@@ -2,11 +2,20 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.Facebook;
+using Microsoft.AspNetCore.Identity;
+using LoginWithGoogle.Models;
 namespace LoginWithGoogle.Controllers
 {
     public class LoginController : Controller
     {
-        public IActionResult Index()
+		private readonly SignInManager<ApplicationUser> _signInManager;
+
+		public LoginController(SignInManager<ApplicationUser> signInManager)
+		{
+			_signInManager = signInManager;
+		}
+		public IActionResult Index()
         {
             return View();
         }
@@ -37,8 +46,22 @@ namespace LoginWithGoogle.Controllers
 
         public async Task<IActionResult> Logout()
         {
-            await HttpContext.SignOutAsync();
-            return RedirectToAction("Index");
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme); // Sign out from cookies
+            return RedirectToAction("Index", "Home");
         }
-    }
+
+        public IActionResult LoginWithFacebook()
+        {
+            var properties = new AuthenticationProperties { RedirectUri = "/" };
+            return Challenge(properties, FacebookDefaults.AuthenticationScheme);
+        }
+
+		[HttpPost]
+		public IActionResult LoginWithMicrosoft()
+		{
+			var redirectUrl = Url.Action("Index", "Home");
+			var properties = _signInManager.ConfigureExternalAuthenticationProperties("Microsoft", redirectUrl);
+			return Challenge(properties, "Microsoft");
+		}
+	}
 }
