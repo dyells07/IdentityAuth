@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CPwaOrJRVR+9GgK4fULUXmLzNdyB3ZSKPOHq1+6p7JKtEeh5Rd4gKvR+a1pbRtwP0GIVU/kPtsC1RqCNIYcO0Q==",
+  "dgSpecHash": "q96QsIL2301XHO8pxNxfjNSWR6GgjOPvrfH7atsUeID0FMWmSsAj6BMJDHi7SXJ6EWupLgodHayoh00a8rSstQ==",
   "success": true,
-  "projectFilePath": "B:\\Clone\\Expense-Tracker-App-in-Asp.Net-Core-MVC\\Expense Tracker\\Expense Tracker.csproj",
+  "projectFilePath": "B:\\Auth\\EntityFrameWorkCodeForExpenseTracking\\Expense Tracker\\Expense Tracker.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\DELL\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",

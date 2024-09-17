@@ -10168,11 +10168,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "B:\\Clone\\Expense-Tracker-App-in-Asp.Net-Core-MVC\\Expense Tracker\\Expense Tracker.csproj",
+      "projectUniqueName": "B:\\Auth\\EntityFrameWorkCodeForExpenseTracking\\Expense Tracker\\Expense Tracker.csproj",
       "projectName": "Expense Tracker",
-      "projectPath": "B:\\Clone\\Expense-Tracker-App-in-Asp.Net-Core-MVC\\Expense Tracker\\Expense Tracker.csproj",
+      "projectPath": "B:\\Auth\\EntityFrameWorkCodeForExpenseTracking\\Expense Tracker\\Expense Tracker.csproj",
       "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-      "outputPath": "B:\\Clone\\Expense-Tracker-App-in-Asp.Net-Core-MVC\\Expense Tracker\\obj\\",
+      "outputPath": "B:\\Auth\\EntityFrameWorkCodeForExpenseTracking\\Expense Tracker\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
