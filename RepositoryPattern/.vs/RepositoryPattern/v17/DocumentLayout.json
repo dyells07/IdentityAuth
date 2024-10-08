@@ -1,0 +1,362 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "B:\\Clone\\ASP.NET-Core-MVC-Example\\RepositoryPattern\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{45E20AAC-2383-410B-8B86-5EFC1C4EE3B0}|RP.Web\\RP.Web.csproj|b:\\clone\\asp.net-core-mvc-example\\repositorypattern\\rp.web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{45E20AAC-2383-410B-8B86-5EFC1C4EE3B0}|RP.Web\\RP.Web.csproj|solutionrelative:rp.web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45E20AAC-2383-410B-8B86-5EFC1C4EE3B0}|RP.Web\\RP.Web.csproj|b:\\clone\\asp.net-core-mvc-example\\repositorypattern\\rp.web\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{45E20AAC-2383-410B-8B86-5EFC1C4EE3B0}|RP.Web\\RP.Web.csproj|solutionrelative:rp.web\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45E20AAC-2383-410B-8B86-5EFC1C4EE3B0}|RP.Web\\RP.Web.csproj|b:\\clone\\asp.net-core-mvc-example\\repositorypattern\\rp.web\\views\\home\\contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{45E20AAC-2383-410B-8B86-5EFC1C4EE3B0}|RP.Web\\RP.Web.csproj|solutionrelative:rp.web\\views\\home\\contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45E20AAC-2383-410B-8B86-5EFC1C4EE3B0}|RP.Web\\RP.Web.csproj|b:\\clone\\asp.net-core-mvc-example\\repositorypattern\\rp.web\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{45E20AAC-2383-410B-8B86-5EFC1C4EE3B0}|RP.Web\\RP.Web.csproj|solutionrelative:rp.web\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6724303D-F214-4DED-A327-B35B79238E7D}|RP.Data\\RP.Data.csproj|b:\\clone\\asp.net-core-mvc-example\\repositorypattern\\rp.data\\migrations\\20241008173428_second.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6724303D-F214-4DED-A327-B35B79238E7D}|RP.Data\\RP.Data.csproj|solutionrelative:rp.data\\migrations\\20241008173428_second.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45E20AAC-2383-410B-8B86-5EFC1C4EE3B0}|RP.Web\\RP.Web.csproj|b:\\clone\\asp.net-core-mvc-example\\repositorypattern\\rp.web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{45E20AAC-2383-410B-8B86-5EFC1C4EE3B0}|RP.Web\\RP.Web.csproj|solutionrelative:rp.web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6724303D-F214-4DED-A327-B35B79238E7D}|RP.Data\\RP.Data.csproj|b:\\clone\\asp.net-core-mvc-example\\repositorypattern\\rp.data\\migrations\\20241008171027_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6724303D-F214-4DED-A327-B35B79238E7D}|RP.Data\\RP.Data.csproj|solutionrelative:rp.data\\migrations\\20241008171027_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6724303D-F214-4DED-A327-B35B79238E7D}|RP.Data\\RP.Data.csproj|b:\\clone\\asp.net-core-mvc-example\\repositorypattern\\rp.data\\employeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6724303D-F214-4DED-A327-B35B79238E7D}|RP.Data\\RP.Data.csproj|solutionrelative:rp.data\\employeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45E20AAC-2383-410B-8B86-5EFC1C4EE3B0}|RP.Web\\RP.Web.csproj|b:\\clone\\asp.net-core-mvc-example\\repositorypattern\\rp.web\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45E20AAC-2383-410B-8B86-5EFC1C4EE3B0}|RP.Web\\RP.Web.csproj|solutionrelative:rp.web\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45E20AAC-2383-410B-8B86-5EFC1C4EE3B0}|RP.Web\\RP.Web.csproj|b:\\clone\\asp.net-core-mvc-example\\repositorypattern\\rp.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45E20AAC-2383-410B-8B86-5EFC1C4EE3B0}|RP.Web\\RP.Web.csproj|solutionrelative:rp.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45E20AAC-2383-410B-8B86-5EFC1C4EE3B0}|RP.Web\\RP.Web.csproj|b:\\clone\\asp.net-core-mvc-example\\repositorypattern\\rp.web\\views\\employee\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{45E20AAC-2383-410B-8B86-5EFC1C4EE3B0}|RP.Web\\RP.Web.csproj|solutionrelative:rp.web\\views\\employee\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45E20AAC-2383-410B-8B86-5EFC1C4EE3B0}|RP.Web\\RP.Web.csproj|b:\\clone\\asp.net-core-mvc-example\\repositorypattern\\rp.web\\views\\employee\\_deleteemployee.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{45E20AAC-2383-410B-8B86-5EFC1C4EE3B0}|RP.Web\\RP.Web.csproj|solutionrelative:rp.web\\views\\employee\\_deleteemployee.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45E20AAC-2383-410B-8B86-5EFC1C4EE3B0}|RP.Web\\RP.Web.csproj|b:\\clone\\asp.net-core-mvc-example\\repositorypattern\\rp.web\\views\\employee\\_addeditemployee.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{45E20AAC-2383-410B-8B86-5EFC1C4EE3B0}|RP.Web\\RP.Web.csproj|solutionrelative:rp.web\\views\\employee\\_addeditemployee.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45E20AAC-2383-410B-8B86-5EFC1C4EE3B0}|RP.Web\\RP.Web.csproj|b:\\clone\\asp.net-core-mvc-example\\repositorypattern\\rp.web\\models\\bootstrapmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45E20AAC-2383-410B-8B86-5EFC1C4EE3B0}|RP.Web\\RP.Web.csproj|solutionrelative:rp.web\\models\\bootstrapmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6724303D-F214-4DED-A327-B35B79238E7D}|RP.Data\\RP.Data.csproj|b:\\clone\\asp.net-core-mvc-example\\repositorypattern\\rp.data\\iemployeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6724303D-F214-4DED-A327-B35B79238E7D}|RP.Data\\RP.Data.csproj|solutionrelative:rp.data\\iemployeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6724303D-F214-4DED-A327-B35B79238E7D}|RP.Data\\RP.Data.csproj|b:\\clone\\asp.net-core-mvc-example\\repositorypattern\\rp.data\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6724303D-F214-4DED-A327-B35B79238E7D}|RP.Data\\RP.Data.csproj|solutionrelative:rp.data\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6724303D-F214-4DED-A327-B35B79238E7D}|RP.Data\\RP.Data.csproj|b:\\clone\\asp.net-core-mvc-example\\repositorypattern\\rp.data\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6724303D-F214-4DED-A327-B35B79238E7D}|RP.Data\\RP.Data.csproj|solutionrelative:rp.data\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45E20AAC-2383-410B-8B86-5EFC1C4EE3B0}|RP.Web\\RP.Web.csproj|b:\\clone\\asp.net-core-mvc-example\\repositorypattern\\rp.web\\designtimedbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45E20AAC-2383-410B-8B86-5EFC1C4EE3B0}|RP.Web\\RP.Web.csproj|solutionrelative:rp.web\\designtimedbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45E20AAC-2383-410B-8B86-5EFC1C4EE3B0}|RP.Web\\RP.Web.csproj|b:\\clone\\asp.net-core-mvc-example\\repositorypattern\\rp.web\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45E20AAC-2383-410B-8B86-5EFC1C4EE3B0}|RP.Web\\RP.Web.csproj|solutionrelative:rp.web\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45E20AAC-2383-410B-8B86-5EFC1C4EE3B0}|RP.Web\\RP.Web.csproj|b:\\clone\\asp.net-core-mvc-example\\repositorypattern\\rp.web\\code\\modelsize.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45E20AAC-2383-410B-8B86-5EFC1C4EE3B0}|RP.Web\\RP.Web.csproj|solutionrelative:rp.web\\code\\modelsize.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45E20AAC-2383-410B-8B86-5EFC1C4EE3B0}|RP.Web\\RP.Web.csproj|b:\\clone\\asp.net-core-mvc-example\\repositorypattern\\rp.web\\rp.web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{45E20AAC-2383-410B-8B86-5EFC1C4EE3B0}|RP.Web\\RP.Web.csproj|solutionrelative:rp.web\\rp.web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "B:\\Clone\\ASP.NET-Core-MVC-Example\\RepositoryPattern\\RP.Web\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "RP.Web\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "B:\\Clone\\ASP.NET-Core-MVC-Example\\RepositoryPattern\\RP.Web\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "RP.Web\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAADUAAAAAAAAAAAAuwEMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-08T17:42:32.389Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "B:\\Clone\\ASP.NET-Core-MVC-Example\\RepositoryPattern\\RP.Web\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "RP.Web\\Views\\Home\\Index.cshtml",
+              "ToolTip": "B:\\Clone\\ASP.NET-Core-MVC-Example\\RepositoryPattern\\RP.Web\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "RP.Web\\Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-08T17:42:23.62Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Contact.cshtml",
+              "DocumentMoniker": "B:\\Clone\\ASP.NET-Core-MVC-Example\\RepositoryPattern\\RP.Web\\Views\\Home\\Contact.cshtml",
+              "RelativeDocumentMoniker": "RP.Web\\Views\\Home\\Contact.cshtml",
+              "ToolTip": "B:\\Clone\\ASP.NET-Core-MVC-Example\\RepositoryPattern\\RP.Web\\Views\\Home\\Contact.cshtml",
+              "RelativeToolTip": "RP.Web\\Views\\Home\\Contact.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-08T17:42:22.289Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "About.cshtml",
+              "DocumentMoniker": "B:\\Clone\\ASP.NET-Core-MVC-Example\\RepositoryPattern\\RP.Web\\Views\\Home\\About.cshtml",
+              "RelativeDocumentMoniker": "RP.Web\\Views\\Home\\About.cshtml",
+              "ToolTip": "B:\\Clone\\ASP.NET-Core-MVC-Example\\RepositoryPattern\\RP.Web\\Views\\Home\\About.cshtml",
+              "RelativeToolTip": "RP.Web\\Views\\Home\\About.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-08T17:42:18.738Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "20241008173428_Second.cs",
+              "DocumentMoniker": "B:\\Clone\\ASP.NET-Core-MVC-Example\\RepositoryPattern\\RP.Data\\Migrations\\20241008173428_Second.cs",
+              "RelativeDocumentMoniker": "RP.Data\\Migrations\\20241008173428_Second.cs",
+              "ToolTip": "B:\\Clone\\ASP.NET-Core-MVC-Example\\RepositoryPattern\\RP.Data\\Migrations\\20241008173428_Second.cs",
+              "RelativeToolTip": "RP.Data\\Migrations\\20241008173428_Second.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-08T17:34:29.407Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "20241008171027_Initial.cs",
+              "DocumentMoniker": "B:\\Clone\\ASP.NET-Core-MVC-Example\\RepositoryPattern\\RP.Data\\Migrations\\20241008171027_Initial.cs",
+              "RelativeDocumentMoniker": "RP.Data\\Migrations\\20241008171027_Initial.cs",
+              "ToolTip": "B:\\Clone\\ASP.NET-Core-MVC-Example\\RepositoryPattern\\RP.Data\\Migrations\\20241008171027_Initial.cs",
+              "RelativeToolTip": "RP.Data\\Migrations\\20241008171027_Initial.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-08T17:10:28.901Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "_AddEditEmployee.cshtml",
+              "DocumentMoniker": "B:\\Clone\\ASP.NET-Core-MVC-Example\\RepositoryPattern\\RP.Web\\Views\\Employee\\_AddEditEmployee.cshtml",
+              "RelativeDocumentMoniker": "RP.Web\\Views\\Employee\\_AddEditEmployee.cshtml",
+              "ToolTip": "B:\\Clone\\ASP.NET-Core-MVC-Example\\RepositoryPattern\\RP.Web\\Views\\Employee\\_AddEditEmployee.cshtml",
+              "RelativeToolTip": "RP.Web\\Views\\Employee\\_AddEditEmployee.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-08T16:39:24.379Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "BootstrapModel.cs",
+              "DocumentMoniker": "B:\\Clone\\ASP.NET-Core-MVC-Example\\RepositoryPattern\\RP.Web\\Models\\BootstrapModel.cs",
+              "RelativeDocumentMoniker": "RP.Web\\Models\\BootstrapModel.cs",
+              "ToolTip": "B:\\Clone\\ASP.NET-Core-MVC-Example\\RepositoryPattern\\RP.Web\\Models\\BootstrapModel.cs",
+              "RelativeToolTip": "RP.Web\\Models\\BootstrapModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-08T16:39:15.446Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "IEmployeeRepository.cs",
+              "DocumentMoniker": "B:\\Clone\\ASP.NET-Core-MVC-Example\\RepositoryPattern\\RP.Data\\IEmployeeRepository.cs",
+              "RelativeDocumentMoniker": "RP.Data\\IEmployeeRepository.cs",
+              "ToolTip": "B:\\Clone\\ASP.NET-Core-MVC-Example\\RepositoryPattern\\RP.Data\\IEmployeeRepository.cs",
+              "RelativeToolTip": "RP.Data\\IEmployeeRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-08T16:36:07.611Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "EmployeeRepository.cs",
+              "DocumentMoniker": "B:\\Clone\\ASP.NET-Core-MVC-Example\\RepositoryPattern\\RP.Data\\EmployeeRepository.cs",
+              "RelativeDocumentMoniker": "RP.Data\\EmployeeRepository.cs",
+              "ToolTip": "B:\\Clone\\ASP.NET-Core-MVC-Example\\RepositoryPattern\\RP.Data\\EmployeeRepository.cs",
+              "RelativeToolTip": "RP.Data\\EmployeeRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAYAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-08T16:36:01.889Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Employee.cs",
+              "DocumentMoniker": "B:\\Clone\\ASP.NET-Core-MVC-Example\\RepositoryPattern\\RP.Data\\Employee.cs",
+              "RelativeDocumentMoniker": "RP.Data\\Employee.cs",
+              "ToolTip": "B:\\Clone\\ASP.NET-Core-MVC-Example\\RepositoryPattern\\RP.Data\\Employee.cs",
+              "RelativeToolTip": "RP.Data\\Employee.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-08T16:35:48.491Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "BaseEntity.cs",
+              "DocumentMoniker": "B:\\Clone\\ASP.NET-Core-MVC-Example\\RepositoryPattern\\RP.Data\\BaseEntity.cs",
+              "RelativeDocumentMoniker": "RP.Data\\BaseEntity.cs",
+              "ToolTip": "B:\\Clone\\ASP.NET-Core-MVC-Example\\RepositoryPattern\\RP.Data\\BaseEntity.cs",
+              "RelativeToolTip": "RP.Data\\BaseEntity.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-08T16:35:46.066Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Startup.cs",
+              "DocumentMoniker": "B:\\Clone\\ASP.NET-Core-MVC-Example\\RepositoryPattern\\RP.Web\\Startup.cs",
+              "RelativeDocumentMoniker": "RP.Web\\Startup.cs",
+              "ToolTip": "B:\\Clone\\ASP.NET-Core-MVC-Example\\RepositoryPattern\\RP.Web\\Startup.cs",
+              "RelativeToolTip": "RP.Web\\Startup.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAA6AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-08T16:35:39.555Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Program.cs",
+              "DocumentMoniker": "B:\\Clone\\ASP.NET-Core-MVC-Example\\RepositoryPattern\\RP.Web\\Program.cs",
+              "RelativeDocumentMoniker": "RP.Web\\Program.cs",
+              "ToolTip": "B:\\Clone\\ASP.NET-Core-MVC-Example\\RepositoryPattern\\RP.Web\\Program.cs",
+              "RelativeToolTip": "RP.Web\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-08T16:35:36.023Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "DesignTimeDbContextFactory.cs",
+              "DocumentMoniker": "B:\\Clone\\ASP.NET-Core-MVC-Example\\RepositoryPattern\\RP.Web\\DesignTimeDbContextFactory.cs",
+              "RelativeDocumentMoniker": "RP.Web\\DesignTimeDbContextFactory.cs",
+              "ToolTip": "B:\\Clone\\ASP.NET-Core-MVC-Example\\RepositoryPattern\\RP.Web\\DesignTimeDbContextFactory.cs",
+              "RelativeToolTip": "RP.Web\\DesignTimeDbContextFactory.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-08T16:35:31.196Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "B:\\Clone\\ASP.NET-Core-MVC-Example\\RepositoryPattern\\RP.Web\\appsettings.json",
+              "RelativeDocumentMoniker": "RP.Web\\appsettings.json",
+              "ToolTip": "B:\\Clone\\ASP.NET-Core-MVC-Example\\RepositoryPattern\\RP.Web\\appsettings.json",
+              "RelativeToolTip": "RP.Web\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAABNAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-10-08T16:35:22.517Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "_DeleteEmployee.cshtml",
+              "DocumentMoniker": "B:\\Clone\\ASP.NET-Core-MVC-Example\\RepositoryPattern\\RP.Web\\Views\\Employee\\_DeleteEmployee.cshtml",
+              "RelativeDocumentMoniker": "RP.Web\\Views\\Employee\\_DeleteEmployee.cshtml",
+              "ToolTip": "B:\\Clone\\ASP.NET-Core-MVC-Example\\RepositoryPattern\\RP.Web\\Views\\Employee\\_DeleteEmployee.cshtml",
+              "RelativeToolTip": "RP.Web\\Views\\Employee\\_DeleteEmployee.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-08T16:39:40.601Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "B:\\Clone\\ASP.NET-Core-MVC-Example\\RepositoryPattern\\RP.Web\\Views\\Employee\\Index.cshtml",
+              "RelativeDocumentMoniker": "RP.Web\\Views\\Employee\\Index.cshtml",
+              "ToolTip": "B:\\Clone\\ASP.NET-Core-MVC-Example\\RepositoryPattern\\RP.Web\\Views\\Employee\\Index.cshtml",
+              "RelativeToolTip": "RP.Web\\Views\\Employee\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-08T16:39:47.299Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "EmployeeController.cs",
+              "DocumentMoniker": "B:\\Clone\\ASP.NET-Core-MVC-Example\\RepositoryPattern\\RP.Web\\Controllers\\EmployeeController.cs",
+              "RelativeDocumentMoniker": "RP.Web\\Controllers\\EmployeeController.cs",
+              "ToolTip": "B:\\Clone\\ASP.NET-Core-MVC-Example\\RepositoryPattern\\RP.Web\\Controllers\\EmployeeController.cs",
+              "RelativeToolTip": "RP.Web\\Controllers\\EmployeeController.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAgwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-08T16:34:17.35Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ModelSize.cs",
+              "DocumentMoniker": "B:\\Clone\\ASP.NET-Core-MVC-Example\\RepositoryPattern\\RP.Web\\Code\\ModelSize.cs",
+              "RelativeDocumentMoniker": "RP.Web\\Code\\ModelSize.cs",
+              "ToolTip": "B:\\Clone\\ASP.NET-Core-MVC-Example\\RepositoryPattern\\RP.Web\\Code\\ModelSize.cs",
+              "RelativeToolTip": "RP.Web\\Code\\ModelSize.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-08T16:34:12.991Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "RP.Web.csproj",
+              "DocumentMoniker": "B:\\Clone\\ASP.NET-Core-MVC-Example\\RepositoryPattern\\RP.Web\\RP.Web.csproj",
+              "RelativeDocumentMoniker": "RP.Web\\RP.Web.csproj",
+              "ToolTip": "B:\\Clone\\ASP.NET-Core-MVC-Example\\RepositoryPattern\\RP.Web\\RP.Web.csproj",
+              "RelativeToolTip": "RP.Web\\RP.Web.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-10-08T16:24:36.761Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

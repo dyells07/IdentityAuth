@@ -1,0 +1,5 @@
+is_global = true
+build_property.RootNamespace = RP.Web
+build_property.ProjectDir = B:\Clone\ASP.NET-Core-MVC-Example\RepositoryPattern\RP.Web\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
