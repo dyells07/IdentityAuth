@@ -14227,11 +14227,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "B:\\Clone\\ASP.NET-Core-MVC-Example\\GenericRepository\\GRP.Web\\GRP.Web.csproj",
+      "projectUniqueName": "B:\\Auth\\GenericRepositoryPattern\\GRP.Web\\GRP.Web.csproj",
       "projectName": "GRP.Web",
-      "projectPath": "B:\\Clone\\ASP.NET-Core-MVC-Example\\GenericRepository\\GRP.Web\\GRP.Web.csproj",
+      "projectPath": "B:\\Auth\\GenericRepositoryPattern\\GRP.Web\\GRP.Web.csproj",
       "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-      "outputPath": "B:\\Clone\\ASP.NET-Core-MVC-Example\\GenericRepository\\GRP.Web\\obj\\",
+      "outputPath": "B:\\Auth\\GenericRepositoryPattern\\GRP.Web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -14253,8 +14253,8 @@
         "netcoreapp2.0": {
           "targetAlias": "netcoreapp2.0",
           "projectReferences": {
-            "B:\\Clone\\ASP.NET-Core-MVC-Example\\GenericRepository\\GRP.Data\\GRP.Data.csproj": {
-              "projectPath": "B:\\Clone\\ASP.NET-Core-MVC-Example\\GenericRepository\\GRP.Data\\GRP.Data.csproj"
+            "B:\\Auth\\GenericRepositoryPattern\\GRP.Data\\GRP.Data.csproj": {
+              "projectPath": "B:\\Auth\\GenericRepositoryPattern\\GRP.Data\\GRP.Data.csproj"
             }
           }
         }

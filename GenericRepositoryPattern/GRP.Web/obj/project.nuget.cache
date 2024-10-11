@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+QOLRuloJczGGGKXvWoMYRNQy1YmPNB0jsSWHhNiveM4CPQ9i7Be8m0HUtoiFEM2+YDdLJ0k7z7JRxNbA02ysw==",
+  "dgSpecHash": "cn0A+ri35eqwCPqplNn1UcvIsdSW4YAggbbWU/Af7khySLBF4ZboRHYtExLM7TEhr5znEjCMj15K7RUJHPjQaQ==",
   "success": true,
-  "projectFilePath": "B:\\Clone\\ASP.NET-Core-MVC-Example\\GenericRepository\\GRP.Web\\GRP.Web.csproj",
+  "projectFilePath": "B:\\Auth\\GenericRepositoryPattern\\GRP.Web\\GRP.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\DELL\\.nuget\\packages\\libuv\\1.10.0\\libuv.1.10.0.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\microsoft.applicationinsights\\2.4.0\\microsoft.applicationinsights.2.4.0.nupkg.sha512",

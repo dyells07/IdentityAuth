@@ -3708,11 +3708,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "B:\\Clone\\ASP.NET-Core-MVC-Example\\GenericRepository\\GRP.Data\\GRP.Data.csproj",
+      "projectUniqueName": "B:\\Auth\\GenericRepositoryPattern\\GRP.Data\\GRP.Data.csproj",
       "projectName": "GRP.Data",
-      "projectPath": "B:\\Clone\\ASP.NET-Core-MVC-Example\\GenericRepository\\GRP.Data\\GRP.Data.csproj",
+      "projectPath": "B:\\Auth\\GenericRepositoryPattern\\GRP.Data\\GRP.Data.csproj",
       "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-      "outputPath": "B:\\Clone\\ASP.NET-Core-MVC-Example\\GenericRepository\\GRP.Data\\obj\\",
+      "outputPath": "B:\\Auth\\GenericRepositoryPattern\\GRP.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

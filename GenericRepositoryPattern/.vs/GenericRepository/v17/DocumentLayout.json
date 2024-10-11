@@ -1,0 +1,224 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "B:\\Auth\\GenericRepositoryPattern\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F9E79083-EA8D-42B2-811A-0AE1ECBDFE4B}|GRP.Web\\GRP.Web.csproj|b:\\auth\\genericrepositorypattern\\grp.web\\views\\customer\\_deletecustomer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F9E79083-EA8D-42B2-811A-0AE1ECBDFE4B}|GRP.Web\\GRP.Web.csproj|solutionrelative:grp.web\\views\\customer\\_deletecustomer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F9E79083-EA8D-42B2-811A-0AE1ECBDFE4B}|GRP.Web\\GRP.Web.csproj|b:\\auth\\genericrepositorypattern\\grp.web\\views\\customer\\_addeditcustomer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F9E79083-EA8D-42B2-811A-0AE1ECBDFE4B}|GRP.Web\\GRP.Web.csproj|solutionrelative:grp.web\\views\\customer\\_addeditcustomer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F9E79083-EA8D-42B2-811A-0AE1ECBDFE4B}|GRP.Web\\GRP.Web.csproj|b:\\auth\\genericrepositorypattern\\grp.web\\views\\customer\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F9E79083-EA8D-42B2-811A-0AE1ECBDFE4B}|GRP.Web\\GRP.Web.csproj|solutionrelative:grp.web\\views\\customer\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F9E79083-EA8D-42B2-811A-0AE1ECBDFE4B}|GRP.Web\\GRP.Web.csproj|b:\\auth\\genericrepositorypattern\\grp.web\\models\\customerlistingviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9E79083-EA8D-42B2-811A-0AE1ECBDFE4B}|GRP.Web\\GRP.Web.csproj|solutionrelative:grp.web\\models\\customerlistingviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F9E79083-EA8D-42B2-811A-0AE1ECBDFE4B}|GRP.Web\\GRP.Web.csproj|b:\\auth\\genericrepositorypattern\\grp.web\\models\\bootstrapmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9E79083-EA8D-42B2-811A-0AE1ECBDFE4B}|GRP.Web\\GRP.Web.csproj|solutionrelative:grp.web\\models\\bootstrapmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F9E79083-EA8D-42B2-811A-0AE1ECBDFE4B}|GRP.Web\\GRP.Web.csproj|b:\\auth\\genericrepositorypattern\\grp.web\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9E79083-EA8D-42B2-811A-0AE1ECBDFE4B}|GRP.Web\\GRP.Web.csproj|solutionrelative:grp.web\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F9E79083-EA8D-42B2-811A-0AE1ECBDFE4B}|GRP.Web\\GRP.Web.csproj|b:\\auth\\genericrepositorypattern\\grp.web\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9E79083-EA8D-42B2-811A-0AE1ECBDFE4B}|GRP.Web\\GRP.Web.csproj|solutionrelative:grp.web\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F9E79083-EA8D-42B2-811A-0AE1ECBDFE4B}|GRP.Web\\GRP.Web.csproj|b:\\auth\\genericrepositorypattern\\grp.web\\code\\modelsize.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9E79083-EA8D-42B2-811A-0AE1ECBDFE4B}|GRP.Web\\GRP.Web.csproj|solutionrelative:grp.web\\code\\modelsize.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0DE90516-3951-4320-A747-F503A4D520E2}|GRP.Data\\GRP.Data.csproj|b:\\auth\\genericrepositorypattern\\grp.data\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0DE90516-3951-4320-A747-F503A4D520E2}|GRP.Data\\GRP.Data.csproj|solutionrelative:grp.data\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0DE90516-3951-4320-A747-F503A4D520E2}|GRP.Data\\GRP.Data.csproj|b:\\auth\\genericrepositorypattern\\grp.data\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0DE90516-3951-4320-A747-F503A4D520E2}|GRP.Data\\GRP.Data.csproj|solutionrelative:grp.data\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0DE90516-3951-4320-A747-F503A4D520E2}|GRP.Data\\GRP.Data.csproj|b:\\auth\\genericrepositorypattern\\grp.data\\addressmap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0DE90516-3951-4320-A747-F503A4D520E2}|GRP.Data\\GRP.Data.csproj|solutionrelative:grp.data\\addressmap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0DE90516-3951-4320-A747-F503A4D520E2}|GRP.Data\\GRP.Data.csproj|b:\\auth\\genericrepositorypattern\\grp.data\\address.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0DE90516-3951-4320-A747-F503A4D520E2}|GRP.Data\\GRP.Data.csproj|solutionrelative:grp.data\\address.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_AddEditCustomer.cshtml",
+              "DocumentMoniker": "B:\\Auth\\GenericRepositoryPattern\\GRP.Web\\Views\\Customer\\_AddEditCustomer.cshtml",
+              "RelativeDocumentMoniker": "GRP.Web\\Views\\Customer\\_AddEditCustomer.cshtml",
+              "ToolTip": "B:\\Auth\\GenericRepositoryPattern\\GRP.Web\\Views\\Customer\\_AddEditCustomer.cshtml",
+              "RelativeToolTip": "GRP.Web\\Views\\Customer\\_AddEditCustomer.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-10T16:28:26.306Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_DeleteCustomer.cshtml",
+              "DocumentMoniker": "B:\\Auth\\GenericRepositoryPattern\\GRP.Web\\Views\\Customer\\_DeleteCustomer.cshtml",
+              "RelativeDocumentMoniker": "GRP.Web\\Views\\Customer\\_DeleteCustomer.cshtml",
+              "ToolTip": "B:\\Auth\\GenericRepositoryPattern\\GRP.Web\\Views\\Customer\\_DeleteCustomer.cshtml",
+              "RelativeToolTip": "GRP.Web\\Views\\Customer\\_DeleteCustomer.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-10T16:28:20.413Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "B:\\Auth\\GenericRepositoryPattern\\GRP.Web\\Views\\Customer\\Index.cshtml",
+              "RelativeDocumentMoniker": "GRP.Web\\Views\\Customer\\Index.cshtml",
+              "ToolTip": "B:\\Auth\\GenericRepositoryPattern\\GRP.Web\\Views\\Customer\\Index.cshtml",
+              "RelativeToolTip": "GRP.Web\\Views\\Customer\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-10T16:28:09.192Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CustomerListingViewModel.cs",
+              "DocumentMoniker": "B:\\Auth\\GenericRepositoryPattern\\GRP.Web\\Models\\CustomerListingViewModel.cs",
+              "RelativeDocumentMoniker": "GRP.Web\\Models\\CustomerListingViewModel.cs",
+              "ToolTip": "B:\\Auth\\GenericRepositoryPattern\\GRP.Web\\Models\\CustomerListingViewModel.cs",
+              "RelativeToolTip": "GRP.Web\\Models\\CustomerListingViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T16:28:01.736Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BootstrapModel.cs",
+              "DocumentMoniker": "B:\\Auth\\GenericRepositoryPattern\\GRP.Web\\Models\\BootstrapModel.cs",
+              "RelativeDocumentMoniker": "GRP.Web\\Models\\BootstrapModel.cs",
+              "ToolTip": "B:\\Auth\\GenericRepositoryPattern\\GRP.Web\\Models\\BootstrapModel.cs",
+              "RelativeToolTip": "GRP.Web\\Models\\BootstrapModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T16:27:59.37Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "B:\\Auth\\GenericRepositoryPattern\\GRP.Web\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "GRP.Web\\Controllers\\HomeController.cs",
+              "ToolTip": "B:\\Auth\\GenericRepositoryPattern\\GRP.Web\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "GRP.Web\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T16:27:48.681Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CustomerController.cs",
+              "DocumentMoniker": "B:\\Auth\\GenericRepositoryPattern\\GRP.Web\\Controllers\\CustomerController.cs",
+              "RelativeDocumentMoniker": "GRP.Web\\Controllers\\CustomerController.cs",
+              "ToolTip": "B:\\Auth\\GenericRepositoryPattern\\GRP.Web\\Controllers\\CustomerController.cs",
+              "RelativeToolTip": "GRP.Web\\Controllers\\CustomerController.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAowAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T16:27:42.457Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ModelSize.cs",
+              "DocumentMoniker": "B:\\Auth\\GenericRepositoryPattern\\GRP.Web\\Code\\ModelSize.cs",
+              "RelativeDocumentMoniker": "GRP.Web\\Code\\ModelSize.cs",
+              "ToolTip": "B:\\Auth\\GenericRepositoryPattern\\GRP.Web\\Code\\ModelSize.cs",
+              "RelativeToolTip": "GRP.Web\\Code\\ModelSize.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T16:27:37.972Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Repository.cs",
+              "DocumentMoniker": "B:\\Auth\\GenericRepositoryPattern\\GRP.Data\\Repository.cs",
+              "RelativeDocumentMoniker": "GRP.Data\\Repository.cs",
+              "ToolTip": "B:\\Auth\\GenericRepositoryPattern\\GRP.Data\\Repository.cs",
+              "RelativeToolTip": "GRP.Data\\Repository.cs",
+              "ViewState": "AQIAAEAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T16:27:18.024Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IRepository.cs",
+              "DocumentMoniker": "B:\\Auth\\GenericRepositoryPattern\\GRP.Data\\IRepository.cs",
+              "RelativeDocumentMoniker": "GRP.Data\\IRepository.cs",
+              "ToolTip": "B:\\Auth\\GenericRepositoryPattern\\GRP.Data\\IRepository.cs",
+              "RelativeToolTip": "GRP.Data\\IRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T16:27:12.4Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AddressMap.cs",
+              "DocumentMoniker": "B:\\Auth\\GenericRepositoryPattern\\GRP.Data\\AddressMap.cs",
+              "RelativeDocumentMoniker": "GRP.Data\\AddressMap.cs",
+              "ToolTip": "B:\\Auth\\GenericRepositoryPattern\\GRP.Data\\AddressMap.cs",
+              "RelativeToolTip": "GRP.Data\\AddressMap.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T16:27:08.101Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Address.cs",
+              "DocumentMoniker": "B:\\Auth\\GenericRepositoryPattern\\GRP.Data\\Address.cs",
+              "RelativeDocumentMoniker": "GRP.Data\\Address.cs",
+              "ToolTip": "B:\\Auth\\GenericRepositoryPattern\\GRP.Data\\Address.cs",
+              "RelativeToolTip": "GRP.Data\\Address.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T16:27:05.768Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

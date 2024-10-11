@@ -7,3 +7,14 @@ E:\VS2017\GenericRepository\GRP.Data\obj\Debug\netcoreapp2.0\GRP.Data.AssemblyIn
 E:\VS2017\GenericRepository\GRP.Data\obj\Debug\netcoreapp2.0\GRP.Data.AssemblyInfo.cs
 E:\VS2017\GenericRepository\GRP.Data\obj\Debug\netcoreapp2.0\GRP.Data.dll
 E:\VS2017\GenericRepository\GRP.Data\obj\Debug\netcoreapp2.0\GRP.Data.pdb
+B:\Auth\GenericRepositoryPattern\GRP.Data\bin\Debug\netcoreapp2.0\GRP.Data.deps.json
+B:\Auth\GenericRepositoryPattern\GRP.Data\bin\Debug\netcoreapp2.0\GRP.Data.dll
+B:\Auth\GenericRepositoryPattern\GRP.Data\bin\Debug\netcoreapp2.0\GRP.Data.pdb
+B:\Auth\GenericRepositoryPattern\GRP.Data\obj\Debug\netcoreapp2.0\GRP.Data.csproj.AssemblyReference.cache
+B:\Auth\GenericRepositoryPattern\GRP.Data\obj\Debug\netcoreapp2.0\GRP.Data.GeneratedMSBuildEditorConfig.editorconfig
+B:\Auth\GenericRepositoryPattern\GRP.Data\obj\Debug\netcoreapp2.0\GRP.Data.AssemblyInfoInputs.cache
+B:\Auth\GenericRepositoryPattern\GRP.Data\obj\Debug\netcoreapp2.0\GRP.Data.AssemblyInfo.cs
+B:\Auth\GenericRepositoryPattern\GRP.Data\obj\Debug\netcoreapp2.0\GRP.Data.csproj.CoreCompileInputs.cache
+B:\Auth\GenericRepositoryPattern\GRP.Data\obj\Debug\netcoreapp2.0\GRP.Data.sourcelink.json
+B:\Auth\GenericRepositoryPattern\GRP.Data\obj\Debug\netcoreapp2.0\GRP.Data.dll
+B:\Auth\GenericRepositoryPattern\GRP.Data\obj\Debug\netcoreapp2.0\GRP.Data.pdb

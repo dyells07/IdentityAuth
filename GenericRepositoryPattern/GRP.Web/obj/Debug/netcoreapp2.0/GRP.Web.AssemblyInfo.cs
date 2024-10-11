@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GRP.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e653b63c6621d71cbadee09a46204419de113517")]
 [assembly: System.Reflection.AssemblyProductAttribute("GRP.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GRP.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

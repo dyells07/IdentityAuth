@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mabQYhhpX/b+ME0ceXdwyLcEBDofYxzshSYN1Bn//smI1ChD2lmF+cGl/2vpbCu5WGV2GyysjZq0V+IPoDOn/g==",
+  "dgSpecHash": "yTwwZyPPGAFYZVBRAcWe+ZZaTajNvtYsWtr8eGVJnaYAN7P7xQZViKNGsT6PgOLIxkHwoufzBK87efRREzDQhw==",
   "success": true,
-  "projectFilePath": "B:\\Clone\\ASP.NET-Core-MVC-Example\\GenericRepository\\GRP.Data\\GRP.Data.csproj",
+  "projectFilePath": "B:\\Auth\\GenericRepositoryPattern\\GRP.Data\\GRP.Data.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\DELL\\.nuget\\packages\\microsoft.csharp\\4.4.0\\microsoft.csharp.4.4.0.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\microsoft.entityframeworkcore\\2.0.0\\microsoft.entityframeworkcore.2.0.0.nupkg.sha512",

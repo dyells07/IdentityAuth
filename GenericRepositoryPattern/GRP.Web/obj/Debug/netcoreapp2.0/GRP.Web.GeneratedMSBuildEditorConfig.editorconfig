@@ -1,5 +1,5 @@
 is_global = true
 build_property.RootNamespace = GRP.Web
-build_property.ProjectDir = B:\Clone\ASP.NET-Core-MVC-Example\GenericRepository\GRP.Web\
+build_property.ProjectDir = B:\Auth\GenericRepositoryPattern\GRP.Web\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
