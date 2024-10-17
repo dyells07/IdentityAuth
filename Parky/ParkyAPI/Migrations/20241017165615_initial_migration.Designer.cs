@@ -10,8 +10,8 @@ using ParkyAPI.Data;
 namespace ParkyAPI.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20191210140738_addTrailsToDb")]
-    partial class addTrailsToDb
+    [Migration("20241017165615_initial_migration")]
+    partial class initial_migration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -38,6 +38,9 @@ namespace ParkyAPI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<byte[]>("Picture")
+                        .HasColumnType("varbinary(max)");
+
                     b.Property<string>("State")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -63,6 +66,9 @@ namespace ParkyAPI.Migrations
                     b.Property<double>("Distance")
                         .HasColumnType("float");
 
+                    b.Property<double>("Elevation")
+                        .HasColumnType("float");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -75,6 +81,27 @@ namespace ParkyAPI.Migrations
                     b.HasIndex("NationalParkId");
 
                     b.ToTable("Trails");
+                });
+
+            modelBuilder.Entity("ParkyAPI.Models.User", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Password")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Role")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Username")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("ParkyAPI.Models.Trail", b =>
