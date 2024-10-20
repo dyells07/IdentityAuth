@@ -1,9 +1,32 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - CRUD Application</title>
+    <title>@ViewData["Title"] - Basic Crud Operation</title>
+
+    <style>
+        /* Sticky footer styles */
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .body-content {
+            flex: 1; /* Ensures the body content expands to fill the available space */
+        }
+
+        footer {
+            background-color: #f5f5f5;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -16,6 +39,7 @@
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
 </head>
+
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
@@ -26,12 +50,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">CRUD Application</a>
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Basic Crud Operation</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Book" asp-action="Index">Book</a></li>                
+                    <li><a asp-area="" asp-controller="Book" asp-action="Index">Book</a></li>
                 </ul>
             </div>
         </div>
@@ -40,7 +64,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; 2017 - FirstCRUDApplication</p>
+            <p>&copy; @DateTime.Now.Year - FirstCRUDApplication</p> <!-- Dynamic year -->
         </footer>
     </div>
 
@@ -67,4 +91,5 @@
 
     @RenderSection("Scripts", required: false)
 </body>
+
 </html>

@@ -11,8 +11,8 @@ using System;
 namespace FirstCRUDApplication.Migrations
 {
     [DbContext(typeof(CRUDContext))]
-    [Migration("20170821021916_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20241020143243_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
