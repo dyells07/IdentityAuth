@@ -7,7 +7,6 @@
     <title>@ViewData["Title"] - Basic Crud Operation</title>
 
     <style>
-        /* Sticky footer styles */
         html, body {
             height: 100%;
         }
@@ -18,7 +17,7 @@
         }
 
         .body-content {
-            flex: 1; /* Ensures the body content expands to fill the available space */
+            flex: 1;
         }
 
         footer {
@@ -50,24 +49,23 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Basic Crud Operation</a>
+                <a asp-area="" asp-controller="Book" asp-action="Index" class="navbar-brand">Basic Crud Operation</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
                     <li><a asp-area="" asp-controller="Book" asp-action="Index">Book</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    <div class="container body-content">
+    <div class="container body-content" style="min-height:90vh;">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - FirstCRUDApplication</p> <!-- Dynamic year -->
-        </footer>
-    </div>
 
+    </div>
+    <footer>
+        <p>&copy; @DateTime.Now.Year - FirstCRUDApplication</p>
+    </footer>
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
