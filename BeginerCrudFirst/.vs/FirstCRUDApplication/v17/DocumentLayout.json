@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "B:\\Auth\\BeginerCrudFirst\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C89DD380-865D-4559-9B7A-84CBB371424E}|FirstCRUDApplication\\FirstCRUDApplication.csproj|b:\\auth\\beginercrudfirst\\firstcrudapplication\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{C89DD380-865D-4559-9B7A-84CBB371424E}|FirstCRUDApplication\\FirstCRUDApplication.csproj|solutionrelative:firstcrudapplication\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "B:\\Auth\\BeginerCrudFirst\\FirstCRUDApplication\\appsettings.json",
+              "RelativeDocumentMoniker": "FirstCRUDApplication\\appsettings.json",
+              "ToolTip": "B:\\Auth\\BeginerCrudFirst\\FirstCRUDApplication\\appsettings.json",
+              "RelativeToolTip": "FirstCRUDApplication\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-10-23T15:45:19.74Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
