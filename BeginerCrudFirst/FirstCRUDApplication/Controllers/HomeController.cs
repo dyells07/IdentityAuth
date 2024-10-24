@@ -24,7 +24,7 @@ namespace FirstCRUDApplication.Controllers
 
         public IActionResult Contact()
         {
-            ViewData["Message"] = "Contact Page.";
+            ViewData["Message"] = "This is Contact Page.";
 
             return View();
         }
