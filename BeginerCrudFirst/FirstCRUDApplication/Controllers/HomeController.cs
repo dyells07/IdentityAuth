@@ -17,7 +17,7 @@ namespace FirstCRUDApplication.Controllers
 
         public IActionResult About()
         {
-            ViewData["Message"] = "This a about section.";
+            ViewData["Message"] = "This a about section page.";
 
             return View();
         }
