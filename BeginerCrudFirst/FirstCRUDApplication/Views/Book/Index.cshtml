@@ -13,7 +13,7 @@
                 <i class="glyphicon glyphicon-plus"></i> Add Book
             </a>
         </div>
-        <div class="table-responsive">
+        <div class="table-responsive mt-2" style="margin-top:8px;">
             <table class="table table-bordered table-striped table-hover">
                 <thead class="thead-dark">
                     <tr>
@@ -25,22 +25,31 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (var item in Model)
+                    @if (Model.Any())
+                    {
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                                <td>@Html.DisplayFor(modelItem => item.ISBN)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Author)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Publisher)</td>
+                                <td>
+                                    <a id="editBookModal" data-toggle="modal" asp-action="AddEditBook" asp-route-id="@item.Id" data-target="#modal-action-book"
+                                       class="btn btn-info btn-sm">
+                                        <i class="glyphicon glyphicon-pencil"></i> Edit
+                                    </a>
+                                    <a id="deleteBookModal" data-toggle="modal" asp-action="DeleteBook" asp-route-id="@item.Id" data-target="#modal-action-book" class="btn btn-danger btn-sm">
+                                        <i class="glyphicon glyphicon-trash"></i> Delete
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
                     {
                         <tr>
-                            <td>@Html.DisplayFor(modelItem => item.Name)</td>
-                            <td>@Html.DisplayFor(modelItem => item.ISBN)</td>
-                            <td>@Html.DisplayFor(modelItem => item.Author)</td>
-                            <td>@Html.DisplayFor(modelItem => item.Publisher)</td>
-                            <td>
-                                <a id="editBookModal" data-toggle="modal" asp-action="AddEditBook" asp-route-id="@item.Id" data-target="#modal-action-book"
-                                   class="btn btn-info btn-sm">
-                                    <i class="glyphicon glyphicon-pencil"></i> Edit
-                                </a>
-                                <a id="deleteBookModal" data-toggle="modal" asp-action="DeleteBook" asp-route-id="@item.Id" data-target="#modal-action-book" class="btn btn-danger btn-sm">
-                                    <i class="glyphicon glyphicon-trash"></i> Delete
-                                </a>
-                            </td>
+                            <td colspan="5" class="text-center">No books available</td>
                         </tr>
                     }
                 </tbody>
