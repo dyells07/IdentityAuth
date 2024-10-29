@@ -2,8 +2,10 @@
 {
     public enum ModalSize
     {
+        XS,
         Small,
         Large,
-        Medium
+        Medium,
+        XL
     }
 }

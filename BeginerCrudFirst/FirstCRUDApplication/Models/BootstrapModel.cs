@@ -14,10 +14,14 @@ namespace FirstCRUDApplication.Models
             {
                 switch (this.Size)
                 {
+                    case ModalSize.XS:
+                        return "modal-xs";
                     case ModalSize.Small:
                         return "modal-sm";
                     case ModalSize.Large:
                         return "modal-lg";
+                    case ModalSize.XL:
+                        return "modal-xl";
                     case ModalSize.Medium:
                     default:
                         return "";
