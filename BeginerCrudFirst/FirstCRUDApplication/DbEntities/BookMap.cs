@@ -8,6 +8,7 @@ namespace FirstCRUDApplication.DbEntities
         {
             entityBuilder.HasKey(t => t.Id);            
             entityBuilder.Property(t => t.Name).IsRequired();
+            entityBuilder.Property(t => t.Edition).IsRequired();
             entityBuilder.Property(t => t.ISBN).IsRequired();
             entityBuilder.Property(t => t.Author).IsRequired();
             entityBuilder.Property(t => t.Publisher).IsRequired();           

@@ -11,9 +11,10 @@ using System;
 namespace FirstCRUDApplication.Migrations
 {
     [DbContext(typeof(CRUDContext))]
-    partial class CRUDContextModelSnapshot : ModelSnapshot
+    [Migration("20241030162300_second-migration")]
+    partial class secondmigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -28,9 +29,6 @@ namespace FirstCRUDApplication.Migrations
                     b.Property<DateTime>("AddedDate");
 
                     b.Property<string>("Author")
-                        .IsRequired();
-
-                    b.Property<string>("Edition")
                         .IsRequired();
 
                     b.Property<string>("IPAddress");

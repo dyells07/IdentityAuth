@@ -24,6 +24,7 @@ namespace FirstCRUDApplication.Controllers
                 Id= b.Id,
                 Name = b.Name,
                 ISBN = b.ISBN,
+                Edition = b.Edition,
                 Author = b.Author,
                 Publisher = b.Publisher
             });
@@ -43,6 +44,7 @@ namespace FirstCRUDApplication.Controllers
                     model.Name = book.Name;
                     model.ISBN = book.ISBN;
                     model.Author = book.Author;
+                    model.Edition = book.Edition;
                     model.Publisher = book.Publisher;
                 }
             }
@@ -64,6 +66,7 @@ namespace FirstCRUDApplication.Controllers
                     book.Name = model.Name;
                     book.ISBN = model.ISBN;
                     book.Author = model.Author;
+                    book.Edition = model.Edition;
                     book.Publisher = model.Publisher;
                     book.IPAddress = Request.HttpContext.Connection.RemoteIpAddress.ToString();
                     book.ModifiedDate = DateTime.UtcNow;

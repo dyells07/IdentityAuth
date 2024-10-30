@@ -3,6 +3,42 @@
   "WorkspaceRootPath": "B:\\Auth\\BeginerCrudFirst\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{C89DD380-865D-4559-9B7A-84CBB371424E}|FirstCRUDApplication\\FirstCRUDApplication.csproj|b:\\auth\\beginercrudfirst\\firstcrudapplication\\controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C89DD380-865D-4559-9B7A-84CBB371424E}|FirstCRUDApplication\\FirstCRUDApplication.csproj|solutionrelative:firstcrudapplication\\controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C89DD380-865D-4559-9B7A-84CBB371424E}|FirstCRUDApplication\\FirstCRUDApplication.csproj|b:\\auth\\beginercrudfirst\\firstcrudapplication\\views\\book\\_addeditbook.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C89DD380-865D-4559-9B7A-84CBB371424E}|FirstCRUDApplication\\FirstCRUDApplication.csproj|solutionrelative:firstcrudapplication\\views\\book\\_addeditbook.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C89DD380-865D-4559-9B7A-84CBB371424E}|FirstCRUDApplication\\FirstCRUDApplication.csproj|b:\\auth\\beginercrudfirst\\firstcrudapplication\\migrations\\20241030163132_second-migratio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C89DD380-865D-4559-9B7A-84CBB371424E}|FirstCRUDApplication\\FirstCRUDApplication.csproj|solutionrelative:firstcrudapplication\\migrations\\20241030163132_second-migratio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C89DD380-865D-4559-9B7A-84CBB371424E}|FirstCRUDApplication\\FirstCRUDApplication.csproj|b:\\auth\\beginercrudfirst\\firstcrudapplication\\dbentities\\bookmap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C89DD380-865D-4559-9B7A-84CBB371424E}|FirstCRUDApplication\\FirstCRUDApplication.csproj|solutionrelative:firstcrudapplication\\dbentities\\bookmap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C89DD380-865D-4559-9B7A-84CBB371424E}|FirstCRUDApplication\\FirstCRUDApplication.csproj|b:\\auth\\beginercrudfirst\\firstcrudapplication\\dbentities\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C89DD380-865D-4559-9B7A-84CBB371424E}|FirstCRUDApplication\\FirstCRUDApplication.csproj|solutionrelative:firstcrudapplication\\dbentities\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C89DD380-865D-4559-9B7A-84CBB371424E}|FirstCRUDApplication\\FirstCRUDApplication.csproj|b:\\auth\\beginercrudfirst\\firstcrudapplication\\dbentities\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C89DD380-865D-4559-9B7A-84CBB371424E}|FirstCRUDApplication\\FirstCRUDApplication.csproj|solutionrelative:firstcrudapplication\\dbentities\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C89DD380-865D-4559-9B7A-84CBB371424E}|FirstCRUDApplication\\FirstCRUDApplication.csproj|b:\\auth\\beginercrudfirst\\firstcrudapplication\\models\\bookviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C89DD380-865D-4559-9B7A-84CBB371424E}|FirstCRUDApplication\\FirstCRUDApplication.csproj|solutionrelative:firstcrudapplication\\models\\bookviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C89DD380-865D-4559-9B7A-84CBB371424E}|FirstCRUDApplication\\FirstCRUDApplication.csproj|b:\\auth\\beginercrudfirst\\firstcrudapplication\\views\\book\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C89DD380-865D-4559-9B7A-84CBB371424E}|FirstCRUDApplication\\FirstCRUDApplication.csproj|solutionrelative:firstcrudapplication\\views\\book\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C89DD380-865D-4559-9B7A-84CBB371424E}|FirstCRUDApplication\\FirstCRUDApplication.csproj|b:\\auth\\beginercrudfirst\\firstcrudapplication\\migrations\\20241030162300_second-migration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C89DD380-865D-4559-9B7A-84CBB371424E}|FirstCRUDApplication\\FirstCRUDApplication.csproj|solutionrelative:firstcrudapplication\\migrations\\20241030162300_second-migration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C89DD380-865D-4559-9B7A-84CBB371424E}|FirstCRUDApplication\\FirstCRUDApplication.csproj|b:\\auth\\beginercrudfirst\\firstcrudapplication\\models\\modalfooter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C89DD380-865D-4559-9B7A-84CBB371424E}|FirstCRUDApplication\\FirstCRUDApplication.csproj|solutionrelative:firstcrudapplication\\models\\modalfooter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -13,14 +49,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{C89DD380-865D-4559-9B7A-84CBB371424E}|FirstCRUDApplication\\FirstCRUDApplication.csproj|b:\\auth\\beginercrudfirst\\firstcrudapplication\\models\\bootstrapmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C89DD380-865D-4559-9B7A-84CBB371424E}|FirstCRUDApplication\\FirstCRUDApplication.csproj|solutionrelative:firstcrudapplication\\models\\bootstrapmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C89DD380-865D-4559-9B7A-84CBB371424E}|FirstCRUDApplication\\FirstCRUDApplication.csproj|b:\\auth\\beginercrudfirst\\firstcrudapplication\\models\\bookviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C89DD380-865D-4559-9B7A-84CBB371424E}|FirstCRUDApplication\\FirstCRUDApplication.csproj|solutionrelative:firstcrudapplication\\models\\bookviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C89DD380-865D-4559-9B7A-84CBB371424E}|FirstCRUDApplication\\FirstCRUDApplication.csproj|b:\\auth\\beginercrudfirst\\firstcrudapplication\\controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C89DD380-865D-4559-9B7A-84CBB371424E}|FirstCRUDApplication\\FirstCRUDApplication.csproj|solutionrelative:firstcrudapplication\\controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C89DD380-865D-4559-9B7A-84CBB371424E}|FirstCRUDApplication\\FirstCRUDApplication.csproj|b:\\auth\\beginercrudfirst\\firstcrudapplication\\code\\modalsize.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -34,11 +62,102 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "_AddEditBook.cshtml",
+              "DocumentMoniker": "B:\\Auth\\BeginerCrudFirst\\FirstCRUDApplication\\Views\\Book\\_AddEditBook.cshtml",
+              "RelativeDocumentMoniker": "FirstCRUDApplication\\Views\\Book\\_AddEditBook.cshtml",
+              "ToolTip": "B:\\Auth\\BeginerCrudFirst\\FirstCRUDApplication\\Views\\Book\\_AddEditBook.cshtml",
+              "RelativeToolTip": "FirstCRUDApplication\\Views\\Book\\_AddEditBook.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-30T16:33:06.043Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "20241030163132_second-migratio.cs",
+              "DocumentMoniker": "B:\\Auth\\BeginerCrudFirst\\FirstCRUDApplication\\Migrations\\20241030163132_second-migratio.cs",
+              "RelativeDocumentMoniker": "FirstCRUDApplication\\Migrations\\20241030163132_second-migratio.cs",
+              "ToolTip": "B:\\Auth\\BeginerCrudFirst\\FirstCRUDApplication\\Migrations\\20241030163132_second-migratio.cs",
+              "RelativeToolTip": "FirstCRUDApplication\\Migrations\\20241030163132_second-migratio.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T16:31:32.45Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BookMap.cs",
+              "DocumentMoniker": "B:\\Auth\\BeginerCrudFirst\\FirstCRUDApplication\\DbEntities\\BookMap.cs",
+              "RelativeDocumentMoniker": "FirstCRUDApplication\\DbEntities\\BookMap.cs",
+              "ToolTip": "B:\\Auth\\BeginerCrudFirst\\FirstCRUDApplication\\DbEntities\\BookMap.cs",
+              "RelativeToolTip": "FirstCRUDApplication\\DbEntities\\BookMap.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T16:30:58.377Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BaseEntity.cs",
+              "DocumentMoniker": "B:\\Auth\\BeginerCrudFirst\\FirstCRUDApplication\\DbEntities\\BaseEntity.cs",
+              "RelativeDocumentMoniker": "FirstCRUDApplication\\DbEntities\\BaseEntity.cs",
+              "ToolTip": "B:\\Auth\\BeginerCrudFirst\\FirstCRUDApplication\\DbEntities\\BaseEntity.cs",
+              "RelativeToolTip": "FirstCRUDApplication\\DbEntities\\BaseEntity.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T16:30:53.739Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Book.cs",
+              "DocumentMoniker": "B:\\Auth\\BeginerCrudFirst\\FirstCRUDApplication\\DbEntities\\Book.cs",
+              "RelativeDocumentMoniker": "FirstCRUDApplication\\DbEntities\\Book.cs",
+              "ToolTip": "B:\\Auth\\BeginerCrudFirst\\FirstCRUDApplication\\DbEntities\\Book.cs",
+              "RelativeToolTip": "FirstCRUDApplication\\DbEntities\\Book.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T16:30:17.55Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "B:\\Auth\\BeginerCrudFirst\\FirstCRUDApplication\\Views\\Book\\Index.cshtml",
+              "RelativeDocumentMoniker": "FirstCRUDApplication\\Views\\Book\\Index.cshtml",
+              "ToolTip": "B:\\Auth\\BeginerCrudFirst\\FirstCRUDApplication\\Views\\Book\\Index.cshtml",
+              "RelativeToolTip": "FirstCRUDApplication\\Views\\Book\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-30T16:24:30.473Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "20241030162300_second-migration.cs",
+              "DocumentMoniker": "B:\\Auth\\BeginerCrudFirst\\FirstCRUDApplication\\Migrations\\20241030162300_second-migration.cs",
+              "RelativeDocumentMoniker": "FirstCRUDApplication\\Migrations\\20241030162300_second-migration.cs",
+              "ToolTip": "B:\\Auth\\BeginerCrudFirst\\FirstCRUDApplication\\Migrations\\20241030162300_second-migration.cs",
+              "RelativeToolTip": "FirstCRUDApplication\\Migrations\\20241030162300_second-migration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T16:23:01.676Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "ModalFooter.cs",
               "DocumentMoniker": "B:\\Auth\\BeginerCrudFirst\\FirstCRUDApplication\\Models\\ModalFooter.cs",
               "RelativeDocumentMoniker": "FirstCRUDApplication\\Models\\ModalFooter.cs",
@@ -51,7 +170,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 10,
               "Title": "ErrorViewModel.cs",
               "DocumentMoniker": "B:\\Auth\\BeginerCrudFirst\\FirstCRUDApplication\\Models\\ErrorViewModel.cs",
               "RelativeDocumentMoniker": "FirstCRUDApplication\\Models\\ErrorViewModel.cs",
@@ -59,12 +178,11 @@
               "RelativeToolTip": "FirstCRUDApplication\\Models\\ErrorViewModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T15:45:29.36Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-29T15:45:29.36Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 11,
               "Title": "BootstrapModel.cs",
               "DocumentMoniker": "B:\\Auth\\BeginerCrudFirst\\FirstCRUDApplication\\Models\\BootstrapModel.cs",
               "RelativeDocumentMoniker": "FirstCRUDApplication\\Models\\BootstrapModel.cs",
@@ -72,38 +190,37 @@
               "RelativeToolTip": "FirstCRUDApplication\\Models\\BootstrapModel.cs",
               "ViewState": "AQIAAAoAAAAAAAAAAAA0wBcAAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T15:44:43.984Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-29T15:44:43.984Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "BookViewModel.cs",
               "DocumentMoniker": "B:\\Auth\\BeginerCrudFirst\\FirstCRUDApplication\\Models\\BookViewModel.cs",
               "RelativeDocumentMoniker": "FirstCRUDApplication\\Models\\BookViewModel.cs",
               "ToolTip": "B:\\Auth\\BeginerCrudFirst\\FirstCRUDApplication\\Models\\BookViewModel.cs",
               "RelativeToolTip": "FirstCRUDApplication\\Models\\BookViewModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAUAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-29T15:44:41.38Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "BookController.cs",
               "DocumentMoniker": "B:\\Auth\\BeginerCrudFirst\\FirstCRUDApplication\\Controllers\\BookController.cs",
               "RelativeDocumentMoniker": "FirstCRUDApplication\\Controllers\\BookController.cs",
               "ToolTip": "B:\\Auth\\BeginerCrudFirst\\FirstCRUDApplication\\Controllers\\BookController.cs",
               "RelativeToolTip": "FirstCRUDApplication\\Controllers\\BookController.cs",
-              "ViewState": "AQIAAEcAAAAAAAAAAAAIwAAAAAAAAAAA",
+              "ViewState": "AQIAAEAAAAAAAAAAAAAIwGAAAABNAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-29T15:44:25.877Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 12,
               "Title": "ModalSize.cs",
               "DocumentMoniker": "B:\\Auth\\BeginerCrudFirst\\FirstCRUDApplication\\Code\\ModalSize.cs",
               "RelativeDocumentMoniker": "FirstCRUDApplication\\Code\\ModalSize.cs",
@@ -111,8 +228,7 @@
               "RelativeToolTip": "FirstCRUDApplication\\Code\\ModalSize.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T15:14:04.655Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-29T15:14:04.655Z"
             }
           ]
         }

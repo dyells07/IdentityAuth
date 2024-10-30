@@ -20,6 +20,7 @@
                         <th>Name</th>
                         <th>ISBN</th>
                         <th>Author</th>
+                        <th>Edition</th>
                         <th>Publisher</th>
                         <th>Action</th>
                     </tr>
@@ -33,6 +34,7 @@
                                 <td>@Html.DisplayFor(modelItem => item.Name)</td>
                                 <td>@Html.DisplayFor(modelItem => item.ISBN)</td>
                                 <td>@Html.DisplayFor(modelItem => item.Author)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Edition)</td>
                                 <td>@Html.DisplayFor(modelItem => item.Publisher)</td>
                                 <td>
                                     <a id="editBookModal" data-toggle="modal" asp-action="AddEditBook" asp-route-id="@item.Id" data-target="#modal-action-book"
