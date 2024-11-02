@@ -13,4 +13,12 @@ namespace FirstCRUDApplication.Models
         public string Publisher { get; set; }      
 
     }
+
+    public class CatalogViewModel
+    {
+        public long Id { get; set; }
+        public string Name { get; set; }
+        public string Genre { get; set; }
+
+    }
 }

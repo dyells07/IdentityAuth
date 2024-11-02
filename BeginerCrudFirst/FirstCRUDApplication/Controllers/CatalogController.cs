@@ -19,60 +19,51 @@ namespace FirstCRUDApplication.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            IEnumerable<BookViewModel> model = context.Set<Book>().ToList().Select(b => new BookViewModel
+            IEnumerable<CatalogViewModel> model = context.Set<Catalog>().ToList().Select(b => new CatalogViewModel
             {
                 Id= b.Id,
                 Name = b.Name,
-                ISBN = b.ISBN,
-                Edition = b.Edition,
-                Author = b.Author,
-                Publisher = b.Publisher
+                Genre = b.Genre
             });
             return View("Index", model);
         }
 
         [HttpGet]
-        public IActionResult AddEditBook(long? id)
+        public IActionResult AddEditCatalog(long? id)
         {
-            BookViewModel model = new BookViewModel();
+            CatalogViewModel model = new CatalogViewModel();
             if (id.HasValue)
             {
-                Book book = context.Set<Book>().SingleOrDefault(c => c.Id == id.Value);
-                if (book != null)
+                Catalog catalog = context.Set<Catalog>().SingleOrDefault(c => c.Id == id.Value);
+                if (catalog != null)
                 {
-                    model.Id = book.Id;
-                    model.Name = book.Name;
-                    model.ISBN = book.ISBN;
-                    model.Author = book.Author;
-                    model.Edition = book.Edition;
-                    model.Publisher = book.Publisher;
+                    model.Id = catalog.Id;
+                    model.Name = catalog.Name;
+                    model.Genre = catalog.Genre;
                 }
             }
             return PartialView("~/Views/Book/_AddEditBook.cshtml", model);
         }
 
         [HttpPost]
-        public IActionResult AddEditBook(long? id, BookViewModel model)
+        public IActionResult AddEditCatalog(long? id, CatalogViewModel model)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
                     bool isNew = !id.HasValue;
-                    Book book = isNew ? new Book
+                    Catalog catalog = isNew ? new Catalog
                     {
                         AddedDate = DateTime.UtcNow
-                    } : context.Set<Book>().SingleOrDefault(s => s.Id == id.Value);
-                    book.Name = model.Name;
-                    book.ISBN = model.ISBN;
-                    book.Author = model.Author;
-                    book.Edition = model.Edition;
-                    book.Publisher = model.Publisher;
-                    book.IPAddress = Request.HttpContext.Connection.RemoteIpAddress.ToString();
-                    book.ModifiedDate = DateTime.UtcNow;
+                    } : context.Set<Catalog>().SingleOrDefault(s => s.Id == id.Value);
+                    catalog.Name = model.Name;
+                    catalog.Genre = model.Genre;
+                    catalog.IPAddress = Request.HttpContext.Connection.RemoteIpAddress.ToString();
+                    catalog.ModifiedDate = DateTime.UtcNow;
                     if (isNew)
                     {
-                        context.Add(book);
+                        context.Add(catalog);
                     }
                     context.SaveChanges();
                 }
@@ -85,17 +76,17 @@ namespace FirstCRUDApplication.Controllers
         }
 
         [HttpGet]
-        public IActionResult DeleteBook(long id)
+        public IActionResult DeleteCatalog(long id)
         {
-            Book book = context.Set<Book>().SingleOrDefault(c => c.Id == id);
-            string bookName = book.Name;         
-            return PartialView("~/Views/Book/_DeleteBook.cshtml", model: bookName);
+            Catalog catalog = context.Set<Catalog>().SingleOrDefault(c => c.Id == id);
+            string cataName = catalog.Name;         
+            return PartialView("~/Views/Book/_DeleteBook.cshtml", model: cataName);
         }
         [HttpPost]
-        public IActionResult DeleteBook(long id, IFormCollection form)
+        public IActionResult DeleteCatalog(long id, IFormCollection form)
         {
-            Book book = context.Set<Book>().SingleOrDefault(c => c.Id == id);
-            context.Entry(book).State = Microsoft.EntityFrameworkCore.EntityState.Deleted;
+            Catalog catalog = context.Set<Catalog>().SingleOrDefault(c => c.Id == id);
+            context.Entry(catalog).State = Microsoft.EntityFrameworkCore.EntityState.Deleted;
             context.SaveChanges();
             return RedirectToAction("Index");
         }
