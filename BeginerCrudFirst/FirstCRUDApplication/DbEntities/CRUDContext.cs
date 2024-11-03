@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using FirstCRUDApplication.DbEntities;
 
 namespace FirstCRUDApplication.DbEntities
 {
@@ -13,5 +14,6 @@ namespace FirstCRUDApplication.DbEntities
 
             new BookMap(modelBuilder.Entity<Book>());
         }
+        public DbSet<FirstCRUDApplication.DbEntities.Catalog> Catalog { get; set; }
     }
 }
