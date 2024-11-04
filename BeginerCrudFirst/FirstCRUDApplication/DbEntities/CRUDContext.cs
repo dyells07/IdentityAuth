@@ -13,7 +13,7 @@ namespace FirstCRUDApplication.DbEntities
             base.OnModelCreating(modelBuilder);
 
             new BookMap(modelBuilder.Entity<Book>());
+            new CatalogMap(modelBuilder.Entity<Catalog>());
         }
-        public DbSet<FirstCRUDApplication.DbEntities.Catalog> Catalog { get; set; }
     }
 }

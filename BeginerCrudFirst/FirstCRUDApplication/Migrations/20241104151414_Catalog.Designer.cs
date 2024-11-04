@@ -11,9 +11,10 @@ using System;
 namespace FirstCRUDApplication.Migrations
 {
     [DbContext(typeof(CRUDContext))]
-    partial class CRUDContextModelSnapshot : ModelSnapshot
+    [Migration("20241104151414_Catalog")]
+    partial class Catalog
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -58,15 +59,13 @@ namespace FirstCRUDApplication.Migrations
 
                     b.Property<DateTime>("AddedDate");
 
-                    b.Property<string>("Genre")
-                        .IsRequired();
+                    b.Property<string>("Genre");
 
                     b.Property<string>("IPAddress");
 
                     b.Property<DateTime>("ModifiedDate");
 
-                    b.Property<string>("Name")
-                        .IsRequired();
+                    b.Property<string>("Name");
 
                     b.HasKey("Id");
 

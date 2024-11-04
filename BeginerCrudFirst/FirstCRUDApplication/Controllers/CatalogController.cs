@@ -42,7 +42,7 @@ namespace FirstCRUDApplication.Controllers
                     model.Genre = catalog.Genre;
                 }
             }
-            return PartialView("~/Views/Book/_AddEditBook.cshtml", model);
+            return PartialView("~/Views/Book/_AddEditCatalog.cshtml", model);
         }
 
         [HttpPost]
@@ -80,7 +80,7 @@ namespace FirstCRUDApplication.Controllers
         {
             Catalog catalog = context.Set<Catalog>().SingleOrDefault(c => c.Id == id);
             string cataName = catalog.Name;         
-            return PartialView("~/Views/Book/_DeleteBook.cshtml", model: cataName);
+            return PartialView("~/Views/Book/_DeleteCatalog.cshtml", model: cataName);
         }
         [HttpPost]
         public IActionResult DeleteCatalog(long id, IFormCollection form)
