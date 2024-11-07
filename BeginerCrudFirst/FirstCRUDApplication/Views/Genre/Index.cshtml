@@ -1,0 +1,63 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+@model IEnumerable<FirstCRUDApplication.Models.GenreViewModal>
+@using FirstCRUDApplication.Models
+@using FirstCRUDApplication.Code
+
+<div class="top-buffer"></div>
+<div class="panel panel-primary">
+    <div class="panel-heading panel-head text-center">
+        <h3 class="panel-title">Catalogs</h3>
+    </div>
+    <div class="panel-body">
+        <div class="btn-group mb-3">
+            <a id="createEditCatalogModal" data-toggle="modal" asp-action="AddEditCatalog" data-target="#modal-action-book" class="btn btn-success">
+                <i class="glyphicon glyphicon-plus"></i> Add Catalog
+            </a>
+        </div>
+        <div class="table-responsive mt-2" style="margin-top:8px;">
+            <table class="table table-bordered table-striped table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Name</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.Any())
+                    {
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                                <td>
+                                    <a id="editCatalogModal" data-toggle="modal" asp-action="AddEditCatalog" asp-route-id="@item.Id" data-target="#modal-action-book"
+                                       class="btn btn-info btn-sm">
+                                        <i class="glyphicon glyphicon-pencil"></i> Edit
+                                    </a>
+                                    <a id="deleteCatalogModal" data-toggle="modal" asp-action="DeleteCatalog" asp-route-id="@item.Id" data-target="#modal-action-book" class="btn btn-danger btn-sm">
+                                        <i class="glyphicon glyphicon-trash"></i> Delete
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="3" class="text-center">No Catalog available</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@Html.Partial("_Modal", new BootstrapModel { ID = "modal-action-book", AreaLabeledId = "modal-action-book-label", Size = ModalSize.Medium })
+
+@section scripts
+{
+    <script src="~/js/book-index.js" asp-append-version="true"></script>
+}

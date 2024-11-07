@@ -14,6 +14,7 @@ namespace FirstCRUDApplication.DbEntities
 
             new BookMap(modelBuilder.Entity<Book>());
             new CatalogMap(modelBuilder.Entity<Catalog>());
+            new GenreMap(modelBuilder.Entity<Genre>());
         }
     }
 }

@@ -21,4 +21,11 @@ namespace FirstCRUDApplication.Models
         public string Genre { get; set; }
 
     }
+
+    public class GenreViewModel
+    {
+        public long Id { get; set; }
+        public string Name { get; set; }
+
+    }
 }
