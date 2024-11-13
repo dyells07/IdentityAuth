@@ -25,7 +25,7 @@ namespace ConsumeSoapService.Controllers
                     num2 = 3
                 }
             });
-            Console.WriteLine(sumResponse.Body.SumResult);
+            //Console.WriteLine(sumResponse.Body.SumResult);
             return View();
         }
 
