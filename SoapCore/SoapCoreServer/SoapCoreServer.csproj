@@ -1,0 +1,91 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>netcoreapp3.1;net6.0;net7.0;net8.0</TargetFrameworks>
+        <Product>SoapCoreServer</Product>
+        <Authors>mailkoba</Authors>
+        <Description>ASP .Net Core implementation of Soap Server. Supports part of features of WCF (Windows Communication Foundation) in .Net Framework 4.x.</Description>
+        <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+        <LangVersion>10.0</LangVersion>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="$(TargetFramework) == 'netcoreapp3.1'">
+        <DefineConstants>NETCORE_31</DefineConstants>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="$(TargetFramework) == 'net6.0' OR $(TargetFramework) == 'net7.0' OR $(TargetFramework) == 'net8.0'">
+        <DefineConstants>NET_60_OR_GREATER</DefineConstants>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Compile Remove="Properties\**" />
+      <Compile Remove="Streamed\**" />
+      <Compile Remove="Wrappers\**" />
+      <EmbeddedResource Remove="Properties\**" />
+      <EmbeddedResource Remove="Streamed\**" />
+      <EmbeddedResource Remove="Wrappers\**" />
+      <None Remove="Properties\**" />
+      <None Remove="Streamed\**" />
+      <None Remove="Wrappers\**" />
+      <None Include="..\LICENSE.txt">
+        <Pack>True</Pack>
+        <PackagePath></PackagePath>
+      </None>
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="page.html" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Include="page.html" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="System.ServiceModel.Primitives" Version="4.10.3" />
+        <PackageReference Include="System.ServiceModel.Http" Version="4.10.3" />
+        <PackageReference Include="Castle.Core" Version="5.1.1" />
+        <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="6.0.0" />
+    </ItemGroup>
+
+   <ItemGroup Condition="$(TargetFramework) == 'netcoreapp3.1'">
+        <FrameworkReference Include="Microsoft.AspNetCore.App" />
+       <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.1.32" />
+        <PackageReference Include="Microsoft.Extensions.Logging" Version="3.1.32" />
+        <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.1.32" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.32" />
+        <PackageReference Include="System.CodeDom" Version="4.7.0" />
+        <PackageReference Include="System.IO.Pipelines" Version="6.0.3" />
+    </ItemGroup>
+
+    <ItemGroup Condition="$(TargetFramework) == 'net6.0'">
+        <FrameworkReference Include="Microsoft.AspNetCore.App" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.1" />
+        <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.1" />
+        <PackageReference Include="System.CodeDom" Version="8.0.0" />
+        <PackageReference Include="System.IO.Pipelines" Version="8.0.0" />
+    </ItemGroup>
+
+    <ItemGroup Condition="$(TargetFramework) == 'net7.0'">
+        <FrameworkReference Include="Microsoft.AspNetCore.App" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.1" />
+        <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.1" />
+        <PackageReference Include="System.CodeDom" Version="8.0.0" />
+        <PackageReference Include="System.IO.Pipelines" Version="8.0.0" />
+    </ItemGroup>
+
+    <ItemGroup Condition="$(TargetFramework) == 'net8.0'">
+        <FrameworkReference Include="Microsoft.AspNetCore.App" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.1" />
+        <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.1" />
+        <PackageReference Include="System.CodeDom" Version="8.0.0" />
+        <PackageReference Include="System.IO.Pipelines" Version="8.0.0" />
+    </ItemGroup>
+
+</Project>
