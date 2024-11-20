@@ -5,4 +5,5 @@ public record class GameSummaryDto(
     string Name, 
     string Genre, 
     decimal Price,
-    DateOnly ReleaseDate);
+    DateOnly ReleaseDate
+);
