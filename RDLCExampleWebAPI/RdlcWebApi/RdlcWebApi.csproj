@@ -10,11 +10,15 @@
     <None Remove="ReportFiles\UserDetails.rdlc" />
     <None Remove="ReportFiles\UserDetails_en.rdlc" />
     <None Remove="ReportFiles\UserDetails_hi.rdlc" />
+    <None Remove="ReportFiles\UserDetails_np.rdlc" />
     <None Remove="ReportFiles\UserDetails_ta.rdlc" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="ReportFiles\Report.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ReportFiles\UserDetails_np.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="ReportFiles\UserDetails_en.rdlc">
