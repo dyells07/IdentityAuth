@@ -25,13 +25,23 @@ namespace RdlcWebApi.Controllers
         {
             var reportNameWithLang = reportName + "_" + lang;
             var reportFileByteString = _reportService.GenerateReportAsync(reportNameWithLang, reportType);
+
             if (reportType == "PDF")
             {
-                return File(reportFileByteString, MediaTypeNames.Application.Pdf);
+                return File(
+                    reportFileByteString,
+                    MediaTypeNames.Application.Pdf,
+                    $"{reportNameWithLang}.pdf",
+                    enableRangeProcessing: true
+                );
             }
-            return File(reportFileByteString, MediaTypeNames.Application.Octet, getReportName(reportNameWithLang, reportType));
-        }
 
+            return File(
+                reportFileByteString,
+                MediaTypeNames.Application.Octet,
+                getReportName(reportNameWithLang, reportType)
+            );
+        }
 
 
         private string getReportName(string reportName, string reportType)
