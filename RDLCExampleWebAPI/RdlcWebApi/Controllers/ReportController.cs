@@ -2,8 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using RdlcWebApi.Services;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Mime;
 using System.Threading.Tasks;
 
@@ -13,7 +11,7 @@ namespace RdlcWebApi.Controllers
     [ApiController]
     public class ReportController : ControllerBase
     {
-        private IReportService _reportService;
+        private readonly IReportService _reportService;
 
         public ReportController(IReportService reportService)
         {
@@ -21,49 +19,39 @@ namespace RdlcWebApi.Controllers
         }
 
         [HttpGet("{reportName}/{reportType}/{lang}")]
-        public ActionResult Get(string reportName, string reportType, string lang)
+        public async Task<ActionResult> Get(string reportName, string reportType, string lang)
         {
-            var reportNameWithLang = reportName + "_" + lang;
-            var reportFileByteString = _reportService.GenerateReportAsync(reportNameWithLang, reportType);
-
-            if (reportType == "PDF")
+            if (string.IsNullOrWhiteSpace(reportType))
             {
-                return File(
-                    reportFileByteString,
-                    MediaTypeNames.Application.Pdf,
-                    $"{reportNameWithLang}.pdf",
-                    enableRangeProcessing: true
-                );
+                return BadRequest("Report type is required.");
             }
+
+            var reportNameWithLang = $"{reportName}_{lang}";
+            var reportFileByteString =  _reportService.GenerateReportAsync(reportNameWithLang, reportType);
+
+            var mediaType = reportType.ToUpper() switch
+            {
+                "PDF" => MediaTypeNames.Application.Pdf,
+                "XLS" => MediaTypeNames.Application.Octet,
+                "WORD" => MediaTypeNames.Application.Octet,
+                _ => MediaTypeNames.Application.Octet
+            };
 
             return File(
                 reportFileByteString,
-                MediaTypeNames.Application.Octet,
-                getReportName(reportNameWithLang, reportType)
+                mediaType,
+                GetReportName(reportNameWithLang, reportType),
+                enableRangeProcessing: reportType.Equals("PDF", StringComparison.OrdinalIgnoreCase)
             );
         }
 
-
-        private string getReportName(string reportName, string reportType)
-        {
-            var outputFileName = reportName + ".pdf";
-
-            switch (reportType.ToUpper())
+        private static string GetReportName(string reportName, string reportType) =>
+            reportType.ToUpper() switch
             {
-                default:
-                case "PDF":
-                    outputFileName = reportName + ".pdf";
-                    break;
-                case "XLS":
-                    outputFileName = reportName + ".xls";
-                    break;
-                case "WORD":
-                    outputFileName = reportName + ".doc";
-                    break;
-            }
-
-            return outputFileName;
-        }
-
+                "PDF" => $"{reportName}.pdf",
+                "XLS" => $"{reportName}.xls",
+                "WORD" => $"{reportName}.doc",
+                _ => $"{reportName}.pdf"
+            };
     }
 }
