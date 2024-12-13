@@ -1,4 +1,9 @@
-﻿using RdlcWebApi.Services;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using Xunit;
+using Moq;
+using RdlcWebApi.Services;
 
 public class ReportServiceTests
 {
