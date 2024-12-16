@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebGYM</name>
+    </assembly>
+    <members>
+        <member name="T:WebGYM.Controllers.AllActivePlanMasterController">
+            <summary>
+            View All Active Plan Master Related API EndPoints
+            </summary>
+        </member>
+        <member name="M:WebGYM.Controllers.AllActivePlanMasterController.Get(System.Nullable{System.Int32})">
+            <summary>
+            Get All Active Plan or  Get Specific Active Plan by ID
+            </summary>
+            <param name="id"></param>
+            <remarks>
+             GET: api/AllActivePlanMaster/5
+            </remarks>
+            <returns></returns>
+        </member>
+        <member name="T:WebGYM.SwaggerServiceExtensions">
+            <summary>
+            Extension method or middleware for Swagger configuration in asp.net core for swagger version >2.0
+            Reference From : https://ppolyzos.com/2017/10/30/add-jwt-bearer-authorization-to-swagger-and-asp-net-core/
+            </summary>
+        </member>
+    </members>
+</doc>

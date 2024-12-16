@@ -1,0 +1,8 @@
+B:\Auth\AngularProject\WebGYM\WebGYM.Models\bin\Debug\WebGYM.Models.dll
+B:\Auth\AngularProject\WebGYM\WebGYM.Models\bin\Debug\WebGYM.Models.pdb
+B:\Auth\AngularProject\WebGYM\WebGYM.Models\bin\Debug\System.ComponentModel.Annotations.dll
+B:\Auth\AngularProject\WebGYM\WebGYM.Models\obj\Debug\WebGYM.Models.csproj.AssemblyReference.cache
+B:\Auth\AngularProject\WebGYM\WebGYM.Models\obj\Debug\WebGYM.Models.csproj.CoreCompileInputs.cache
+B:\Auth\AngularProject\WebGYM\WebGYM.Models\obj\Debug\WebGYM.M.5B25AAC3.Up2Date
+B:\Auth\AngularProject\WebGYM\WebGYM.Models\obj\Debug\WebGYM.Models.dll
+B:\Auth\AngularProject\WebGYM\WebGYM.Models\obj\Debug\WebGYM.Models.pdb

@@ -1,0 +1,74 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+import { setDate, setHours, setMilliseconds, setMinutes, setMonth, setSeconds } from './date-setters';
+import { cloneDate } from '../create/clone';
+import { setISODayOfWeek, setLocaleDayOfWeek } from '../units/day-of-week';
+import { getMonth } from './date-getters';
+import { add, subtract } from '../moment/add-subtract';
+/**
+ * @param {?} date
+ * @param {?} unit
+ * @param {?=} isUTC
+ * @return {?}
+ */
+export function startOf(date, unit, isUTC) {
+    var /** @type {?} */ _date = cloneDate(date);
+    // the following switch intentionally omits break keywords
+    // to utilize falling through the cases.
+    switch (unit) {
+        case 'year':
+            setMonth(_date, 0, isUTC);
+        /* falls through */
+        case 'quarter':
+        case 'month':
+            setDate(_date, 1, isUTC);
+        /* falls through */
+        case 'week':
+        case 'isoWeek':
+        case 'day':
+        case 'date':
+            setHours(_date, 0, isUTC);
+        /* falls through */
+        case 'hours':
+            setMinutes(_date, 0, isUTC);
+        /* falls through */
+        case 'minutes':
+            setSeconds(_date, 0, isUTC);
+        /* falls through */
+        case 'seconds':
+            setMilliseconds(_date, 0, isUTC);
+    }
+    // weeks are a special case
+    if (unit === 'week') {
+        setLocaleDayOfWeek(_date, 0, { isUTC: isUTC });
+    }
+    if (unit === 'isoWeek') {
+        setISODayOfWeek(_date, 1);
+    }
+    // quarters are also special
+    if (unit === 'quarter') {
+        setMonth(_date, Math.floor(getMonth(_date, isUTC) / 3) * 3, isUTC);
+    }
+    return _date;
+}
+/**
+ * @param {?} date
+ * @param {?} unit
+ * @param {?=} isUTC
+ * @return {?}
+ */
+export function endOf(date, unit, isUTC) {
+    var /** @type {?} */ _unit = unit;
+    // 'date' is an alias for 'day', so it should be considered as such.
+    if (_unit === 'date') {
+        _unit = 'day';
+    }
+    var /** @type {?} */ start = startOf(date, _unit, isUTC);
+    var /** @type {?} */ _step = add(start, 1, _unit === 'isoWeek' ? 'week' : _unit, isUTC);
+    var /** @type {?} */ res = subtract(_step, 1, 'milliseconds', isUTC);
+    return res;
+}
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3RhcnQtZW5kLW9mLmpzIiwic291cmNlUm9vdCI6Im5nOi8vbmd4LWJvb3RzdHJhcC9jaHJvbm9zLyIsInNvdXJjZXMiOlsidXRpbHMvc3RhcnQtZW5kLW9mLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7QUFFQSxPQUFPLEVBQ0wsT0FBTyxFQUFlLFFBQVEsRUFBRSxlQUFlLEVBQUUsVUFBVSxFQUFFLFFBQVEsRUFBRSxVQUFVLEVBRWxGLE1BQU0sZ0JBQWdCLENBQUM7QUFDeEIsT0FBTyxFQUFFLFNBQVMsRUFBRSxNQUFNLGlCQUFpQixDQUFDO0FBQzVDLE9BQU8sRUFBRSxlQUFlLEVBQUUsa0JBQWtCLEVBQUUsTUFBTSxzQkFBc0IsQ0FBQztBQUMzRSxPQUFPLEVBQUUsUUFBUSxFQUFFLE1BQU0sZ0JBQWdCLENBQUM7QUFDMUMsT0FBTyxFQUFFLEdBQUcsRUFBRSxRQUFRLEVBQUUsTUFBTSx3QkFBd0IsQ0FBQzs7Ozs7OztBQUV2RCxNQUFNLGtCQUFrQixJQUFVLEVBQUUsSUFBZ0IsRUFBRSxLQUFlO0lBQ25FLHFCQUFNLEtBQUssR0FBRyxTQUFTLENBQUMsSUFBSSxDQUFDLENBQUM7OztJQUc5QixNQUFNLENBQUMsQ0FBQyxJQUFJLENBQUMsQ0FBQyxDQUFDO1FBQ2IsS0FBSyxNQUFNO1lBQ1QsUUFBUSxDQUFDLEtBQUssRUFBRSxDQUFDLEVBQUUsS0FBSyxDQUFDLENBQUM7O1FBRTVCLEtBQUssU0FBUyxDQUFDO1FBQ2YsS0FBSyxPQUFPO1lBQ1YsT0FBTyxDQUFDLEtBQUssRUFBRSxDQUFDLEVBQUUsS0FBSyxDQUFDLENBQUM7O1FBRTNCLEtBQUssTUFBTSxDQUFDO1FBQ1osS0FBSyxTQUFTLENBQUM7UUFDZixLQUFLLEtBQUssQ0FBQztRQUNYLEtBQUssTUFBTTtZQUNULFFBQVEsQ0FBQyxLQUFLLEVBQUUsQ0FBQyxFQUFFLEtBQUssQ0FBQyxDQUFDOztRQUU1QixLQUFLLE9BQU87WUFDVixVQUFVLENBQUMsS0FBSyxFQUFFLENBQUMsRUFBRSxLQUFLLENBQUMsQ0FBQzs7UUFFOUIsS0FBSyxTQUFTO1lBQ1osVUFBVSxDQUFDLEtBQUssRUFBRSxDQUFDLEVBQUUsS0FBSyxDQUFDLENBQUM7O1FBRTlCLEtBQUssU0FBUztZQUNaLGVBQWUsQ0FBQyxLQUFLLEVBQUUsQ0FBQyxFQUFFLEtBQUssQ0FBQyxDQUFDO0tBQ3BDOztJQUdELEVBQUUsQ0FBQyxDQUFDLElBQUksS0FBSyxNQUFNLENBQUMsQ0FBQyxDQUFDO1FBQ3BCLGtCQUFrQixDQUFDLEtBQUssRUFBRSxDQUFDLEVBQUUsRUFBQyxLQUFLLE9BQUEsRUFBQyxDQUFDLENBQUM7S0FDdkM7SUFDRCxFQUFFLENBQUMsQ0FBQyxJQUFJLEtBQUssU0FBUyxDQUFDLENBQUMsQ0FBQztRQUN2QixlQUFlLENBQUMsS0FBSyxFQUFFLENBQUMsQ0FBQyxDQUFDO0tBQzNCOztJQUdELEVBQUUsQ0FBQyxDQUFDLElBQUksS0FBSyxTQUFTLENBQUMsQ0FBQyxDQUFDO1FBQ3ZCLFFBQVEsQ0FBQyxLQUFLLEVBQUUsSUFBSSxDQUFDLEtBQUssQ0FBQyxRQUFRLENBQUMsS0FBSyxFQUFFLEtBQUssQ0FBQyxHQUFHLENBQUMsQ0FBQyxHQUFHLENBQUMsRUFBRSxLQUFLLENBQUMsQ0FBQztLQUNwRTtJQUVELE1BQU0sQ0FBQyxLQUFLLENBQUM7Q0FDZDs7Ozs7OztBQUVELE1BQU0sZ0JBQWdCLElBQVUsRUFBRSxJQUFnQixFQUFFLEtBQWU7SUFDakUscUJBQUksS0FBSyxHQUFHLElBQUksQ0FBQzs7SUFFakIsRUFBRSxDQUFDLENBQUMsS0FBSyxLQUFLLE1BQU0sQ0FBQyxDQUFDLENBQUM7UUFDckIsS0FBSyxHQUFHLEtBQUssQ0FBQztLQUNmO0lBRUQscUJBQU0sS0FBSyxHQUFHLE9BQU8sQ0FBQyxJQUFJLEVBQUUsS0FBSyxFQUFFLEtBQUssQ0FBQyxDQUFDO0lBQzFDLHFCQUFNLEtBQUssR0FBRyxHQUFHLENBQUMsS0FBSyxFQUFFLENBQUMsRUFBRSxLQUFLLEtBQUssU0FBUyxDQUFDLENBQUMsQ0FBQyxNQUFNLENBQUMsQ0FBQyxDQUFDLEtBQUssRUFBRSxLQUFLLENBQUMsQ0FBQztJQUN6RSxxQkFBTSxHQUFHLEdBQUcsUUFBUSxDQUFDLEtBQUssRUFBRSxDQUFDLEVBQUUsY0FBYyxFQUFFLEtBQUssQ0FBQyxDQUFDO0lBRXRELE1BQU0sQ0FBQyxHQUFHLENBQUM7Q0FDWiIsInNvdXJjZXNDb250ZW50IjpbIi8vIHRzbGludDpkaXNhYmxlOiBzd2l0Y2gtZGVmYXVsdFxuaW1wb3J0IHsgVGltZVVuaXQsIFVuaXRPZlRpbWUgfSBmcm9tICcuLi90eXBlcyc7XG5pbXBvcnQge1xuICBzZXREYXRlLCBzZXRGdWxsRGF0ZSwgc2V0SG91cnMsIHNldE1pbGxpc2Vjb25kcywgc2V0TWludXRlcywgc2V0TW9udGgsIHNldFNlY29uZHMsXG4gIHNoaWZ0RGF0ZVxufSBmcm9tICcuL2RhdGUtc2V0dGVycyc7XG5pbXBvcnQgeyBjbG9uZURhdGUgfSBmcm9tICcuLi9jcmVhdGUvY2xvbmUnO1xuaW1wb3J0IHsgc2V0SVNPRGF5T2ZXZWVrLCBzZXRMb2NhbGVEYXlPZldlZWsgfSBmcm9tICcuLi91bml0cy9kYXktb2Ytd2Vlayc7XG5pbXBvcnQgeyBnZXRNb250aCB9IGZyb20gJy4vZGF0ZS1nZXR0ZXJzJztcbmltcG9ydCB7IGFkZCwgc3VidHJhY3QgfSBmcm9tICcuLi9tb21lbnQvYWRkLXN1YnRyYWN0JztcblxuZXhwb3J0IGZ1bmN0aW9uIHN0YXJ0T2YoZGF0ZTogRGF0ZSwgdW5pdDogVW5pdE9mVGltZSwgaXNVVEM/OiBib29sZWFuKTogRGF0ZSB7XG4gIGNvbnN0IF9kYXRlID0gY2xvbmVEYXRlKGRhdGUpO1xuICAvLyB0aGUgZm9sbG93aW5nIHN3aXRjaCBpbnRlbnRpb25hbGx5IG9taXRzIGJyZWFrIGtleXdvcmRzXG4gIC8vIHRvIHV0aWxpemUgZmFsbGluZyB0aHJvdWdoIHRoZSBjYXNlcy5cbiAgc3dpdGNoICh1bml0KSB7XG4gICAgY2FzZSAneWVhcic6XG4gICAgICBzZXRNb250aChfZGF0ZSwgMCwgaXNVVEMpO1xuICAgIC8qIGZhbGxzIHRocm91Z2ggKi9cbiAgICBjYXNlICdxdWFydGVyJzpcbiAgICBjYXNlICdtb250aCc6XG4gICAgICBzZXREYXRlKF9kYXRlLCAxLCBpc1VUQyk7XG4gICAgLyogZmFsbHMgdGhyb3VnaCAqL1xuICAgIGNhc2UgJ3dlZWsnOlxuICAgIGNhc2UgJ2lzb1dlZWsnOlxuICAgIGNhc2UgJ2RheSc6XG4gICAgY2FzZSAnZGF0ZSc6XG4gICAgICBzZXRIb3VycyhfZGF0ZSwgMCwgaXNVVEMpO1xuICAgIC8qIGZhbGxzIHRocm91Z2ggKi9cbiAgICBjYXNlICdob3Vycyc6XG4gICAgICBzZXRNaW51dGVzKF9kYXRlLCAwLCBpc1VUQyk7XG4gICAgLyogZmFsbHMgdGhyb3VnaCAqL1xuICAgIGNhc2UgJ21pbnV0ZXMnOlxuICAgICAgc2V0U2Vjb25kcyhfZGF0ZSwgMCwgaXNVVEMpO1xuICAgIC8qIGZhbGxzIHRocm91Z2ggKi9cbiAgICBjYXNlICdzZWNvbmRzJzpcbiAgICAgIHNldE1pbGxpc2Vjb25kcyhfZGF0ZSwgMCwgaXNVVEMpO1xuICB9XG5cbiAgLy8gd2Vla3MgYXJlIGEgc3BlY2lhbCBjYXNlXG4gIGlmICh1bml0ID09PSAnd2VlaycpIHtcbiAgICBzZXRMb2NhbGVEYXlPZldlZWsoX2RhdGUsIDAsIHtpc1VUQ30pO1xuICB9XG4gIGlmICh1bml0ID09PSAnaXNvV2VlaycpIHtcbiAgICBzZXRJU09EYXlPZldlZWsoX2RhdGUsIDEpO1xuICB9XG5cbiAgLy8gcXVhcnRlcnMgYXJlIGFsc28gc3BlY2lhbFxuICBpZiAodW5pdCA9PT0gJ3F1YXJ0ZXInKSB7XG4gICAgc2V0TW9udGgoX2RhdGUsIE1hdGguZmxvb3IoZ2V0TW9udGgoX2RhdGUsIGlzVVRDKSAvIDMpICogMywgaXNVVEMpO1xuICB9XG5cbiAgcmV0dXJuIF9kYXRlO1xufVxuXG5leHBvcnQgZnVuY3Rpb24gZW5kT2YoZGF0ZTogRGF0ZSwgdW5pdDogVW5pdE9mVGltZSwgaXNVVEM/OiBib29sZWFuKTogRGF0ZSB7XG4gIGxldCBfdW5pdCA9IHVuaXQ7XG4gIC8vICdkYXRlJyBpcyBhbiBhbGlhcyBmb3IgJ2RheScsIHNvIGl0IHNob3VsZCBiZSBjb25zaWRlcmVkIGFzIHN1Y2guXG4gIGlmIChfdW5pdCA9PT0gJ2RhdGUnKSB7XG4gICAgX3VuaXQgPSAnZGF5JztcbiAgfVxuXG4gIGNvbnN0IHN0YXJ0ID0gc3RhcnRPZihkYXRlLCBfdW5pdCwgaXNVVEMpO1xuICBjb25zdCBfc3RlcCA9IGFkZChzdGFydCwgMSwgX3VuaXQgPT09ICdpc29XZWVrJyA/ICd3ZWVrJyA6IF91bml0LCBpc1VUQyk7XG4gIGNvbnN0IHJlcyA9IHN1YnRyYWN0KF9zdGVwLCAxLCAnbWlsbGlzZWNvbmRzJywgaXNVVEMpO1xuXG4gIHJldHVybiByZXM7XG59XG4iXX0=

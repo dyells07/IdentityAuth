@@ -1,0 +1,11 @@
+B:\Auth\AngularProject\WebGYM\WebGYM.Interface\bin\Debug\WebGYM.Interface.dll
+B:\Auth\AngularProject\WebGYM\WebGYM.Interface\bin\Debug\WebGYM.Interface.pdb
+B:\Auth\AngularProject\WebGYM\WebGYM.Interface\bin\Debug\WebGYM.Models.dll
+B:\Auth\AngularProject\WebGYM\WebGYM.Interface\bin\Debug\WebGYM.ViewModels.dll
+B:\Auth\AngularProject\WebGYM\WebGYM.Interface\bin\Debug\WebGYM.Models.pdb
+B:\Auth\AngularProject\WebGYM\WebGYM.Interface\bin\Debug\WebGYM.ViewModels.pdb
+B:\Auth\AngularProject\WebGYM\WebGYM.Interface\obj\Debug\WebGYM.Interface.csproj.AssemblyReference.cache
+B:\Auth\AngularProject\WebGYM\WebGYM.Interface\obj\Debug\WebGYM.Interface.csproj.CoreCompileInputs.cache
+B:\Auth\AngularProject\WebGYM\WebGYM.Interface\obj\Debug\WebGYM.I.9CEED848.Up2Date
+B:\Auth\AngularProject\WebGYM\WebGYM.Interface\obj\Debug\WebGYM.Interface.dll
+B:\Auth\AngularProject\WebGYM\WebGYM.Interface\obj\Debug\WebGYM.Interface.pdb

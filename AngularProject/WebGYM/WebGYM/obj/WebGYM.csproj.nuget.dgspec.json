@@ -1,0 +1,188 @@
+{
+  "format": 1,
+  "restore": {
+    "B:\\Auth\\AngularProject\\WebGYM\\WebGYM\\WebGYM.csproj": {}
+  },
+  "projects": {
+    "B:\\Auth\\AngularProject\\WebGYM\\WebGYM.Concrete\\WebGYM.Concrete.csproj": {
+      "restore": {
+        "projectUniqueName": "B:\\Auth\\AngularProject\\WebGYM\\WebGYM.Concrete\\WebGYM.Concrete.csproj",
+        "projectName": "WebGYM.Concrete",
+        "projectPath": "B:\\Auth\\AngularProject\\WebGYM\\WebGYM.Concrete\\WebGYM.Concrete.csproj",
+        "frameworks": {
+          "net461": {
+            "projectReferences": {
+              "B:\\Auth\\AngularProject\\WebGYM\\WebGYM.Interface\\WebGYM.Interface.csproj": {
+                "projectPath": "B:\\Auth\\AngularProject\\WebGYM\\WebGYM.Interface\\WebGYM.Interface.csproj"
+              },
+              "B:\\Auth\\AngularProject\\WebGYM\\WebGYM.Models\\WebGYM.Models.csproj": {
+                "projectPath": "B:\\Auth\\AngularProject\\WebGYM\\WebGYM.Models\\WebGYM.Models.csproj"
+              },
+              "B:\\Auth\\AngularProject\\WebGYM\\WebGYM.ViewModels\\WebGYM.ViewModels.csproj": {
+                "projectPath": "B:\\Auth\\AngularProject\\WebGYM\\WebGYM.ViewModels\\WebGYM.ViewModels.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net461": {}
+      }
+    },
+    "B:\\Auth\\AngularProject\\WebGYM\\WebGYM.Interface\\WebGYM.Interface.csproj": {
+      "restore": {
+        "projectUniqueName": "B:\\Auth\\AngularProject\\WebGYM\\WebGYM.Interface\\WebGYM.Interface.csproj",
+        "projectName": "WebGYM.Interface",
+        "projectPath": "B:\\Auth\\AngularProject\\WebGYM\\WebGYM.Interface\\WebGYM.Interface.csproj",
+        "frameworks": {
+          "net461": {
+            "projectReferences": {
+              "B:\\Auth\\AngularProject\\WebGYM\\WebGYM.Models\\WebGYM.Models.csproj": {
+                "projectPath": "B:\\Auth\\AngularProject\\WebGYM\\WebGYM.Models\\WebGYM.Models.csproj"
+              },
+              "B:\\Auth\\AngularProject\\WebGYM\\WebGYM.ViewModels\\WebGYM.ViewModels.csproj": {
+                "projectPath": "B:\\Auth\\AngularProject\\WebGYM\\WebGYM.ViewModels\\WebGYM.ViewModels.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net461": {}
+      }
+    },
+    "B:\\Auth\\AngularProject\\WebGYM\\WebGYM.Models\\WebGYM.Models.csproj": {
+      "restore": {
+        "projectUniqueName": "B:\\Auth\\AngularProject\\WebGYM\\WebGYM.Models\\WebGYM.Models.csproj",
+        "projectName": "WebGYM.Models",
+        "projectPath": "B:\\Auth\\AngularProject\\WebGYM\\WebGYM.Models\\WebGYM.Models.csproj",
+        "frameworks": {
+          "net461": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net461": {}
+      }
+    },
+    "B:\\Auth\\AngularProject\\WebGYM\\WebGYM.ViewModels\\WebGYM.ViewModels.csproj": {
+      "restore": {
+        "projectUniqueName": "B:\\Auth\\AngularProject\\WebGYM\\WebGYM.ViewModels\\WebGYM.ViewModels.csproj",
+        "projectName": "WebGYM.ViewModels",
+        "projectPath": "B:\\Auth\\AngularProject\\WebGYM\\WebGYM.ViewModels\\WebGYM.ViewModels.csproj",
+        "frameworks": {
+          "net461": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net461": {}
+      }
+    },
+    "B:\\Auth\\AngularProject\\WebGYM\\WebGYM\\WebGYM.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "B:\\Auth\\AngularProject\\WebGYM\\WebGYM\\WebGYM.csproj",
+        "projectName": "WebGYM",
+        "projectPath": "B:\\Auth\\AngularProject\\WebGYM\\WebGYM\\WebGYM.csproj",
+        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+        "outputPath": "B:\\Auth\\AngularProject\\WebGYM\\WebGYM\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "targetAlias": "netcoreapp2.1",
+            "projectReferences": {
+              "B:\\Auth\\AngularProject\\WebGYM\\WebGYM.Concrete\\WebGYM.Concrete.csproj": {
+                "projectPath": "B:\\Auth\\AngularProject\\WebGYM\\WebGYM.Concrete\\WebGYM.Concrete.csproj"
+              },
+              "B:\\Auth\\AngularProject\\WebGYM\\WebGYM.Interface\\WebGYM.Interface.csproj": {
+                "projectPath": "B:\\Auth\\AngularProject\\WebGYM\\WebGYM.Interface\\WebGYM.Interface.csproj"
+              },
+              "B:\\Auth\\AngularProject\\WebGYM\\WebGYM.Models\\WebGYM.Models.csproj": {
+                "projectPath": "B:\\Auth\\AngularProject\\WebGYM\\WebGYM.Models\\WebGYM.Models.csproj"
+              },
+              "B:\\Auth\\AngularProject\\WebGYM\\WebGYM.ViewModels\\WebGYM.ViewModels.csproj": {
+                "projectPath": "B:\\Auth\\AngularProject\\WebGYM\\WebGYM.ViewModels\\WebGYM.ViewModels.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "targetAlias": "netcoreapp2.1",
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.AspNetCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.1, )",
+              "autoReferenced": true
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[2.1.1, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[4.0.1, )"
+            },
+            "System.Linq.Dynamic.Core": {
+              "target": "Package",
+              "version": "[1.0.8.8, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

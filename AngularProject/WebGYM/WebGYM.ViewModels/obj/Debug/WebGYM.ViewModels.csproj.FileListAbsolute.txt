@@ -1,0 +1,6 @@
+B:\Auth\AngularProject\WebGYM\WebGYM.ViewModels\bin\Debug\WebGYM.ViewModels.dll
+B:\Auth\AngularProject\WebGYM\WebGYM.ViewModels\bin\Debug\WebGYM.ViewModels.pdb
+B:\Auth\AngularProject\WebGYM\WebGYM.ViewModels\obj\Debug\WebGYM.ViewModels.csproj.AssemblyReference.cache
+B:\Auth\AngularProject\WebGYM\WebGYM.ViewModels\obj\Debug\WebGYM.ViewModels.csproj.CoreCompileInputs.cache
+B:\Auth\AngularProject\WebGYM\WebGYM.ViewModels\obj\Debug\WebGYM.ViewModels.dll
+B:\Auth\AngularProject\WebGYM\WebGYM.ViewModels\obj\Debug\WebGYM.ViewModels.pdb

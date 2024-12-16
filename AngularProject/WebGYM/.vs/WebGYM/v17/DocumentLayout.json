@@ -1,0 +1,139 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "B:\\Auth\\AngularProject\\WebGYM\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{37EAFA43-5C3D-4C21-963E-C6373FEAC1EB}|WebGYM.Concrete\\WebGYM.Concrete.csproj|b:\\auth\\angularproject\\webgym\\webgym.concrete\\memberregistrationconcrete.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{37EAFA43-5C3D-4C21-963E-C6373FEAC1EB}|WebGYM.Concrete\\WebGYM.Concrete.csproj|solutionrelative:webgym.concrete\\memberregistrationconcrete.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37EAFA43-5C3D-4C21-963E-C6373FEAC1EB}|WebGYM.Concrete\\WebGYM.Concrete.csproj|b:\\auth\\angularproject\\webgym\\webgym.concrete\\generaterecepitconcrete.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{37EAFA43-5C3D-4C21-963E-C6373FEAC1EB}|WebGYM.Concrete\\WebGYM.Concrete.csproj|solutionrelative:webgym.concrete\\generaterecepitconcrete.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37EAFA43-5C3D-4C21-963E-C6373FEAC1EB}|WebGYM.Concrete\\WebGYM.Concrete.csproj|b:\\auth\\angularproject\\webgym\\webgym.concrete\\databasecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{37EAFA43-5C3D-4C21-963E-C6373FEAC1EB}|WebGYM.Concrete\\WebGYM.Concrete.csproj|solutionrelative:webgym.concrete\\databasecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{004A6CBE-5302-4397-A338-D4DD7CD5F265}|WebGYM\\WebGYM.csproj|b:\\auth\\angularproject\\webgym\\webgym\\controllers\\allactiveplanmastercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{004A6CBE-5302-4397-A338-D4DD7CD5F265}|WebGYM\\WebGYM.csproj|solutionrelative:webgym\\controllers\\allactiveplanmastercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{004A6CBE-5302-4397-A338-D4DD7CD5F265}|WebGYM\\WebGYM.csproj|b:\\auth\\angularproject\\webgym\\webgym\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{004A6CBE-5302-4397-A338-D4DD7CD5F265}|WebGYM\\WebGYM.csproj|solutionrelative:webgym\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{004A6CBE-5302-4397-A338-D4DD7CD5F265}|WebGYM\\WebGYM.csproj|b:\\auth\\angularproject\\webgym\\webgym\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{004A6CBE-5302-4397-A338-D4DD7CD5F265}|WebGYM\\WebGYM.csproj|solutionrelative:webgym\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E0F6298-5763-4072-AC8E-8C56286E708C}|WebGYM.Interface\\WebGYM.Interface.csproj|b:\\auth\\angularproject\\webgym\\webgym.interface\\igeneraterecepit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E0F6298-5763-4072-AC8E-8C56286E708C}|WebGYM.Interface\\WebGYM.Interface.csproj|solutionrelative:webgym.interface\\igeneraterecepit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "B:\\Auth\\AngularProject\\WebGYM\\WebGYM\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "WebGYM\\appsettings.Development.json",
+              "ToolTip": "B:\\Auth\\AngularProject\\WebGYM\\WebGYM\\appsettings.Development.json",
+              "RelativeToolTip": "WebGYM\\appsettings.Development.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-16T16:34:13.898Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "B:\\Auth\\AngularProject\\WebGYM\\WebGYM\\appsettings.json",
+              "RelativeDocumentMoniker": "WebGYM\\appsettings.json",
+              "ToolTip": "B:\\Auth\\AngularProject\\WebGYM\\WebGYM\\appsettings.json",
+              "RelativeToolTip": "WebGYM\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-16T16:34:03.774Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AllActivePlanMasterController.cs",
+              "DocumentMoniker": "B:\\Auth\\AngularProject\\WebGYM\\WebGYM\\Controllers\\AllActivePlanMasterController.cs",
+              "RelativeDocumentMoniker": "WebGYM\\Controllers\\AllActivePlanMasterController.cs",
+              "ToolTip": "B:\\Auth\\AngularProject\\WebGYM\\WebGYM\\Controllers\\AllActivePlanMasterController.cs",
+              "RelativeToolTip": "WebGYM\\Controllers\\AllActivePlanMasterController.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAAAQwCsAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T16:33:12.777Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IGenerateRecepit.cs",
+              "DocumentMoniker": "B:\\Auth\\AngularProject\\WebGYM\\WebGYM.Interface\\IGenerateRecepit.cs",
+              "RelativeDocumentMoniker": "WebGYM.Interface\\IGenerateRecepit.cs",
+              "ToolTip": "B:\\Auth\\AngularProject\\WebGYM\\WebGYM.Interface\\IGenerateRecepit.cs",
+              "RelativeToolTip": "WebGYM.Interface\\IGenerateRecepit.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T16:32:52.618Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MemberRegistrationConcrete.cs",
+              "DocumentMoniker": "B:\\Auth\\AngularProject\\WebGYM\\WebGYM.Concrete\\MemberRegistrationConcrete.cs",
+              "RelativeDocumentMoniker": "WebGYM.Concrete\\MemberRegistrationConcrete.cs",
+              "ToolTip": "B:\\Auth\\AngularProject\\WebGYM\\WebGYM.Concrete\\MemberRegistrationConcrete.cs",
+              "RelativeToolTip": "WebGYM.Concrete\\MemberRegistrationConcrete.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAAAowAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T16:32:32.372Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GenerateRecepitConcrete.cs",
+              "DocumentMoniker": "B:\\Auth\\AngularProject\\WebGYM\\WebGYM.Concrete\\GenerateRecepitConcrete.cs",
+              "RelativeDocumentMoniker": "WebGYM.Concrete\\GenerateRecepitConcrete.cs",
+              "ToolTip": "B:\\Auth\\AngularProject\\WebGYM\\WebGYM.Concrete\\GenerateRecepitConcrete.cs",
+              "RelativeToolTip": "WebGYM.Concrete\\GenerateRecepitConcrete.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T16:32:28.406Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DatabaseContext.cs",
+              "DocumentMoniker": "B:\\Auth\\AngularProject\\WebGYM\\WebGYM.Concrete\\DatabaseContext.cs",
+              "RelativeDocumentMoniker": "WebGYM.Concrete\\DatabaseContext.cs",
+              "ToolTip": "B:\\Auth\\AngularProject\\WebGYM\\WebGYM.Concrete\\DatabaseContext.cs",
+              "RelativeToolTip": "WebGYM.Concrete\\DatabaseContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T16:32:17.92Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
