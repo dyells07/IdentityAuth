@@ -220,7 +220,7 @@ namespace WebGYM
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1.0/swagger.json", "Gym Web API v1.0");
-                c.DocumentTitle = "Title Documentation";
+                c.DocumentTitle = "Gym Web";
                 //Reference link : https://stackoverflow.com/questions/22008452/collapse-expand-swagger-response-model-class
                 //Reference link : https://swagger.io/docs/open-source-tools/swagger-ui/usage/deep-linking/
                 //  c.DocExpansion(Swashbuckle.AspNetCore.SwaggerUI.DocExpansion.None);
