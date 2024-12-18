@@ -1,12 +1,173 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "B:\\Auth\\EntityFrameWorkCodeForExpenseTracking\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0B8E3BF2-A3D7-4339-94C9-B369DD9D8388}|Expense Tracker\\Expense Tracker.csproj|b:\\auth\\entityframeworkcodeforexpensetracking\\expense tracker\\views\\transaction\\addoredit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0B8E3BF2-A3D7-4339-94C9-B369DD9D8388}|Expense Tracker\\Expense Tracker.csproj|solutionrelative:expense tracker\\views\\transaction\\addoredit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B8E3BF2-A3D7-4339-94C9-B369DD9D8388}|Expense Tracker\\Expense Tracker.csproj|b:\\auth\\entityframeworkcodeforexpensetracking\\expense tracker\\controllers\\transactioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B8E3BF2-A3D7-4339-94C9-B369DD9D8388}|Expense Tracker\\Expense Tracker.csproj|solutionrelative:expense tracker\\controllers\\transactioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B8E3BF2-A3D7-4339-94C9-B369DD9D8388}|Expense Tracker\\Expense Tracker.csproj|b:\\auth\\entityframeworkcodeforexpensetracking\\expense tracker\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0B8E3BF2-A3D7-4339-94C9-B369DD9D8388}|Expense Tracker\\Expense Tracker.csproj|solutionrelative:expense tracker\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B8E3BF2-A3D7-4339-94C9-B369DD9D8388}|Expense Tracker\\Expense Tracker.csproj|b:\\auth\\entityframeworkcodeforexpensetracking\\expense tracker\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B8E3BF2-A3D7-4339-94C9-B369DD9D8388}|Expense Tracker\\Expense Tracker.csproj|solutionrelative:expense tracker\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B8E3BF2-A3D7-4339-94C9-B369DD9D8388}|Expense Tracker\\Expense Tracker.csproj|b:\\auth\\entityframeworkcodeforexpensetracking\\expense tracker\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B8E3BF2-A3D7-4339-94C9-B369DD9D8388}|Expense Tracker\\Expense Tracker.csproj|solutionrelative:expense tracker\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B8E3BF2-A3D7-4339-94C9-B369DD9D8388}|Expense Tracker\\Expense Tracker.csproj|b:\\auth\\entityframeworkcodeforexpensetracking\\expense tracker\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B8E3BF2-A3D7-4339-94C9-B369DD9D8388}|Expense Tracker\\Expense Tracker.csproj|solutionrelative:expense tracker\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B8E3BF2-A3D7-4339-94C9-B369DD9D8388}|Expense Tracker\\Expense Tracker.csproj|b:\\auth\\entityframeworkcodeforexpensetracking\\expense tracker\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0B8E3BF2-A3D7-4339-94C9-B369DD9D8388}|Expense Tracker\\Expense Tracker.csproj|solutionrelative:expense tracker\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B8E3BF2-A3D7-4339-94C9-B369DD9D8388}|Expense Tracker\\Expense Tracker.csproj|b:\\auth\\entityframeworkcodeforexpensetracking\\expense tracker\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B8E3BF2-A3D7-4339-94C9-B369DD9D8388}|Expense Tracker\\Expense Tracker.csproj|solutionrelative:expense tracker\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B8E3BF2-A3D7-4339-94C9-B369DD9D8388}|Expense Tracker\\Expense Tracker.csproj|b:\\auth\\entityframeworkcodeforexpensetracking\\expense tracker\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{0B8E3BF2-A3D7-4339-94C9-B369DD9D8388}|Expense Tracker\\Expense Tracker.csproj|solutionrelative:expense tracker\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AddOrEdit.cshtml",
+              "DocumentMoniker": "B:\\Auth\\EntityFrameWorkCodeForExpenseTracking\\Expense Tracker\\Views\\Transaction\\AddOrEdit.cshtml",
+              "RelativeDocumentMoniker": "Expense Tracker\\Views\\Transaction\\AddOrEdit.cshtml",
+              "ToolTip": "B:\\Auth\\EntityFrameWorkCodeForExpenseTracking\\Expense Tracker\\Views\\Transaction\\AddOrEdit.cshtml",
+              "RelativeToolTip": "Expense Tracker\\Views\\Transaction\\AddOrEdit.cshtml",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAAAC0AAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-18T15:32:28.749Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "B:\\Auth\\EntityFrameWorkCodeForExpenseTracking\\Expense Tracker\\Views\\Dashboard\\Index.cshtml",
+              "RelativeDocumentMoniker": "Expense Tracker\\Views\\Dashboard\\Index.cshtml",
+              "ToolTip": "B:\\Auth\\EntityFrameWorkCodeForExpenseTracking\\Expense Tracker\\Views\\Dashboard\\Index.cshtml",
+              "RelativeToolTip": "Expense Tracker\\Views\\Dashboard\\Index.cshtml",
+              "ViewState": "AQIAADYAAAAAAAAAAAAAACsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-18T15:31:19.928Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DashboardController.cs",
+              "DocumentMoniker": "B:\\Auth\\EntityFrameWorkCodeForExpenseTracking\\Expense Tracker\\Controllers\\DashboardController.cs",
+              "RelativeDocumentMoniker": "Expense Tracker\\Controllers\\DashboardController.cs",
+              "ToolTip": "B:\\Auth\\EntityFrameWorkCodeForExpenseTracking\\Expense Tracker\\Controllers\\DashboardController.cs",
+              "RelativeToolTip": "Expense Tracker\\Controllers\\DashboardController.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAQwCYAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T15:30:40.193Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "B:\\Auth\\EntityFrameWorkCodeForExpenseTracking\\Expense Tracker\\Program.cs",
+              "RelativeDocumentMoniker": "Expense Tracker\\Program.cs",
+              "ToolTip": "B:\\Auth\\EntityFrameWorkCodeForExpenseTracking\\Expense Tracker\\Program.cs",
+              "RelativeToolTip": "Expense Tracker\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T15:30:30.656Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "B:\\Auth\\EntityFrameWorkCodeForExpenseTracking\\Expense Tracker\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Expense Tracker\\Views\\Home\\Index.cshtml",
+              "ToolTip": "B:\\Auth\\EntityFrameWorkCodeForExpenseTracking\\Expense Tracker\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Expense Tracker\\Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-18T15:30:24.28Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "B:\\Auth\\EntityFrameWorkCodeForExpenseTracking\\Expense Tracker\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Expense Tracker\\Controllers\\HomeController.cs",
+              "ToolTip": "B:\\Auth\\EntityFrameWorkCodeForExpenseTracking\\Expense Tracker\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Expense Tracker\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T15:30:19.073Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "B:\\Auth\\EntityFrameWorkCodeForExpenseTracking\\Expense Tracker\\appsettings.json",
+              "RelativeDocumentMoniker": "Expense Tracker\\appsettings.json",
+              "ToolTip": "B:\\Auth\\EntityFrameWorkCodeForExpenseTracking\\Expense Tracker\\appsettings.json",
+              "RelativeToolTip": "Expense Tracker\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-18T15:19:18.663Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TransactionController.cs",
+              "DocumentMoniker": "B:\\Auth\\EntityFrameWorkCodeForExpenseTracking\\Expense Tracker\\Controllers\\TransactionController.cs",
+              "RelativeDocumentMoniker": "Expense Tracker\\Controllers\\TransactionController.cs",
+              "ToolTip": "B:\\Auth\\EntityFrameWorkCodeForExpenseTracking\\Expense Tracker\\Controllers\\TransactionController.cs",
+              "RelativeToolTip": "Expense Tracker\\Controllers\\TransactionController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T15:17:54.234Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CategoryController.cs",
+              "DocumentMoniker": "B:\\Auth\\EntityFrameWorkCodeForExpenseTracking\\Expense Tracker\\Controllers\\CategoryController.cs",
+              "RelativeDocumentMoniker": "Expense Tracker\\Controllers\\CategoryController.cs",
+              "ToolTip": "B:\\Auth\\EntityFrameWorkCodeForExpenseTracking\\Expense Tracker\\Controllers\\CategoryController.cs",
+              "RelativeToolTip": "Expense Tracker\\Controllers\\CategoryController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEsAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T15:16:46.909Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

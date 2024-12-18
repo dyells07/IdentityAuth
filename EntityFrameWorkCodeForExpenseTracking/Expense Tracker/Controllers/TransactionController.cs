@@ -35,9 +35,6 @@ namespace Expense_Tracker.Controllers
                 return View(_context.Transactions.Find(id));
         }
 
-        // POST: Transaction/AddOrEdit
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> AddOrEdit([Bind("TransactionId,CategoryId,Amount,Note,Date")] Transaction transaction)
