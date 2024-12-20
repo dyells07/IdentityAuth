@@ -22,5 +22,6 @@ namespace WebGYM.ViewModels
         public int Feb { get; set; }
         public int March { get; set; }
         public int Total { get; set; }
+        public int All { get; set; }
     }
 }
