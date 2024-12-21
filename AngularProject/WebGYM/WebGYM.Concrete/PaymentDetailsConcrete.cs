@@ -27,25 +27,29 @@ namespace WebGYM.Concrete
         }
         public IQueryable<PaymentDetailsViewModel> GetAll(QueryParameters queryParameters, int userId)
         {
-            IQueryable<PaymentDetailsViewModel> allItems = (from payment in _context.PaymentDetails
-                                                            where payment.Createdby == userId
-                                                            join member in _context.MemberRegistration on payment.MemberID equals member.MemberId
-                                                            join plan in _context.PlanMaster on payment.PlanID equals plan.PlanID
-                                                            join scheme in _context.SchemeMaster on payment.WorkouttypeID equals scheme.SchemeID
-                                                            select new PaymentDetailsViewModel()
-                                                            {
-                                                                RecStatus = payment.RecStatus,
-                                                                PlanName = plan.PlanName,
-                                                                MemberName = member.MemberFName + '|' + member.MemberMName + '|' + member.MemberLName,
-                                                                MemberNo = member.MemberNo,
-                                                                NextRenwalDate = payment.NextRenwalDate,
-                                                                PaymentAmount = payment.PaymentAmount,
-                                                                SchemeName = scheme.SchemeName,
-                                                                PaymentID = payment.PaymentID,
-                                                                PaymentFromdt = payment.PaymentFromdt,
-                                                                PaymentTodt = payment.PaymentTodt
+            IQueryable<PaymentDetailsViewModel> allItems =
+                from payment in _context.PaymentDetails
+                join member in _context.MemberRegistration on payment.MemberID equals member.MemberId
+                join plan in _context.PlanMaster on payment.PlanID equals plan.PlanID
+                join scheme in _context.SchemeMaster on payment.WorkouttypeID equals scheme.SchemeID
+                where payment.Createdby == userId
+                select new PaymentDetailsViewModel
+                {
+                    RecStatus = payment.RecStatus,
+                    PlanName = plan.PlanName,
+                    MemberName = $"{member.MemberFName}|{member.MemberMName}|{member.MemberLName}",
+                    MemberNo = member.MemberNo,
+                    NextRenwalDate = payment.NextRenwalDate,
+                    PaymentAmount = payment.PaymentAmount,
+                    SchemeName = scheme.SchemeName,
+                    PaymentID = payment.PaymentID,
+                    PaymentFromdt = payment.PaymentFromdt,
+                    PaymentTodt = payment.PaymentTodt
+                };
 
-                                                            }).AsQueryable().OrderBy("PaymentID", queryParameters.IsDescending());
+            allItems = queryParameters.IsDescending()
+                ? allItems.OrderByDescending(x => x.PaymentID)
+                : allItems.OrderBy(x => x.PaymentID);
 
             if (queryParameters.HasQuery())
             {
@@ -68,43 +72,53 @@ namespace WebGYM.Concrete
 
         public bool RenewalPayment(RenewalViewModel renewalViewModel)
         {
-            using (var con = new SqlConnection(_configuration.GetConnectionString("DatabaseConnection")))
+            try
             {
-                con.Open();
-                var sqlTransaction = con.BeginTransaction();
-                var paramater = new DynamicParameters();
-                paramater.Add("@PaymentID", 0);
-                paramater.Add("@PlanID", renewalViewModel.PlanID);
-                paramater.Add("@WorkouttypeID", renewalViewModel.SchemeID);
-                paramater.Add("@Paymenttype", "Cash");
-                paramater.Add("@PaymentFromdt", renewalViewModel.NextRenwalDate);
-                paramater.Add("@PaymentAmount", renewalViewModel.Amount);
-                paramater.Add("@CreateUserID", renewalViewModel.Createdby);
-                paramater.Add("@ModifyUserID", renewalViewModel.Createdby);
-                paramater.Add("@RecStatus", "A");
-                paramater.Add("@MemberID", renewalViewModel.MemberId);
-                paramater.Add("@PaymentIDOUT", dbType: DbType.Int32, direction: ParameterDirection.Output);
-                int resultPayment = con.Execute("sprocPaymentDetailsInsertUpdateSingleItem", paramater, sqlTransaction,
-                    0, CommandType.StoredProcedure);
+                using (var con = new SqlConnection(_configuration.GetConnectionString("DatabaseConnection")))
+                {
+                    con.Open();
 
-                if (resultPayment > 0)
-                {
-                    sqlTransaction.Commit();
-                    int paymentId = paramater.Get<int>("PaymentIDOUT");
-                    return true;
-                }
-                else
-                {
-                    sqlTransaction.Rollback();
-                    return false;
+                    using (var sqlTransaction = con.BeginTransaction())
+                    {
+                        var parameters = new DynamicParameters();
+                        parameters.Add("@PaymentID", 0); // Assuming this is for insert (use default ID)
+                        parameters.Add("@PlanID", renewalViewModel.PlanID);
+                        parameters.Add("@WorkouttypeID", renewalViewModel.SchemeID);
+                        parameters.Add("@Paymenttype", "Cash");
+                        parameters.Add("@PaymentFromdt", renewalViewModel.NextRenwalDate);
+                        parameters.Add("@PaymentAmount", renewalViewModel.Amount);
+                        parameters.Add("@CreateUserID", renewalViewModel.Createdby);
+                        parameters.Add("@ModifyUserID", renewalViewModel.Createdby);
+                        parameters.Add("@RecStatus", "A");
+                        parameters.Add("@MemberID", renewalViewModel.MemberId);
+                        parameters.Add("@PaymentIDOUT", dbType: DbType.Int32, direction: ParameterDirection.Output);
+
+                        int resultPayment = con.Execute(
+                            "sprocPaymentDetailsInsertUpdateSingleItem",
+                            parameters,
+                            sqlTransaction,
+                            commandTimeout: 0,
+                            commandType: CommandType.StoredProcedure);
+
+                        if (resultPayment > 0)
+                        {
+                            sqlTransaction.Commit();
+                            int paymentId = parameters.Get<int>("@PaymentIDOUT");
+                            return true;
+                        }
+                        else
+                        {
+                            sqlTransaction.Rollback();
+                            return false;
+                        }
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
-
-
-
-
-
 
     }
 }
