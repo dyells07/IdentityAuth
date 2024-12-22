@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WebGYM.Interface;
 using WebGYM.ViewModels;
@@ -30,7 +31,7 @@ namespace WebGYM.Controllers
 
             try
             {
-                var amount = await _planMaster.GetAmount(amountRequest.PlanId, amountRequest.SchemeId);
+                var amount =  _planMaster.GetAmount(amountRequest.PlanId, amountRequest.SchemeId);
                 return Ok(amount);
             }
             catch (Exception ex)

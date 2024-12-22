@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
@@ -21,121 +18,115 @@ namespace WebGYM.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUsers _users;
+
         public UserController(IUsers users)
         {
-            _users = users;
+            _users = users ?? throw new ArgumentNullException(nameof(users));
         }
+
         // GET: api/User
         [HttpGet]
-        public IEnumerable<Users> Get()
+        public async Task<IActionResult> Get()
         {
-            return _users.GetAllUsers();
+            try
+            {
+                var users = await Task.Run(() => _users.GetAllUsers());
+                return Ok(users);
+            }
+            catch (Exception ex)
+            {
+                // Optional: Log the exception
+                return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while retrieving users.");
+            }
         }
 
         // GET: api/User/5
-        [HttpGet("{id}", Name = "GetUsers")]
-        public Users Get(int id)
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Get(int id)
         {
-            return _users.GetUsersbyId(id);
+            try
+            {
+                var user = await Task.Run(() => _users.GetUsersbyId(id));
+                if (user == null)
+                    return NotFound($"User with ID {id} not found.");
+
+                return Ok(user);
+            }
+            catch (Exception ex)
+            {
+                // Optional: Log the exception
+                return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while retrieving the user.");
+            }
         }
 
         // POST: api/User
         [HttpPost]
-        public HttpResponseMessage Post([FromBody] UsersViewModel users)
+        public async Task<IActionResult> Post([FromBody] UsersViewModel users)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            try
             {
                 if (_users.CheckUsersExits(users.UserName))
                 {
-                    var response = new HttpResponseMessage()
-                    {
-                        StatusCode = HttpStatusCode.Conflict
-                    };
-
-                    return response;
+                    return Conflict("A user with the same username already exists.");
                 }
-                else
-                {
-                    var userId = this.User.FindFirstValue(ClaimTypes.Name);
-                    var tempUsers = AutoMapper.Mapper.Map<Users>(users);
-                    tempUsers.CreatedDate = DateTime.Now;
-                    tempUsers.Createdby = Convert.ToInt32(userId);
-                    tempUsers.Password = EncryptionLibrary.EncryptText(users.Password);
-                    _users.InsertUsers(tempUsers);
 
-                    var response = new HttpResponseMessage()
-                    {
-                        StatusCode = HttpStatusCode.OK
-                    };
+                var userId = User.FindFirstValue(ClaimTypes.Name);
+                var tempUsers = AutoMapper.Mapper.Map<Users>(users);
+                tempUsers.CreatedDate = DateTime.Now;
+                tempUsers.Createdby = Convert.ToInt32(userId);
+                tempUsers.Password = EncryptionLibrary.EncryptText(users.Password);
 
-                    return response;
-                }
+                await Task.Run(() => _users.InsertUsers(tempUsers));
+                return Ok("User created successfully.");
             }
-            else
+            catch (Exception ex)
             {
-                var response = new HttpResponseMessage()
-                {
-
-                    StatusCode = HttpStatusCode.BadRequest
-                };
-
-                return response;
+                // Optional: Log the exception
+                return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while creating the user.");
             }
-
         }
 
         // PUT: api/User/5
         [HttpPut("{id}")]
-        public HttpResponseMessage Put(int id, [FromBody] UsersViewModel users)
+        public async Task<IActionResult> Put(int id, [FromBody] UsersViewModel users)
         {
-            if (ModelState.IsValid)
-            {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
 
+            try
+            {
                 var tempUsers = AutoMapper.Mapper.Map<Users>(users);
                 tempUsers.CreatedDate = DateTime.Now;
-                _users.UpdateUsers(tempUsers);
 
-                var response = new HttpResponseMessage()
-                {
-                    StatusCode = HttpStatusCode.OK
-                };
-
-                return response;
-
+                await Task.Run(() => _users.UpdateUsers(tempUsers));
+                return Ok("User updated successfully.");
             }
-            else
+            catch (Exception ex)
             {
-                var response = new HttpResponseMessage()
-                {
-
-                    StatusCode = HttpStatusCode.BadRequest
-                };
-
-                return response;
+                // Optional: Log the exception
+                return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while updating the user.");
             }
         }
 
-        // DELETE: api/ApiWithActions/5
+        // DELETE: api/User/5
         [HttpDelete("{id}")]
-        public HttpResponseMessage Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            var result = _users.DeleteUsers(id);
-
-            if (result)
+            try
             {
-                var response = new HttpResponseMessage()
-                {
-                    StatusCode = HttpStatusCode.OK
-                };
-                return response;
+                var result = await Task.Run(() => _users.DeleteUsers(id));
+                if (result)
+                    return Ok("User deleted successfully.");
+                else
+                    return BadRequest("Failed to delete the user.");
             }
-            else
+            catch (Exception ex)
             {
-                var response = new HttpResponseMessage()
-                {
-                    StatusCode = HttpStatusCode.BadRequest
-                };
-                return response;
+                // Optional: Log the exception
+                return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while deleting the user.");
             }
         }
     }

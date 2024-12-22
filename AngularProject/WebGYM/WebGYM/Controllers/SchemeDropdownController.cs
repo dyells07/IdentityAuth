@@ -15,27 +15,33 @@ namespace WebGYM.Controllers
     [ApiController]
     public class SchemeDropdownController : ControllerBase
     {
-
         private readonly ISchemeMaster _schemeMaster;
+
         public SchemeDropdownController(ISchemeMaster schemeMaster)
         {
-            _schemeMaster = schemeMaster;
+            _schemeMaster = schemeMaster ?? throw new ArgumentNullException(nameof(schemeMaster));
         }
 
         // GET: api/SchemeDropdown
         [HttpGet]
-        public IEnumerable<SchemeMaster> Get()
+        public async Task<IActionResult> GetActiveSchemesAsync()
         {
             try
             {
-                return _schemeMaster.GetActiveSchemeMasterList();
+                var activeSchemes = await Task.Run(() => _schemeMaster.GetActiveSchemeMasterList());
+
+                if (activeSchemes == null || !activeSchemes.Any())
+                {
+                    return NotFound("No active schemes found.");
+                }
+
+                return Ok(activeSchemes);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                // Optionally log the exception using a logging framework (e.g., ILogger)
+                return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while retrieving the schemes.");
             }
         }
-
-       
     }
 }
