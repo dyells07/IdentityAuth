@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
 using System.Security.Claims;
 using System.Text;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using WebGYM.Common;
@@ -22,72 +20,67 @@ namespace WebGYM.Controllers
     {
         private readonly AppSettings _appSettings;
         private readonly IUsers _users;
-        public AuthenticateController(IOptions<AppSettings> appSettings, IUsers users)
+        private readonly ILogger<AuthenticateController> _logger;
+
+        public AuthenticateController(IOptions<AppSettings> appSettings, IUsers users, ILogger<AuthenticateController> logger)
         {
             _users = users;
             _appSettings = appSettings.Value;
+            _logger = logger;
         }
 
-        // POST: api/Authenticate
         [HttpPost]
         public IActionResult Post([FromBody] LoginRequestViewModel value)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(new { message = "Invalid login request." });
+            }
+
             try
             {
-                if (ModelState.IsValid)
+                var encryptedPassword = EncryptionLibrary.EncryptText(value.Password);
+                if (!_users.AuthenticateUsers(value.UserName, encryptedPassword))
                 {
-                    var loginstatus = _users.AuthenticateUsers(value.UserName, EncryptionLibrary.EncryptText(value.Password));
-
-                    if (loginstatus)
-                    {
-                        var userdetails = _users.GetUserDetailsbyCredentials(value.UserName);
-
-                        if (userdetails != null)
-                        {
-
-                            var tokenHandler = new JwtSecurityTokenHandler();
-                            var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
-                            var tokenDescriptor = new SecurityTokenDescriptor
-                            {
-                                Subject = new ClaimsIdentity(new Claim[]
-                                {
-                                        new Claim(ClaimTypes.Name, userdetails.UserId.ToString())
-                                }),
-                                Expires = DateTime.UtcNow.AddDays(1),
-                                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key),
-                                    SecurityAlgorithms.HmacSha256Signature)
-                            };
-                            var token = tokenHandler.CreateToken(tokenDescriptor);
-                            value.Token = tokenHandler.WriteToken(token);
-
-                            // remove password before returning
-                            value.Password = null;
-                            value.Usertype = userdetails.RoleId;
-
-                            return Ok(value);
-
-                        }
-                        else
-                        {
-                            value.Password = null;
-                            value.Usertype = 0;
-                            return Ok(value);
-                        }
-                    }
-                    value.Password = null;
-                    value.Usertype = 0;
-                    return Ok(value);
+                    return StatusCode(StatusCodes.Status401Unauthorized, new { message = "An error occurred while processing your request." });
                 }
-                value.Password = null;
-                value.Usertype = 0;
+
+                var userdetails = _users.GetUserDetailsbyCredentials(value.UserName);
+                if (userdetails == null)
+                {
+                    return NotFound(new { message = "User details not found." });
+                }
+
+                // Generate JWT token
+                var token = GenerateJwtToken(userdetails.UserId);
+                value.Token = token;
+                value.Password = null; // Remove sensitive information
+                value.Usertype = userdetails.RoleId;
+
                 return Ok(value);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                _logger.LogError(ex, "An error occurred during user authentication.");
+                return StatusCode(StatusCodes.Status500InternalServerError, new { message = "An error occurred while processing your request." });
             }
         }
 
+        private string GenerateJwtToken(int userId)
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(new[]
+                {
+                    new Claim(ClaimTypes.Name, userId.ToString())
+                }),
+                Expires = DateTime.UtcNow.AddDays(1),
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+            };
+            var token = tokenHandler.CreateToken(tokenDescriptor);
+            return tokenHandler.WriteToken(token);
+        }
     }
 }

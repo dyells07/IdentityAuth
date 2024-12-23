@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WebGYM.Interface;
 using WebGYM.ViewModels;
+using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Http;
 
 namespace WebGYM.Controllers
 {
@@ -15,42 +14,46 @@ namespace WebGYM.Controllers
     [ApiController]
     public class AllActivePlanMasterController : ControllerBase
     {
-
         private readonly IPlanMaster _planMaster;
-        public AllActivePlanMasterController(IPlanMaster planMaster)
+        private readonly ILogger<AllActivePlanMasterController> _logger;
+
+        public AllActivePlanMasterController(IPlanMaster planMaster, ILogger<AllActivePlanMasterController> logger)
         {
             _planMaster = planMaster;
+            _logger = logger;
         }
 
-        [HttpGet("{id}", Name = "GetAllActivePlan")]
-        public List<ActivePlanModel> Get(int? id)
+        [HttpGet("{id:int?}", Name = "GetAllActivePlan")]
+        public ActionResult<List<ActivePlanModel>> Get(int? id)
         {
             try
             {
-                if (id != null)
+                if (id.HasValue)
                 {
-                    return _planMaster.GetActivePlanMasterList(id);
+                    var activePlans = _planMaster.GetActivePlanMasterList(id);
+                    if (activePlans == null || activePlans.Count == 0)
+                    {
+                        return NotFound(new { message = "No active plans found for the given ID." });
+                    }
+
+                    return Ok(activePlans);
                 }
-                else
+
+                // Return a default empty plan if no ID is provided
+                return Ok(new List<ActivePlanModel>
                 {
-                    return new List<ActivePlanModel>()
-                {
-                    new ActivePlanModel()
+                    new ActivePlanModel
                     {
                         PlanID = string.Empty,
-                        PlanName = ""
+                        PlanName = string.Empty
                     }
-                };
-                }
+                });
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                _logger.LogError(ex, "An error occurred while fetching active plan data.");
+                return StatusCode(StatusCodes.Status500InternalServerError, new { message = "An error occurred while processing your request." });
             }
-
         }
-
-
     }
 }
