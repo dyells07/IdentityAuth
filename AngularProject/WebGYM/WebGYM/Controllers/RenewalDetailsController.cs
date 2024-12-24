@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Claims;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -17,17 +14,42 @@ namespace WebGYM.Controllers
     public class RenewalDetailsController : ControllerBase
     {
         private readonly IRenewal _renewal;
+
         public RenewalDetailsController(IRenewal renewal)
         {
-            _renewal = renewal;
+            _renewal = renewal ?? throw new ArgumentNullException(nameof(renewal));
         }
-          
+
         // POST: api/RenewalDetails
         [HttpPost]
-        public RenewalViewModel Post([FromBody] MemberNoRequest memberNoRequest)
+        public IActionResult Post([FromBody] MemberNoRequest memberNoRequest)
         {
-            var userId = Convert.ToInt32(this.User.FindFirstValue(ClaimTypes.Name));
-            return _renewal.GetMemberNo(memberNoRequest.MemberNo, userId);
+            if (memberNoRequest == null)
+            {
+                return BadRequest("Invalid request. MemberNoRequest cannot be null.");
+            }
+
+            try
+            {
+                var userIdClaim = this.User.FindFirstValue(ClaimTypes.Name);
+                if (string.IsNullOrEmpty(userIdClaim) || !int.TryParse(userIdClaim, out var userId))
+                {
+                    return StatusCode(StatusCodes.Status401Unauthorized, "User ID could not be determined.");
+                }
+
+                var renewalDetails = _renewal.GetMemberNo(memberNoRequest.MemberNo, userId);
+                if (renewalDetails == null)
+                {
+                    return NotFound($"No renewal details found for MemberNo: {memberNoRequest.MemberNo}");
+                }
+
+                return Ok(renewalDetails);
+            }
+            catch (Exception ex)
+            {
+                // Log the exception here if logging is implemented
+                return StatusCode(StatusCodes.Status500InternalServerError, $"An error occurred: {ex.Message}");
+            }
         }
     }
 }
