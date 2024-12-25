@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Security.Claims;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WebGYM.Interface;
 using WebGYM.ViewModels;
@@ -21,86 +15,80 @@ namespace WebGYM.Controllers
         private readonly IRenewal _renewal;
         private readonly IPaymentDetails _paymentDetails;
         private readonly IPlanMaster _planMaster;
+
         public RenewalController(IRenewal renewal, IPaymentDetails paymentDetails, IPlanMaster planMaster)
         {
             _renewal = renewal;
             _paymentDetails = paymentDetails;
             _planMaster = planMaster;
         }
-     
+
         // GET: api/Renewal/5
         [HttpGet("{memberNo}", Name = "GetRenewal")]
-        public RenewalViewModel Get(string memberNo)
+        public IActionResult Get(string memberNo)
         {
-            var userId = Convert.ToInt32(this.User.FindFirstValue(ClaimTypes.Name));
-            return _renewal.GetMemberNo(memberNo, userId);
+            try
+            {
+                var userId = Convert.ToInt32(User.FindFirstValue(ClaimTypes.Name));
+                var renewalData = _renewal.GetMemberNo(memberNo, userId);
+
+                if (renewalData == null)
+                {
+                    return NotFound("Member not found.");
+                }
+
+                return Ok(renewalData);
+            }
+            catch (Exception ex)
+            {
+                // Log the exception here if needed
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
         }
 
         // POST: api/Renewal
         [HttpPost]
-        public HttpResponseMessage Post([FromBody] RenewalViewModel renewalViewModel)
+        public IActionResult Post([FromBody] RenewalViewModel renewalViewModel)
         {
-            if (_renewal.CheckRenewalPaymentExists(renewalViewModel.NewDate,renewalViewModel.MemberId))
+            try
             {
-                var response = new HttpResponseMessage()
+                if (_renewal.CheckRenewalPaymentExists(renewalViewModel.NewDate, renewalViewModel.MemberId))
                 {
-                    StatusCode = HttpStatusCode.BadRequest,
-                    ReasonPhrase = "Already Renewed"
+                    return BadRequest("Renewal already exists for the provided date.");
+                }
 
-                };
-                return response;
-            }
-            else
-            {
-                int cmp = renewalViewModel.NewDate.CompareTo(renewalViewModel.NextRenwalDate);
-                var userId = this.User.FindFirstValue(ClaimTypes.Name);
+                var comparison = renewalViewModel.NewDate.CompareTo(renewalViewModel.NextRenwalDate);
 
-                if (cmp > 0)
+                if (comparison < 0)
+                {
+                    return BadRequest("New renewal date cannot be earlier than the next renewal date.");
+                }
+
+                var userId = Convert.ToInt32(User.FindFirstValue(ClaimTypes.Name));
+                if (comparison > 0)
                 {
                     var months = _planMaster.GetPlanMonthbyPlanId(renewalViewModel.PlanID);
                     var calculatedNextRenewalDate = renewalViewModel.NewDate.AddMonths(months).AddDays(-1);
                     renewalViewModel.NextRenwalDate = calculatedNextRenewalDate;
+                    renewalViewModel.Createdby = userId;
 
-                    renewalViewModel.Createdby = Convert.ToInt32(userId);
                     if (_paymentDetails.RenewalPayment(renewalViewModel))
                     {
-                        var response = new HttpResponseMessage()
-                        {
-                            StatusCode = HttpStatusCode.OK,
-                            ReasonPhrase = "Renewed Successfully"
-
-                        };
-                        return response;
+                        return Ok("Renewal processed successfully.");
                     }
                     else
                     {
-                        var response = new HttpResponseMessage()
-                        {
-                            StatusCode = HttpStatusCode.InternalServerError,
-                            ReasonPhrase = "Renewal Failed"
-
-                        };
-                        return response;
+                        return StatusCode(500, "Failed to process renewal.");
                     }
                 }
 
-                if (cmp < 0)
-                {
-                    var response = new HttpResponseMessage()
-                    {
-                        StatusCode = HttpStatusCode.BadRequest,
-                        Content = new StringContent("Invalid Date")
-                    };
-                    return response;
-                }
+                return BadRequest("Unexpected error occurred while processing renewal.");
             }
-
-            var responseMessage = new HttpResponseMessage()
+            catch (Exception ex)
             {
-                StatusCode = HttpStatusCode.BadRequest,
-                Content = new StringContent("Something went wrong")
-            };
-            return responseMessage;
+                // Log the exception here if needed
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
         }
     }
 }

@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WebGYM.Interface;
 using WebGYM.Models;
@@ -17,8 +11,8 @@ namespace WebGYM.Controllers
     [ApiController]
     public class RemoveRoleController : ControllerBase
     {
-
         private readonly IUsersInRoles _usersInRoles;
+
         public RemoveRoleController(IUsersInRoles usersInRoles)
         {
             _usersInRoles = usersInRoles;
@@ -26,45 +20,32 @@ namespace WebGYM.Controllers
 
         // POST: api/RemoveRole
         [HttpPost]
-        public HttpResponseMessage Post([FromBody] UsersInRoles usersInRoles)
+        public IActionResult Post([FromBody] UsersInRoles usersInRoles)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
+            {
+                return BadRequest("Invalid data provided.");
+            }
+
+            try
             {
                 if (_usersInRoles.CheckRoleExists(usersInRoles))
                 {
-                  
                     usersInRoles.UserRolesId = 0;
                     _usersInRoles.RemoveRole(usersInRoles);
 
-                    var response = new HttpResponseMessage()
-                    {
-                        StatusCode = HttpStatusCode.OK
-                    };
-
-                    return response;
+                    return Ok("Role removed successfully.");
                 }
                 else
                 {
-                    var response = new HttpResponseMessage()
-                    {
-                        StatusCode = HttpStatusCode.Conflict
-                    };
-
-                    return response;
+                    return Conflict("The role does not exist.");
                 }
             }
-            else
+            catch (Exception ex)
             {
-                var response = new HttpResponseMessage()
-                {
-
-                    StatusCode = HttpStatusCode.BadRequest
-                };
-
-                return response;
+                // Log the exception here if needed.
+                return StatusCode(500, $"Internal server error: {ex.Message}");
             }
         }
-
-
     }
 }

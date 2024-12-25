@@ -26,29 +26,30 @@ namespace WebGYM.Controllers
         {
             if (memberNoRequest == null)
             {
-                return BadRequest("Invalid request. MemberNoRequest cannot be null.");
+                return BadRequest("Request body cannot be null. Please provide valid MemberNoRequest data.");
             }
 
             try
             {
-                var userIdClaim = this.User.FindFirstValue(ClaimTypes.Name);
-                if (string.IsNullOrEmpty(userIdClaim) || !int.TryParse(userIdClaim, out var userId))
+                var userIdClaim = User.FindFirstValue(ClaimTypes.Name);
+                if (!int.TryParse(userIdClaim, out var userId))
                 {
-                    return StatusCode(StatusCodes.Status401Unauthorized, "User ID could not be determined.");
+                    return Unauthorized("Unable to determine the authenticated user's ID. Please log in and try again.");
                 }
 
                 var renewalDetails = _renewal.GetMemberNo(memberNoRequest.MemberNo, userId);
                 if (renewalDetails == null)
                 {
-                    return NotFound($"No renewal details found for MemberNo: {memberNoRequest.MemberNo}");
+                    return NotFound($"No renewal details found for the provided MemberNo: {memberNoRequest.MemberNo}");
                 }
 
                 return Ok(renewalDetails);
             }
             catch (Exception ex)
             {
-                // Log the exception here if logging is implemented
-                return StatusCode(StatusCodes.Status500InternalServerError, $"An error occurred: {ex.Message}");
+                // Log the exception for debugging purposes (if logging is set up in the application)
+                // Example: _logger.LogError(ex, "An error occurred while retrieving renewal details.");
+                return StatusCode(StatusCodes.Status500InternalServerError, $"An internal error occurred: {ex.Message}");
             }
         }
     }

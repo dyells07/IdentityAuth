@@ -1,16 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Security.Claims;
-using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using WebGYM.Common;
 using WebGYM.Interface;
 using WebGYM.Models;
 using WebGYM.ViewModels;
@@ -23,189 +18,124 @@ namespace WebGYM.Controllers
     public class RegisterMemberController : ControllerBase
     {
         private readonly IMemberRegistration _memberRegistration;
-        private readonly IUrlHelper _urlHelper;
+        private readonly IMapper _mapper;
 
-        public RegisterMemberController(IUrlHelper urlHelper, IMemberRegistration memberRegistration)
+        public RegisterMemberController(IMapper mapper, IMemberRegistration memberRegistration)
         {
             _memberRegistration = memberRegistration;
-            _urlHelper = urlHelper;
+            _mapper = mapper;
         }
+
+        // Helper method for creating responses
+        private IActionResult CreateResponse(bool isSuccess, object result = null, int statusCode = StatusCodes.Status200OK)
+        {
+            return isSuccess ? Ok(result) : StatusCode(statusCode, result);
+        }
+
         // GET: api/RegisterMember
         [HttpGet(Name = "GetAll")]
         public IActionResult GetAll([FromQuery] QueryParameters queryParameters)
         {
-            var userId = Convert.ToInt32(this.User.FindFirstValue(ClaimTypes.Name));
-            List<MemberRegistrationGridModel> allMembers = _memberRegistration.GetAll(queryParameters, userId).ToList();
-
-            var allItemCount = _memberRegistration.Count(userId);
-
-            var paginationMetadata = new
+            try
             {
-                totalCount = allItemCount,
-                pageSize = queryParameters.PageCount,
-                currentPage = queryParameters.Page,
-                totalPages = queryParameters.GetTotalPages(allItemCount)
-            };
+                var userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+                var allMembers = _memberRegistration.GetAll(queryParameters, userId);
+                var totalCount = _memberRegistration.Count(userId);
 
-            Request.HttpContext.Response.Headers.Add("X-Pagination", JsonConvert.SerializeObject(paginationMetadata));
+                var paginationMetadata = new
+                {
+                    totalCount,
+                    queryParameters.PageCount,
+                    queryParameters.Page,
+                    totalPages = queryParameters.GetTotalPages(totalCount)
+                };
 
-            return Ok(new
+                Response.Headers.Add("X-Pagination", JsonConvert.SerializeObject(paginationMetadata));
+                return Ok(new { value = allMembers });
+            }
+            catch (Exception ex)
             {
-                value = allMembers
-            });
+                return StatusCode(StatusCodes.Status500InternalServerError, new { message = ex.Message });
+            }
         }
 
         // GET: api/RegisterMember/5
         [HttpGet("{id}", Name = "GetMember")]
-        public MemberRegistrationViewModel Get(int id)
+        public IActionResult GetMember(int id)
         {
-            return _memberRegistration.GetMemberbyId(id);
+            try
+            {
+                var member = _memberRegistration.GetMemberbyId(id);
+                return member != null ? Ok(member) : NotFound();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, new { message = ex.Message });
+            }
         }
 
         // POST: api/RegisterMember
         [HttpPost]
-        public HttpResponseMessage Post([FromBody] MemberRegistrationViewModel member)
+        public IActionResult Post([FromBody] MemberRegistrationViewModel member)
         {
+            if (!ModelState.IsValid) return BadRequest(ModelState);
+
+            if (_memberRegistration.CheckNameExits(member.MemberFName, member.MemberLName, member.MemberMName))
+                return Conflict(new { message = "Member with the same name already exists." });
+
             try
             {
-                if (ModelState.IsValid)
-                {
-                    if (!_memberRegistration.CheckNameExits(member.MemberFName, member.MemberLName, member.MemberMName))
-                    {
-                        var userId = this.User.FindFirstValue(ClaimTypes.Name);
-                        var automember = AutoMapper.Mapper.Map<MemberRegistration>(member);
-                        automember.JoiningDate = DateTime.Now;
-                        automember.Createdby = Convert.ToInt32(userId);
+                var userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+                var automember = _mapper.Map<MemberRegistration>(member);
+                automember.JoiningDate = DateTime.Now;
+                automember.Createdby = userId;
 
-                        var result = _memberRegistration.InsertMember(automember);
-                        if (result > 0)
-                        {
-                            var response = new HttpResponseMessage()
-                            {
-                                StatusCode = HttpStatusCode.OK
-                            };
-                            return response;
-                        }
-                        else
-                        {
-                            var response = new HttpResponseMessage()
-                            {
-                                StatusCode = HttpStatusCode.BadRequest
-                            };
-                            return response;
-                        }
-                    }
-                    else
-                    {
-                        var response = new HttpResponseMessage()
-                        {
-                            StatusCode = HttpStatusCode.Conflict
-                        };
-                        return response;
-                    }
-                }
-                else
-                {
-                    var response = new HttpResponseMessage()
-                    {
-                        StatusCode = HttpStatusCode.BadRequest
-                    };
-                    return response;
-                }
+                var result = _memberRegistration.InsertMember(automember);
+                return CreateResponse(result > 0, new { message = "Member added successfully." });
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                return StatusCode(StatusCodes.Status500InternalServerError, new { message = ex.Message });
             }
         }
 
         // PUT: api/RegisterMember/5
         [HttpPut("{id}")]
-        public HttpResponseMessage Put(int id, [FromBody] MemberRegistrationViewModel member)
+        public IActionResult Put(int id, [FromBody] MemberRegistrationViewModel member)
         {
+            if (!ModelState.IsValid) return BadRequest(ModelState);
 
-            if (ModelState.IsValid)
+            if (_memberRegistration.CheckNameExitsforUpdate(member.MemberFName, member.MemberLName, member.MemberMName) != 0
+                && id != member.MemberId)
+                return Conflict(new { message = "Another member with the same name exists." });
+
+            try
             {
-                var storedMemberid =
-                    _memberRegistration.CheckNameExitsforUpdate(member.MemberFName, member.MemberLName,
-                        member.MemberMName);
-                if (storedMemberid == member.MemberId || storedMemberid == 0)
-                {
-                    var automember = AutoMapper.Mapper.Map<MemberRegistration>(member);
-                    automember.JoiningDate = DateTime.Now;
-                    
-                    var result = _memberRegistration.UpdateMember(automember);
-                    if (result > 0)
-                    {
-                        var response = new HttpResponseMessage()
-                        {
-                            StatusCode = HttpStatusCode.OK
-                        };
-                        return response;
-                    }
-                    else
-                    {
-                        var response = new HttpResponseMessage()
-                        {
-                            StatusCode = HttpStatusCode.BadRequest
-                        };
-                        return response;
-                    }
-                }
-                else
-                {
-                    var response = new HttpResponseMessage()
-                    {
-                        StatusCode = HttpStatusCode.Conflict
-                    };
-                    return response;
-                }
+                var automember = _mapper.Map<MemberRegistration>(member);
+                automember.JoiningDate = DateTime.Now;
+
+                var result = _memberRegistration.UpdateMember(automember);
+                return CreateResponse(result > 0, new { message = "Member updated successfully." });
             }
-            else
+            catch (Exception ex)
             {
-                var response = new HttpResponseMessage()
-                {
-                    StatusCode = HttpStatusCode.BadRequest
-                };
-                return response;
+                return StatusCode(StatusCodes.Status500InternalServerError, new { message = ex.Message });
             }
         }
 
-        // DELETE: api/ApiWithActions/5
+        // DELETE: api/RegisterMember/5
         [HttpDelete("{id}")]
-        public HttpResponseMessage Delete(long id)
+        public IActionResult Delete(long id)
         {
             try
             {
                 var result = _memberRegistration.DeleteMember(id);
-
-                if (result)
-                {
-                    var response = new HttpResponseMessage()
-                    {
-                        StatusCode = HttpStatusCode.OK
-                    };
-                    return response;
-                }
-                else
-                {
-                    var response = new HttpResponseMessage()
-                    {
-                        StatusCode = HttpStatusCode.BadRequest
-                    };
-                    return response;
-                }
+                return CreateResponse(result, new { message = result ? "Member deleted successfully." : "Failed to delete member." });
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                var response = new HttpResponseMessage()
-                {
-                    StatusCode = HttpStatusCode.InternalServerError
-                };
-                return response;
+                return StatusCode(StatusCodes.Status500InternalServerError, new { message = ex.Message });
             }
         }
-
-
     }
 }
