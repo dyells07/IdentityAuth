@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -19,78 +17,58 @@ namespace WebGYM.Controllers
     public class AssignRolesController : ControllerBase
     {
         private readonly IUsersInRoles _usersInRoles;
+
         public AssignRolesController(IUsersInRoles usersInRoles)
         {
-            _usersInRoles = usersInRoles;
+            _usersInRoles = usersInRoles ?? throw new ArgumentNullException(nameof(usersInRoles));
         }
 
-
-        // GET: api/UsersInRoles
+        // GET: api/AssignRoles
         [HttpGet]
-        public IEnumerable<AssignRolesViewModel> Get()
+        public IActionResult GetAssignedRoles()
         {
             try
             {
-                return _usersInRoles.GetAssignRoles();
-            }
-            catch (Exception)
-            {
+                var roles = _usersInRoles.GetAssignRoles();
+                if (roles == null || !roles.Any())
+                {
+                    return NotFound(new { message = "No assigned roles found." });
+                }
 
-                throw;
+                return Ok(roles);
+            }
+            catch (Exception ex)
+            {
+                // Log the exception if a logging framework is in use
+                return StatusCode(StatusCodes.Status500InternalServerError, new { message = $"An error occurred while retrieving roles: {ex.Message}" });
             }
         }
 
-       
-        // POST: api/UsersInRoles
+        // POST: api/AssignRoles
         [HttpPost]
-        public HttpResponseMessage Post([FromBody] UsersInRoles usersInRoles)
+        public IActionResult AssignRole([FromBody] UsersInRoles usersInRoles)
         {
             try
             {
-                if (ModelState.IsValid)
+                if (!ModelState.IsValid)
                 {
-                    if (_usersInRoles.CheckRoleExists(usersInRoles))
-                    {
-                        var response = new HttpResponseMessage()
-                        {
-                            StatusCode = HttpStatusCode.Conflict
-                        };
-
-                        return response;
-                    }
-                    else
-                    {
-
-                        usersInRoles.UserRolesId = 0;
-                        _usersInRoles.AssignRole(usersInRoles);
-
-                        var response = new HttpResponseMessage()
-                        {
-                            StatusCode = HttpStatusCode.OK
-                        };
-
-                        return response;
-                    }
+                    return BadRequest(new { message = "Invalid input data." });
                 }
-                else
+
+                if (_usersInRoles.CheckRoleExists(usersInRoles))
                 {
-                    var response = new HttpResponseMessage()
-                    {
-
-                        StatusCode = HttpStatusCode.BadRequest
-                    };
-
-                    return response;
+                    return Conflict(new { message = "Role assignment already exists." });
                 }
+
+                usersInRoles.UserRolesId = 0;
+                _usersInRoles.AssignRole(usersInRoles);
+                return Ok(new { message = "Role assigned successfully." });
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                // Log the exception if a logging framework is in use
+                return StatusCode(StatusCodes.Status500InternalServerError, new { message = $"An error occurred while assigning roles: {ex.Message}" });
             }
         }
-
-
-
     }
 }

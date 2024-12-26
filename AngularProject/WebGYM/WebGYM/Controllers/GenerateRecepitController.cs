@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WebGYM.Interface;
 using WebGYM.ViewModels;
+using Microsoft.Extensions.Logging;
 
 namespace WebGYM.Controllers
 {
@@ -14,25 +12,46 @@ namespace WebGYM.Controllers
     public class GenerateRecepitController : ControllerBase
     {
         private readonly IGenerateRecepit _generateRecepit;
-        public GenerateRecepitController(IGenerateRecepit generateRecepit)
+        private readonly ILogger<GenerateRecepitController> _logger;
+
+        public GenerateRecepitController(IGenerateRecepit generateRecepit, ILogger<GenerateRecepitController> logger)
         {
             _generateRecepit = generateRecepit;
+            _logger = logger;
         }
-       
 
         // POST: api/GenerateRecepit
         [HttpPost]
-        public GenerateRecepitViewModel Post([FromBody] GenerateRecepitRequestModel generateRecepitRequestModel)
+        public IActionResult Post([FromBody] GenerateRecepitRequestModel generateRecepitRequestModel)
         {
+            // Check for validation
+            if (generateRecepitRequestModel == null || generateRecepitRequestModel.PaymentId <= 0)
+            {
+                return BadRequest("Invalid request. PaymentId is required.");
+            }
+
             try
             {
-                return _generateRecepit.Generate(generateRecepitRequestModel.PaymentId);
+                // Call service layer to generate receipt
+                var receipt = _generateRecepit.Generate(generateRecepitRequestModel.PaymentId);
+
+                // If no receipt is generated, return not found
+                if (receipt == null)
+                {
+                    return NotFound("Receipt could not be generated.");
+                }
+
+                // Return the generated receipt as OK response
+                return Ok(receipt);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                // Log the exception for debugging purposes
+                _logger.LogError(ex, "An error occurred while generating the receipt.");
+
+                // Return internal server error with a message
+                return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while generating the receipt.");
             }
         }
-
     }
 }

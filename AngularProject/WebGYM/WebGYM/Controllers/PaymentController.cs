@@ -11,6 +11,7 @@ using WebGYM.Common;
 using WebGYM.Interface;
 using WebGYM.Models;
 using WebGYM.ViewModels;
+using Microsoft.Extensions.Logging;
 
 namespace WebGYM.Controllers
 {
@@ -21,10 +22,13 @@ namespace WebGYM.Controllers
     {
         private readonly IPaymentDetails _paymentDetails;
         private readonly IUrlHelper _urlHelper;
-        public PaymentController(IUrlHelper urlHelper, IPaymentDetails paymentDetails)
+        private readonly ILogger<PaymentController> _logger;
+
+        public PaymentController(IUrlHelper urlHelper, IPaymentDetails paymentDetails, ILogger<PaymentController> logger)
         {
             _paymentDetails = paymentDetails;
             _urlHelper = urlHelper;
+            _logger = logger;
         }
 
         // GET: api/Payment
@@ -33,9 +37,20 @@ namespace WebGYM.Controllers
         {
             try
             {
+                // Ensure valid query parameters
+                if (queryParameters.Page <= 0 || queryParameters.PageCount <= 0)
+                {
+                    return BadRequest("Invalid pagination parameters.");
+                }
+
                 var userId = Convert.ToInt32(this.User.FindFirstValue(ClaimTypes.Name));
 
                 List<PaymentDetailsViewModel> allMembers = _paymentDetails.GetAll(queryParameters, userId).ToList();
+
+                if (!allMembers.Any())
+                {
+                    return NotFound("No payment details found.");
+                }
 
                 var allItemCount = _paymentDetails.Count(userId);
 
@@ -47,6 +62,7 @@ namespace WebGYM.Controllers
                     totalPages = queryParameters.GetTotalPages(allItemCount)
                 };
 
+                // Add pagination metadata to response headers
                 Request.HttpContext.Response.Headers.Add("X-Pagination", JsonConvert.SerializeObject(paginationMetadata));
 
                 return Ok(new
@@ -54,11 +70,14 @@ namespace WebGYM.Controllers
                     value = allMembers
                 });
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                // Log the exception for debugging purposes
+                _logger.LogError(ex, "An error occurred while fetching payment details.");
+
+                // Return 500 Internal Server Error with message
+                return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while processing your request.");
             }
         }
-
     }
 }

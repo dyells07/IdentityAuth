@@ -66,13 +66,21 @@ namespace WebGYM.Controllers
             try
             {
                 var member = _memberRegistration.GetMemberbyId(id);
-                return member != null ? Ok(member) : NotFound();
+                if (member != null)
+                {
+                    return Ok(member);
+                }
+                else
+                {
+                    return NotFound();
+                }
             }
             catch (Exception ex)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, new { message = ex.Message });
             }
         }
+
 
         // POST: api/RegisterMember
         [HttpPost]

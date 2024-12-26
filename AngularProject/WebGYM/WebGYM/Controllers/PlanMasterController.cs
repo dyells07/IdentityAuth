@@ -4,10 +4,10 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Security.Claims;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using WebGYM.Interface;
 using WebGYM.Models;
 using WebGYM.ViewModels;
@@ -20,10 +20,12 @@ namespace WebGYM.Controllers
     public class PlanMasterController : ControllerBase
     {
         private readonly IPlanMaster _planMaster;
+
         public PlanMasterController(IPlanMaster planMaster)
         {
             _planMaster = planMaster;
         }
+
         // GET: api/PlanMaster
         [HttpGet]
         public IEnumerable<PlanMasterDisplayViewModel> Get()
@@ -33,108 +35,101 @@ namespace WebGYM.Controllers
 
         // GET: api/PlanMaster/5
         [HttpGet("{id}", Name = "GetPlan")]
-        public PlanMasterViewModel Get(int id)
+        public ActionResult<PlanMasterViewModel> Get(int id)
         {
             try
             {
-                return _planMaster.GetPlanMasterbyId(id);
+                var plan = _planMaster.GetPlanMasterbyId(id);
+                if (plan == null)
+                {
+                    return NotFound("Plan not found.");
+                }
+                return Ok(plan);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while fetching the plan.");
             }
         }
 
         // POST: api/PlanMaster
         [HttpPost]
-        public HttpResponseMessage Post([FromBody] PlanMasterViewModel planMasterViewModel)
+        public ActionResult Post([FromBody] PlanMasterViewModel planMasterViewModel)
         {
             try
             {
+                // Check if the plan already exists
                 if (_planMaster.CheckPlanExits(planMasterViewModel.PlanName))
                 {
-                    var response = new HttpResponseMessage()
-                    {
-                        StatusCode = HttpStatusCode.Conflict
-                    };
-                    return response;
+                    return Conflict("Plan with this name already exists.");
                 }
-                else
-                {
-                    var userId = this.User.FindFirstValue(ClaimTypes.Name);
-                    var tempplanMaster = AutoMapper.Mapper.Map<PlanMaster>(planMasterViewModel);
-                    tempplanMaster.CreateUserID = Convert.ToInt32(userId);
-                    tempplanMaster.RecStatus = true;
-                    _planMaster.InsertPlan(tempplanMaster);
 
-                    var response = new HttpResponseMessage()
-                    {
-                        StatusCode = HttpStatusCode.OK
-                    };
+                var userId = this.User.FindFirstValue(ClaimTypes.Name);
+                var plan = AutoMapper.Mapper.Map<PlanMaster>(planMasterViewModel);
+                plan.CreateUserID = Convert.ToInt32(userId);
+                plan.RecStatus = true;
 
-                    return response;
-                }
+                // Insert plan (if InsertPlan is async, call it with await, else call synchronously)
+                _planMaster.InsertPlan(plan);  // Assuming InsertPlan is a synchronous method
+
+                // Return CreatedAtRoute with the new plan's ID
+                return CreatedAtRoute("GetPlan", new { id = plan.PlanID }, plan); // Ensure PlanId is correct
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                var response = new HttpResponseMessage()
-                {
-                    StatusCode = HttpStatusCode.InternalServerError
-                };
-                return response;
+                // Log error
+                return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while creating the plan.");
             }
         }
 
         // PUT: api/PlanMaster/5
         [HttpPut("{id}")]
-        public HttpResponseMessage Put(int id, [FromBody] PlanMasterViewModel planMasterViewModel)
+        public ActionResult Put(int id, [FromBody] PlanMasterViewModel planMasterViewModel)
         {
             try
             {
-                var userId = this.User.FindFirstValue(ClaimTypes.Name);
-                var tempplanMaster = AutoMapper.Mapper.Map<PlanMaster>(planMasterViewModel);
-                tempplanMaster.CreateUserID = Convert.ToInt32(userId);
-                tempplanMaster.RecStatus = true;
-                _planMaster.UpdatePlanMaster(tempplanMaster);
-                var response = new HttpResponseMessage()
+                var plan = _planMaster.GetPlanMasterbyId(id);
+                if (plan == null)
                 {
-                    StatusCode = HttpStatusCode.OK
-                };
+                    return NotFound("Plan not found.");
+                }
 
-                return response;
+                var userId = this.User.FindFirstValue(ClaimTypes.Name);
+                var updatedPlan = AutoMapper.Mapper.Map<PlanMaster>(planMasterViewModel);
+                updatedPlan.CreateUserID = Convert.ToInt32(userId);
+                updatedPlan.RecStatus = true;
+
+                // Update plan (if UpdatePlanMaster is async, call it with await, else call synchronously)
+                _planMaster.UpdatePlanMaster(updatedPlan);  // Assuming UpdatePlanMaster is a synchronous method
+
+                return NoContent(); // Successful update (no content to return)
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                var response = new HttpResponseMessage()
-                {
-                    StatusCode = HttpStatusCode.InternalServerError
-                };
-                return response;
+                return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while updating the plan.");
             }
         }
 
-        // DELETE: api/ApiWithActions/5
+        // DELETE: api/PlanMaster/5
         [HttpDelete("{id}")]
-        public HttpResponseMessage Delete(int id)
+        public ActionResult Delete(int id)
         {
             try
             {
-              
-                _planMaster.DeletePlan(id);
-                var response = new HttpResponseMessage()
+                var plan = _planMaster.GetPlanMasterbyId(id);
+                if (plan == null)
                 {
-                    StatusCode = HttpStatusCode.OK
-                };
+                    return NotFound("Plan not found.");
+                }
 
-                return response;
+                // Delete plan (if DeletePlan is async, call it with await, else call synchronously)
+                _planMaster.DeletePlan(id);  // Assuming DeletePlan is a synchronous method
+
+                return Ok("Plan deleted successfully.");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                var response = new HttpResponseMessage()
-                {
-                    StatusCode = HttpStatusCode.InternalServerError
-                };
-                return response;
+                return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while deleting the plan.");
             }
         }
     }

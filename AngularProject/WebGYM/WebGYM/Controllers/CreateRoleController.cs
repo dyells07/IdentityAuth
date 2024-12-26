@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -22,147 +19,113 @@ namespace WebGYM.Controllers
 
         public CreateRoleController(IRole role)
         {
-            _role = role;
+            _role = role ?? throw new ArgumentNullException(nameof(role));
         }
 
         // GET: api/CreateRole
         [HttpGet]
-        public IEnumerable<Role> Get()
+        public ActionResult<IEnumerable<Role>> GetAllRoles()
         {
             try
             {
-                return _role.GetAllRole();
+                var roles = _role.GetAllRole();
+                return Ok(roles);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                return StatusCode(StatusCodes.Status500InternalServerError, new { message = "An error occurred while retrieving roles.", details = ex.Message });
             }
         }
 
         // GET: api/CreateRole/5
-        [HttpGet("{id}", Name = "GetRole")]
-        public Role Get(int id)
+        [HttpGet("{id}")]
+        public ActionResult<Role> GetRoleById(int id)
         {
             try
             {
-                return _role.GetRolebyId(id);
-            }
-            catch (Exception)
-            {
+                var role = _role.GetRolebyId(id);
+                if (role == null)
+                {
+                    return NotFound(new { message = "Role not found." });
+                }
 
-                throw;
+                return Ok(role);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, new { message = "An error occurred while retrieving the role.", details = ex.Message });
             }
         }
 
         // POST: api/CreateRole
         [HttpPost]
-        public HttpResponseMessage Post([FromBody] RoleViewModel roleViewModel)
+        public IActionResult CreateRole([FromBody] RoleViewModel roleViewModel)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(new { message = "Invalid role data." });
+            }
 
             try
             {
-                if (ModelState.IsValid)
+                if (_role.CheckRoleExits(roleViewModel.RoleName))
                 {
-                    if (_role.CheckRoleExits(roleViewModel.RoleName))
-                    {
-                        var response = new HttpResponseMessage()
-                        {
-                            StatusCode = HttpStatusCode.Conflict
-                        };
-
-                        return response;
-                    }
-                    else
-                    {
-                        var temprole = AutoMapper.Mapper.Map<Role>(roleViewModel);
-
-                        _role.InsertRole(temprole);
-
-                        var response = new HttpResponseMessage()
-                        {
-                            StatusCode = HttpStatusCode.OK
-                        };
-
-                        return response;
-                    }
+                    return Conflict(new { message = "Role already exists." });
                 }
-                else
-                {
-                    var response = new HttpResponseMessage()
-                    {
 
-                        StatusCode = HttpStatusCode.BadRequest
-                    };
+                var role = AutoMapper.Mapper.Map<Role>(roleViewModel);
+                _role.InsertRole(role);
 
-                    return response;
-                }
+                return Ok(new { message = "Role created successfully." });
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                return StatusCode(StatusCodes.Status500InternalServerError, new { message = "An error occurred while creating the role.", details = ex.Message });
             }
         }
 
         // PUT: api/CreateRole/5
         [HttpPut("{id}")]
-        public HttpResponseMessage Put(int id, [FromBody] RoleViewModel roleViewModel)
+        public IActionResult UpdateRole(int id, [FromBody] RoleViewModel roleViewModel)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(new { message = "Invalid role data." });
+            }
+
             try
             {
-                var temprole = AutoMapper.Mapper.Map<Role>(roleViewModel);
-                _role.UpdateRole(temprole);
+                var role = AutoMapper.Mapper.Map<Role>(roleViewModel);
+                role.RoleId = id;
 
-                var response = new HttpResponseMessage()
-                {
-                    StatusCode = HttpStatusCode.OK
-                };
+                _role.UpdateRole(role);
 
-                return response;
+                return Ok(new { message = "Role updated successfully." });
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                var response = new HttpResponseMessage()
-                {
-
-                    StatusCode = HttpStatusCode.BadRequest
-                };
-
-                return response;
-
+                return StatusCode(StatusCodes.Status500InternalServerError, new { message = "An error occurred while updating the role.", details = ex.Message });
             }
         }
 
-        // DELETE: api/ApiWithActions/5
+        // DELETE: api/CreateRole/5
         [HttpDelete("{id}")]
-        public HttpResponseMessage Delete(int id)
+        public IActionResult DeleteRole(int id)
         {
             try
             {
-
                 var result = _role.DeleteRole(id);
 
-                if (result)
+                if (!result)
                 {
-                    var response = new HttpResponseMessage()
-                    {
-                        StatusCode = HttpStatusCode.OK
-                    };
-                    return response;
+                    return BadRequest(new { message = "Role deletion failed." });
                 }
-                else
-                {
-                    var response = new HttpResponseMessage()
-                    {
-                        StatusCode = HttpStatusCode.BadRequest
-                    };
-                    return response;
-                }
+
+                return Ok(new { message = "Role deleted successfully." });
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                return StatusCode(StatusCodes.Status500InternalServerError, new { message = "An error occurred while deleting the role.", details = ex.Message });
             }
         }
     }

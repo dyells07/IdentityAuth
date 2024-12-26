@@ -34,7 +34,7 @@ namespace WebGYM.Controllers
                 var userIdClaim = User.FindFirstValue(ClaimTypes.Name);
                 if (!int.TryParse(userIdClaim, out var userId))
                 {
-                    return Unauthorized("Unable to determine the authenticated user's ID. Please log in and try again.");
+                    return StatusCode(StatusCodes.Status401Unauthorized, "Unable to determine the authenticated user's ID. Please log in and try again.");
                 }
 
                 var renewalDetails = _renewal.GetMemberNo(memberNoRequest.MemberNo, userId);

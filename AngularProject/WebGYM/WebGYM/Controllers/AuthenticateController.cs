@@ -24,13 +24,13 @@ namespace WebGYM.Controllers
 
         public AuthenticateController(IOptions<AppSettings> appSettings, IUsers users, ILogger<AuthenticateController> logger)
         {
-            _users = users;
-            _appSettings = appSettings.Value;
-            _logger = logger;
+            _users = users ?? throw new ArgumentNullException(nameof(users));
+            _appSettings = appSettings?.Value ?? throw new ArgumentNullException(nameof(appSettings));
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody] LoginRequestViewModel value)
+        public IActionResult Authenticate([FromBody] LoginRequestViewModel loginRequest)
         {
             if (!ModelState.IsValid)
             {
@@ -39,29 +39,35 @@ namespace WebGYM.Controllers
 
             try
             {
-                var encryptedPassword = EncryptionLibrary.EncryptText(value.Password);
-                if (!_users.AuthenticateUsers(value.UserName, encryptedPassword))
+                // Encrypt the provided password
+                var encryptedPassword = EncryptionLibrary.EncryptText(loginRequest.Password);
+
+                // Validate user credentials
+                if (!_users.AuthenticateUsers(loginRequest.UserName, encryptedPassword))
                 {
-                    return StatusCode(StatusCodes.Status401Unauthorized, new { message = "An error occurred while processing your request." });
+                    return StatusCode(StatusCodes.Status401Unauthorized, new { message = "Invalid username or password." });
                 }
 
-                var userdetails = _users.GetUserDetailsbyCredentials(value.UserName);
-                if (userdetails == null)
+                // Fetch user details
+                var userDetails = _users.GetUserDetailsbyCredentials(loginRequest.UserName);
+                if (userDetails == null)
                 {
                     return NotFound(new { message = "User details not found." });
                 }
 
                 // Generate JWT token
-                var token = GenerateJwtToken(userdetails.UserId);
-                value.Token = token;
-                value.Password = null; // Remove sensitive information
-                value.Usertype = userdetails.RoleId;
+                var token = GenerateJwtToken(userDetails.UserId);
 
-                return Ok(value);
+                // Build response
+                loginRequest.Token = token;
+                loginRequest.Password = null; // Mask sensitive information
+                loginRequest.Usertype = userDetails.RoleId;
+
+                return Ok(loginRequest);
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "An error occurred during user authentication.");
+                _logger.LogError(ex, "Error during authentication.");
                 return StatusCode(StatusCodes.Status500InternalServerError, new { message = "An error occurred while processing your request." });
             }
         }
@@ -70,15 +76,14 @@ namespace WebGYM.Controllers
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
+
             var tokenDescriptor = new SecurityTokenDescriptor
             {
-                Subject = new ClaimsIdentity(new[]
-                {
-                    new Claim(ClaimTypes.Name, userId.ToString())
-                }),
+                Subject = new ClaimsIdentity(new[] { new Claim(ClaimTypes.Name, userId.ToString()) }),
                 Expires = DateTime.UtcNow.AddDays(1),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
+
             var token = tokenHandler.CreateToken(tokenDescriptor);
             return tokenHandler.WriteToken(token);
         }

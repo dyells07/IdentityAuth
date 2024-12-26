@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Security.Claims;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -20,115 +16,135 @@ namespace WebGYM.Controllers
     public class SchemeController : ControllerBase
     {
         private readonly ISchemeMaster _schemeMaster;
+
         public SchemeController(ISchemeMaster schemeMaster)
         {
-            _schemeMaster = schemeMaster;
+            _schemeMaster = schemeMaster ?? throw new ArgumentNullException(nameof(schemeMaster));
         }
 
         // GET: api/Scheme
         [HttpGet]
-        public List<SchemeMaster> Get()
+        public IActionResult Get()
         {
-            return _schemeMaster.GetSchemeMasterList();
+            try
+            {
+                var schemes = _schemeMaster.GetSchemeMasterList();
+                return Ok(schemes);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, new { message = $"An error occurred: {ex.Message}" });
+            }
         }
 
         // GET: api/Scheme/5
         [HttpGet("{id}", Name = "GetScheme")]
-        public SchemeMaster Get(int id)
+        public IActionResult Get(int id)
         {
-            return _schemeMaster.GetSchemeMasterbyId(id);
+            try
+            {
+                var scheme = _schemeMaster.GetSchemeMasterbyId(id);
+                if (scheme == null)
+                {
+                    return NotFound($"No scheme found with ID: {id}");
+                }
+                else
+                {
+                    return Ok(scheme);
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, new { message = $"An error occurred: {ex.Message}" });
+            }
         }
 
         // POST: api/Scheme
         [HttpPost]
-        public HttpResponseMessage Post([FromBody] SchemeMasterViewModel schemeMaster)
+        public IActionResult Post([FromBody] SchemeMasterViewModel schemeMaster)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
+            {
+                return BadRequest("Invalid data provided.");
+            }
+
+            try
             {
                 if (_schemeMaster.CheckSchemeNameExists(schemeMaster.SchemeName))
                 {
-                    var response = new HttpResponseMessage()
-                    {
-                        StatusCode = HttpStatusCode.Conflict
-                    };
-
-                    return response;
+                    return Conflict("A scheme with the same name already exists.");
                 }
-                else
+
+                var userId = User.FindFirstValue(ClaimTypes.Name);
+                if (string.IsNullOrEmpty(userId) || !int.TryParse(userId, out var createdBy))
                 {
-                    var userId = this.User.FindFirstValue(ClaimTypes.Name);
-
-                    var tempSchemeMaster = AutoMapper.Mapper.Map<SchemeMaster>(schemeMaster);
-                    tempSchemeMaster.Createddate = DateTime.Now;
-                    tempSchemeMaster.Createdby = Convert.ToInt32(userId);
-                    _schemeMaster.AddSchemeMaster(tempSchemeMaster);
-
-                    var response = new HttpResponseMessage()
-                    {
-                        StatusCode = HttpStatusCode.OK
-                    };
-
-                    return response;
+                    return StatusCode(StatusCodes.Status401Unauthorized, "User ID could not be determined.");
                 }
+
+                var tempSchemeMaster = AutoMapper.Mapper.Map<SchemeMaster>(schemeMaster);
+                tempSchemeMaster.Createddate = DateTime.Now;
+                tempSchemeMaster.Createdby = createdBy;
+
+                _schemeMaster.AddSchemeMaster(tempSchemeMaster);
+
+                return Ok("Scheme added successfully.");
             }
-            else
+            catch (Exception ex)
             {
-                var response = new HttpResponseMessage()
-                {
-
-                    StatusCode = HttpStatusCode.BadRequest
-                };
-
-                return response;
+                return StatusCode(StatusCodes.Status500InternalServerError, new { message = $"An error occurred: {ex.Message}" });
             }
         }
 
         // PUT: api/Scheme/5
         [HttpPut("{id}")]
-        public HttpResponseMessage Put(int id, [FromBody] SchemeMasterEditViewModel schemeMaster)
+        public IActionResult Put(int id, [FromBody] SchemeMasterEditViewModel schemeMaster)
         {
-            if (string.IsNullOrWhiteSpace(Convert.ToString(id)) || schemeMaster == null)
+            if (id <= 0 || schemeMaster == null)
             {
-                var response = new HttpResponseMessage()
-                {
-                    StatusCode = HttpStatusCode.BadRequest
-                };
-                return response;
+                return BadRequest("Invalid scheme ID or data.");
             }
-            else
+
+            try
             {
                 var temp = AutoMapper.Mapper.Map<SchemeMaster>(schemeMaster);
                 var result = _schemeMaster.UpdateSchemeMaster(temp);
 
-                var response = new HttpResponseMessage()
+                if (result)
                 {
-                    StatusCode = HttpStatusCode.OK
-                };
-                return response;
+                    return Ok("Scheme updated successfully.");
+                }
+
+                return NotFound($"No scheme found with ID: {id}");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, new { message = $"An error occurred: {ex.Message}" });
             }
         }
 
-        // DELETE: api/ApiWithActions/5
+        // DELETE: api/Scheme/5
         [HttpDelete("{id}")]
-        public HttpResponseMessage Delete(int id)
+        public IActionResult Delete(int id)
         {
-            var result = _schemeMaster.DeleteScheme(id);
-
-            if (result)
+            if (id <= 0)
             {
-                var response = new HttpResponseMessage()
-                {
-                    StatusCode = HttpStatusCode.OK
-                };
-                return response;
+                return BadRequest("Invalid scheme ID.");
             }
-            else
+
+            try
             {
-                var response = new HttpResponseMessage()
+                var result = _schemeMaster.DeleteScheme(id);
+
+                if (result)
                 {
-                    StatusCode = HttpStatusCode.BadRequest
-                };
-                return response;
+                    return Ok("Scheme deleted successfully.");
+                }
+
+                return NotFound($"No scheme found with ID: {id}");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, new { message = $"An error occurred: {ex.Message}" });
             }
         }
     }
