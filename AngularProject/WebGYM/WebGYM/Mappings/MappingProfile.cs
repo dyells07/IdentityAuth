@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using WebGYM.Models;
 using WebGYM.ViewModels;
 
@@ -12,6 +8,7 @@ namespace WebGYM.Mappings
     {
         public MappingProfile()
         {
+            // SchemeMaster Mappings
             CreateMap<SchemeMasterViewModel, SchemeMaster>()
                 .ForMember(dest => dest.SchemeName, opt => opt.MapFrom(src => src.SchemeName))
                 .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status));
@@ -21,6 +18,7 @@ namespace WebGYM.Mappings
                 .ForMember(dest => dest.SchemeID, opt => opt.MapFrom(src => src.SchemeID))
                 .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status));
 
+            // PlanMaster Mappings
             CreateMap<PlanMasterViewModel, PlanMaster>()
                 .ForMember(dest => dest.PlanID, opt => opt.MapFrom(src => src.PlanID))
                 .ForMember(dest => dest.SchemeID, opt => opt.MapFrom(src => src.SchemeID))
@@ -30,10 +28,12 @@ namespace WebGYM.Mappings
                 .ForMember(dest => dest.ServiceTax, opt => opt.MapFrom(src => src.ServiceTax))
                 .ForMember(dest => dest.RecStatus, opt => opt.MapFrom(src => src.RecStatus));
 
+            // Role Mappings
             CreateMap<Role, RoleViewModel>()
                 .ForMember(dest => dest.RoleName, opt => opt.MapFrom(src => src.RoleName))
                 .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status));
 
+            // MemberRegistration Mappings
             CreateMap<MemberRegistrationViewModel, MemberRegistration>()
                 .ForMember(dest => dest.MemberId, opt => opt.MapFrom(src => src.MemberId))
                 .ForMember(dest => dest.MemberFName, opt => opt.MapFrom(src => src.MemberFName))
@@ -53,6 +53,7 @@ namespace WebGYM.Mappings
                 .ForMember(dest => dest.MemImagename, opt => opt.Ignore())
                 .ForMember(dest => dest.ModifiedBy, opt => opt.Ignore());
 
+            // Users Mappings
             CreateMap<UsersViewModel, Users>()
                 .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.UserName))
                 .ForMember(dest => dest.Contactno, opt => opt.MapFrom(src => src.Contactno))
@@ -61,7 +62,6 @@ namespace WebGYM.Mappings
                 .ForMember(dest => dest.Password, opt => opt.MapFrom(src => src.Password))
                 .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.Id))
                 .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status));
-
         }
     }
 }
