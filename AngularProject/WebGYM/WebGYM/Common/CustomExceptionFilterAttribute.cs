@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Routing;
-
 namespace WebGYM.Common
 {
     public class CustomExceptionFilterAttribute : ExceptionFilterAttribute
@@ -41,11 +37,10 @@ namespace WebGYM.Common
             if (ex.InnerException != null)
             {
                 strLogText += Environment.NewLine + "Inner Exception is {0}" + ex.InnerException;
-                //error prone
             }
             if (ex.HelpLink != null)
             {
-                strLogText += Environment.NewLine + "HelpLink ---\n{0}" + ex.HelpLink;//error prone
+                strLogText += Environment.NewLine + "HelpLink ---\n{0}" + ex.HelpLink;
             }
 
             StreamWriter log;
@@ -59,7 +54,6 @@ namespace WebGYM.Common
                 System.IO.Directory.CreateDirectory(errorFolder);
             }
 
-            // ReSharper disable once ConvertIfStatementToConditionalTernaryExpression
             if (!File.Exists($@"{errorFolder}\Log_{timestamp}.txt"))
             {
                 log = new StreamWriter($@"{errorFolder}\Log_{timestamp}.txt");
@@ -72,7 +66,6 @@ namespace WebGYM.Common
             var controllerName = (string)context.RouteData.Values["controller"];
             var actionName = (string)context.RouteData.Values["action"];
 
-            // Write to the file:
             log.WriteLine(Environment.NewLine + DateTime.Now);
             log.WriteLine("------------------------------------------------------------------------------------------------");
             log.WriteLine("Controller Name :- " + controllerName);
@@ -81,14 +74,11 @@ namespace WebGYM.Common
             log.WriteLine(objClass);
             log.WriteLine(strLogText);
             log.WriteLine();
-
-            // Close the stream:
             log.Close();
-          
+
 
             if (!_hostingEnvironment.IsDevelopment())
             {
-                // do nothing
                 return;
             }
             var result = new RedirectToRouteResult(
@@ -96,7 +86,6 @@ namespace WebGYM.Common
             {
             {"controller", "Errorview"}, {"action", "Error"}
             });
-            // TODO: Pass additional detailed data via ViewData
             context.Result = result;
         }
     }

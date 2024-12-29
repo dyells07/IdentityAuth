@@ -2,9 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Dynamic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WebGYM.Models
 {
@@ -12,12 +9,17 @@ namespace WebGYM.Models
     {
         public static dynamic ToDynamic(this object value)
         {
-            IDictionary<string, object> expando = new ExpandoObject();
+            if (value == null)
+                throw new ArgumentNullException(nameof(value));
 
-            foreach (PropertyDescriptor property in TypeDescriptor.GetProperties(value.GetType()))
-                expando.Add(property.Name, property.GetValue(value));
+            var expando = new ExpandoObject() as IDictionary<string, object>;
 
-            return expando as ExpandoObject;
+            foreach (PropertyDescriptor property in TypeDescriptor.GetProperties(value))
+            {
+                expando[property.Name] = property.GetValue(value);
+            }
+
+            return expando;
         }
     }
 }

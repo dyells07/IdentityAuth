@@ -4,11 +4,5 @@
         <name>WebGYM</name>
     </assembly>
     <members>
-        <member name="T:WebGYM.SwaggerServiceExtensions">
-            <summary>
-            Extension method or middleware for Swagger configuration in asp.net core for swagger version >2.0
-            Reference From : https://ppolyzos.com/2017/10/30/add-jwt-bearer-authorization-to-swagger-and-asp-net-core/
-            </summary>
-        </member>
     </members>
 </doc>
