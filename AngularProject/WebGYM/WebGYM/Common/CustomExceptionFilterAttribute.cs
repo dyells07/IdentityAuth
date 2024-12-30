@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Globalization;
 using System.IO;
+using System.Text;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
@@ -18,75 +19,52 @@ namespace WebGYM.Common
 
         public override void OnException(ExceptionContext context)
         {
-            string strLogText = "";
-            Exception ex = context.Exception;
-
-            context.ExceptionHandled = true;
-            var objClass = context;
-            strLogText += "Message ---\n{0}" + ex.Message;
-
-
-            if (context.HttpContext.Request.Headers["x-requested-with"] == "XMLHttpRequest")
-            {
-                strLogText += Environment.NewLine + ".Net Error ---\n{0}" + "Check MVC Ajax Code For Error";
-            }
-
-            strLogText += Environment.NewLine + "Source ---\n{0}" + ex.Source;
-            strLogText += Environment.NewLine + "StackTrace ---\n{0}" + ex.StackTrace;
-            strLogText += Environment.NewLine + "TargetSite ---\n{0}" + ex.TargetSite;
-            if (ex.InnerException != null)
-            {
-                strLogText += Environment.NewLine + "Inner Exception is {0}" + ex.InnerException;
-            }
-            if (ex.HelpLink != null)
-            {
-                strLogText += Environment.NewLine + "HelpLink ---\n{0}" + ex.HelpLink;
-            }
-
-            StreamWriter log;
-
-            string timestamp = DateTime.Now.ToString("d-MMMM-yyyy", new CultureInfo("en-GB"));
-
-            string errorFolder = Path.Combine(_hostingEnvironment.WebRootPath, "ErrorLog");
-
-            if (!System.IO.Directory.Exists(errorFolder))
-            {
-                System.IO.Directory.CreateDirectory(errorFolder);
-            }
-
-            if (!File.Exists($@"{errorFolder}\Log_{timestamp}.txt"))
-            {
-                log = new StreamWriter($@"{errorFolder}\Log_{timestamp}.txt");
-            }
-            else
-            {
-                log = File.AppendText($@"{errorFolder}\Log_{timestamp}.txt");
-            }
-
+            var ex = context.Exception;
             var controllerName = (string)context.RouteData.Values["controller"];
             var actionName = (string)context.RouteData.Values["action"];
+            var isAjaxRequest = context.HttpContext.Request.Headers["x-requested-with"] == "XMLHttpRequest";
 
-            log.WriteLine(Environment.NewLine + DateTime.Now);
-            log.WriteLine("------------------------------------------------------------------------------------------------");
-            log.WriteLine("Controller Name :- " + controllerName);
-            log.WriteLine("Action Method Name :- " + actionName);
-            log.WriteLine("------------------------------------------------------------------------------------------------");
-            log.WriteLine(objClass);
-            log.WriteLine(strLogText);
-            log.WriteLine();
-            log.Close();
+            var logDetails = new StringBuilder();
+            logDetails.AppendLine($"Date: {DateTime.Now}");
+            logDetails.AppendLine($"Controller: {controllerName}");
+            logDetails.AppendLine($"Action: {actionName}");
+            logDetails.AppendLine($"Message: {ex.Message}");
+            logDetails.AppendLine($"Source: {ex.Source}");
+            logDetails.AppendLine($"StackTrace: {ex.StackTrace}");
+            logDetails.AppendLine($"TargetSite: {ex.TargetSite}");
 
+            if (ex.InnerException != null)
+            {
+                logDetails.AppendLine($"Inner Exception: {ex.InnerException}");
+            }
+
+            if (ex.HelpLink != null)
+            {
+                logDetails.AppendLine($"HelpLink: {ex.HelpLink}");
+            }
+
+            if (isAjaxRequest)
+            {
+                logDetails.AppendLine("Note: AJAX request error - Check MVC AJAX implementation.");
+            }
+
+            var errorFolder = Path.Combine(_hostingEnvironment.ContentRootPath, "Logs", "ErrorLogs");
+            Directory.CreateDirectory(errorFolder);
+            var logFilePath = Path.Combine(errorFolder, $"Log_{DateTime.Now:dd-MMMM-yyyy}.txt");
+
+            File.AppendAllText(logFilePath, logDetails.ToString());
 
             if (!_hostingEnvironment.IsDevelopment())
             {
-                return;
-            }
-            var result = new RedirectToRouteResult(
-            new RouteValueDictionary
-            {
+                var result = new RedirectToRouteResult(new RouteValueDictionary
+        {
             {"controller", "Errorview"}, {"action", "Error"}
-            });
-            context.Result = result;
+        });
+                context.Result = result;
+            }
+
+            context.ExceptionHandled = true;
         }
+
     }
 }
