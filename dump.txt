@@ -1,0 +1,11 @@
+- Angular Pattern 
+- CRUD operation 
+- Clean Architecture 
+- DI Service Lifetime 
+- Design Patterns 
+- Expense Tracking for graphs 
+- Entity Framework
+- Onion Architecture 
+- RDLC 
+- Repository Pattern
+-
