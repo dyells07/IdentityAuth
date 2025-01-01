@@ -33,7 +33,7 @@ namespace WebGYM.Controllers
                     var activePlans = _planMaster.GetActivePlanMasterList(id);
                     if (activePlans == null || activePlans.Count == 0)
                     {
-                        return NotFound(new { message = "No active plans found for the given ID." });
+                        return NotFound(new { message = "No Active plans found for the given ID." });
                     }
 
                     return Ok(activePlans);
