@@ -22,7 +22,6 @@ namespace WebGYM.Controllers
             _role = role ?? throw new ArgumentNullException(nameof(role));
         }
 
-        // GET: api/CreateRole
         [HttpGet]
         public ActionResult<IEnumerable<Role>> GetAllRoles()
         {
@@ -37,7 +36,6 @@ namespace WebGYM.Controllers
             }
         }
 
-        // GET: api/CreateRole/5
         [HttpGet("{id}")]
         public ActionResult<Role> GetRoleById(int id)
         {
@@ -57,7 +55,6 @@ namespace WebGYM.Controllers
             }
         }
 
-        // POST: api/CreateRole
         [HttpPost]
         public IActionResult CreateRole([FromBody] RoleViewModel roleViewModel)
         {
@@ -84,7 +81,6 @@ namespace WebGYM.Controllers
             }
         }
 
-        // PUT: api/CreateRole/5
         [HttpPut("{id}")]
         public IActionResult UpdateRole(int id, [FromBody] RoleViewModel roleViewModel)
         {
@@ -108,7 +104,6 @@ namespace WebGYM.Controllers
             }
         }
 
-        // DELETE: api/CreateRole/5
         [HttpDelete("{id}")]
         public IActionResult DeleteRole(int id)
         {

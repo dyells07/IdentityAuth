@@ -20,7 +20,6 @@ namespace WebGYM.Controllers
             _planMaster = planMaster ?? throw new ArgumentNullException(nameof(planMaster));
         }
 
-        // POST: api/GetTotalAmount
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] AmountRequestViewModel amountRequest)
         {
@@ -36,7 +35,6 @@ namespace WebGYM.Controllers
             }
             catch (Exception ex)
             {
-                // Log the exception here (e.g., using ILogger or a logging service)
                 return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while processing your request.");
             }
         }

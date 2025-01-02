@@ -39,7 +39,6 @@ namespace WebGYM.Controllers
                     return Ok(activePlans);
                 }
 
-                // Return a default empty plan if no ID is provided
                 return Ok(new List<ActivePlanModel>
                 {
                     new ActivePlanModel

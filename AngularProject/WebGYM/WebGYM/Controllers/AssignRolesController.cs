@@ -23,7 +23,6 @@ namespace WebGYM.Controllers
             _usersInRoles = usersInRoles ?? throw new ArgumentNullException(nameof(usersInRoles));
         }
 
-        // GET: api/AssignRoles
         [HttpGet]
         public IActionResult GetAssignedRoles()
         {
@@ -39,12 +38,10 @@ namespace WebGYM.Controllers
             }
             catch (Exception ex)
             {
-                // Log the exception if a logging framework is in use
                 return StatusCode(StatusCodes.Status500InternalServerError, new { message = $"An error occurred while retrieving roles: {ex.Message}" });
             }
         }
 
-        // POST: api/AssignRoles
         [HttpPost]
         public IActionResult AssignRole([FromBody] UsersInRoles usersInRoles)
         {
@@ -66,7 +63,6 @@ namespace WebGYM.Controllers
             }
             catch (Exception ex)
             {
-                // Log the exception if a logging framework is in use
                 return StatusCode(StatusCodes.Status500InternalServerError, new { message = $"An error occurred while assigning roles: {ex.Message}" });
             }
         }

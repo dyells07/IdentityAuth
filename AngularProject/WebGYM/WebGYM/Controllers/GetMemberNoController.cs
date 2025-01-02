@@ -25,11 +25,9 @@ namespace WebGYM.Controllers
             _logger = logger;
         }
 
-        // POST: api/GetMemberNo
         [HttpPost]
         public IActionResult Post([FromBody] MemberRequest memberRequest)
         {
-            // Validate the request
             if (memberRequest == null || string.IsNullOrEmpty(memberRequest.MemberName))
             {
                 return BadRequest("MemberName is required.");
@@ -37,26 +35,18 @@ namespace WebGYM.Controllers
 
             try
             {
-                // Get the current user's ID
                 var userId = Convert.ToInt32(this.User.FindFirstValue(ClaimTypes.Name));
-
-                // Get the list of members based on the request
                 var members = _memberRegistration.GetMemberNoList(memberRequest.MemberName, userId);
 
                 if (members == null || !members.Any())
                 {
                     return NotFound("No members found with the provided criteria.");
                 }
-
-                // Return the list of members as a successful response
                 return Ok(members);
             }
             catch (Exception ex)
             {
-                // Log the error for debugging purposes
                 _logger.LogError(ex, "An error occurred while retrieving member data.");
-
-                // Return internal server error with a generic error message
                 return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while processing your request.");
             }
         }

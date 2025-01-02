@@ -39,28 +39,20 @@ namespace WebGYM.Controllers
 
             try
             {
-                // Encrypt the provided password
-                var encryptedPassword = EncryptionLibrary.EncryptText(loginRequest.Password);
+                var encryptedPassword = EncryptionLibrary.EncryptText(loginRequest.Password, _appSettings.Secret);
 
-                // Validate user credentials
                 if (!_users.AuthenticateUsers(loginRequest.UserName, encryptedPassword))
                 {
                     return StatusCode(StatusCodes.Status401Unauthorized, new { message = "Invalid username or password." });
                 }
-
-                // Fetch user details
                 var userDetails = _users.GetUserDetailsbyCredentials(loginRequest.UserName);
                 if (userDetails == null)
                 {
                     return NotFound(new { message = "User details not found." });
                 }
-
-                // Generate JWT token
                 var token = GenerateJwtToken(userDetails.UserId);
-
-                // Build response
                 loginRequest.Token = token;
-                loginRequest.Password = null; // Mask sensitive information
+                loginRequest.Password = null;
                 loginRequest.Usertype = userDetails.RoleId;
 
                 return Ok(loginRequest);
