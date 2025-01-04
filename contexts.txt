@@ -8,4 +8,4 @@
 - Onion Architecture 
 - RDLC 
 - Repository Pattern
--
+- MAUI 
