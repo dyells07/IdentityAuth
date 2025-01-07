@@ -8,4 +8,5 @@
 - Onion Architecture 
 - RDLC 
 - Repository Pattern
-- MAUI iOS and android setup 
+- MAUI iOS and android setup
+- Generic Pattern 
