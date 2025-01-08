@@ -10,3 +10,4 @@
 - Repository Pattern
 - MAUI iOS and android setup
 - Generic Pattern 
+- Entity Framework 
