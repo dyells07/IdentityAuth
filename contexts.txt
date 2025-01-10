@@ -11,4 +11,4 @@
 - MAUI iOS and android setup
 - Generic Pattern 
 - Entity Framework 
-- Test Cases
+- Test Case
