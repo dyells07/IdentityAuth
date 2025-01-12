@@ -46,9 +46,9 @@ namespace RdlcWebApi.Services
                 new UserDto { FirstName = "Dipesh", LastName = "Pangeni", Email = "Dipesh@gmail.com", Phone = "+976111111111" },
                 new UserDto { FirstName = "Rakesh", LastName = "KC", Email = "RakeshKC@gmail.com", Phone = "+976222222222" },
                 new UserDto { FirstName = "Sita", LastName = "Dahal", Email = "SitaD@gmail.com", Phone = "+976333333333" },
-                new UserDto { FirstName = "Ram", LastName = "Shrestha", Email = "RamS@gmail.com", Phone = "+976444444444" },
+                new UserDto { FirstName = "Ram", LastName = "Shrestha", Email = "Ram@gmail.com", Phone = "+976444444444" },
                 new UserDto { FirstName = "Krishna", LastName = "Aryal", Email = "KrishnaA@gmail.com", Phone = "+976555555555" },
-                new UserDto { FirstName = "Gita", LastName = "Pandey", Email = "GitaP@gmail.com", Phone = "+976666666666" }
+                new UserDto { FirstName = "Gita", LastName = "Pandey", Email = "Gita@gmail.com", Phone = "+976666666666" }
             };
         }
 
