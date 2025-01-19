@@ -4,13 +4,13 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using OnlineShop.Data;
-using OnlineShop.Models;
 using OnlineShop.Utility;
+using OnlineShopApp.Data;
+using OnlineShopApp.Models;
 using X.PagedList;
-
 namespace OnlineShop.Controllers
 {
     [Area("Customer")]
@@ -27,7 +27,7 @@ namespace OnlineShop.Controllers
        
         public IActionResult Index(int? page)
         {
-            return View(_db.Products.Include(c=>c.ProductTypes).Include(c=>c.SpecialTag).ToList().ToPagedList(page??1,9));
+            return View(_db.Products.Include(c => c.ProductTypes).Include(c => c.SpecialTag).ToList().ToPagedList(page ?? 1, 9));
         }
 
         public IActionResult Privacy()

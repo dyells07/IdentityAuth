@@ -8,8 +8,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using OnlineShop.Data;
 using OnlineShop.Models;
+using OnlineShopApp.Data;
+using OnlineShopApp.Models;
 
 namespace OnlineShop.Areas.Admin.Controllers
 {

@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "H:\\OnlineShopApp\\OnlineShopApp.csproj": {}
+    "B:\\Auth\\EcommerceExample\\OnlineShopApp.csproj": {}
   },
   "projects": {
-    "H:\\OnlineShopApp\\OnlineShopApp.csproj": {
+    "B:\\Auth\\EcommerceExample\\OnlineShopApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\OnlineShopApp\\OnlineShopApp.csproj",
+        "projectUniqueName": "B:\\Auth\\EcommerceExample\\OnlineShopApp.csproj",
         "projectName": "OnlineShopApp",
-        "projectPath": "H:\\OnlineShopApp\\OnlineShopApp.csproj",
-        "packagesPath": "C:\\Users\\Md Shabuj Hossain\\.nuget\\packages\\",
-        "outputPath": "H:\\OnlineShopApp\\obj\\",
+        "projectPath": "B:\\Auth\\EcommerceExample\\OnlineShopApp.csproj",
+        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+        "outputPath": "B:\\Auth\\EcommerceExample\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Md Shabuj Hossain\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,10 +26,12 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -33,10 +39,16 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
@@ -69,7 +81,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -81,7 +94,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
         }
       }
     }
