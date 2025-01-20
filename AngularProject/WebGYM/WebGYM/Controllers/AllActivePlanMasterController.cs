@@ -50,7 +50,7 @@ namespace WebGYM.Controllers
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "An error occurred while fetching active plan data.");
+                //_logger.LogError(ex, "An error occurred while fetching active plan data.");
                 return StatusCode(StatusCodes.Status500InternalServerError, new { message = "An error occurred while processing your request." });
             }
         }
