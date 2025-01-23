@@ -33,10 +33,6 @@ namespace ChatApp.Services
                 CreateUser("Komal Orr", "emoji4.png", "#C3C1E6"),
                 CreateUser("Sariba Abood", "emoji5.png", "#FFE0EC"),
                 CreateUser("Justin O'Moore", "emoji6.png", "#FFE5A6"),
-                CreateUser("Alissia Shah", "emoji7.png", "#FFE0EC"),
-                CreateUser("Antoni Whitney", "emoji8.png", "#FFE0EC"),
-                CreateUser("Jaime Zuniga", "emoji9.png", "#C3C1E6"),
-                CreateUser("Barbara Cherry", "emoji10.png", "#FF95A2")
             };
         }
 
