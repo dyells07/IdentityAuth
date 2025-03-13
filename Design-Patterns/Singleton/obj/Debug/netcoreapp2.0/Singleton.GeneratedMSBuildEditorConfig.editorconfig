@@ -1,0 +1,5 @@
+is_global = true
+build_property.RootNamespace = Singleton
+build_property.ProjectDir = B:\Auth\Design-Patterns\Singleton\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 

@@ -8,3 +8,17 @@ c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Singleton\obj\Debug\netcor
 c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Singleton\obj\Debug\netcoreapp2.0\Singleton.AssemblyInfo.cs
 c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Singleton\obj\Debug\netcoreapp2.0\Singleton.dll
 c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Singleton\obj\Debug\netcoreapp2.0\Singleton.pdb
+B:\Auth\Design-Patterns\Singleton\bin\Debug\netcoreapp2.0\Singleton.deps.json
+B:\Auth\Design-Patterns\Singleton\bin\Debug\netcoreapp2.0\Singleton.runtimeconfig.json
+B:\Auth\Design-Patterns\Singleton\bin\Debug\netcoreapp2.0\Singleton.runtimeconfig.dev.json
+B:\Auth\Design-Patterns\Singleton\bin\Debug\netcoreapp2.0\Singleton.dll
+B:\Auth\Design-Patterns\Singleton\bin\Debug\netcoreapp2.0\Singleton.pdb
+B:\Auth\Design-Patterns\Singleton\obj\Debug\netcoreapp2.0\Singleton.csproj.AssemblyReference.cache
+B:\Auth\Design-Patterns\Singleton\obj\Debug\netcoreapp2.0\Singleton.GeneratedMSBuildEditorConfig.editorconfig
+B:\Auth\Design-Patterns\Singleton\obj\Debug\netcoreapp2.0\Singleton.AssemblyInfoInputs.cache
+B:\Auth\Design-Patterns\Singleton\obj\Debug\netcoreapp2.0\Singleton.AssemblyInfo.cs
+B:\Auth\Design-Patterns\Singleton\obj\Debug\netcoreapp2.0\Singleton.csproj.CoreCompileInputs.cache
+B:\Auth\Design-Patterns\Singleton\obj\Debug\netcoreapp2.0\Singleton.sourcelink.json
+B:\Auth\Design-Patterns\Singleton\obj\Debug\netcoreapp2.0\Singleton.dll
+B:\Auth\Design-Patterns\Singleton\obj\Debug\netcoreapp2.0\Singleton.pdb
+B:\Auth\Design-Patterns\Singleton\obj\Debug\netcoreapp2.0\Singleton.genruntimeconfig.cache
