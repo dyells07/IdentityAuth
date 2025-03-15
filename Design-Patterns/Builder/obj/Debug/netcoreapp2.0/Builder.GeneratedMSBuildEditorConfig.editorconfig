@@ -1,0 +1,8 @@
+is_global = true
+build_property.RootNamespace = Builder
+build_property.ProjectDir = B:\Auth\Design-Patterns\Builder\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.CsWinRTUseWindowsUIXamlProjections = false
+build_property.EffectiveAnalysisLevelStyle = 
+build_property.EnableCodeStyleSeverity = 

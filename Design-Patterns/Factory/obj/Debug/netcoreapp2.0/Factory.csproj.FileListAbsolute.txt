@@ -8,3 +8,17 @@ c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Factory\obj\Debug\netcorea
 c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Factory\obj\Debug\netcoreapp2.0\Factory.AssemblyInfo.cs
 c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Factory\obj\Debug\netcoreapp2.0\Factory.dll
 c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Factory\obj\Debug\netcoreapp2.0\Factory.pdb
+B:\Auth\Design-Patterns\Factory\bin\Debug\netcoreapp2.0\Factory.deps.json
+B:\Auth\Design-Patterns\Factory\bin\Debug\netcoreapp2.0\Factory.runtimeconfig.json
+B:\Auth\Design-Patterns\Factory\bin\Debug\netcoreapp2.0\Factory.runtimeconfig.dev.json
+B:\Auth\Design-Patterns\Factory\bin\Debug\netcoreapp2.0\Factory.dll
+B:\Auth\Design-Patterns\Factory\bin\Debug\netcoreapp2.0\Factory.pdb
+B:\Auth\Design-Patterns\Factory\obj\Debug\netcoreapp2.0\Factory.csproj.AssemblyReference.cache
+B:\Auth\Design-Patterns\Factory\obj\Debug\netcoreapp2.0\Factory.GeneratedMSBuildEditorConfig.editorconfig
+B:\Auth\Design-Patterns\Factory\obj\Debug\netcoreapp2.0\Factory.AssemblyInfoInputs.cache
+B:\Auth\Design-Patterns\Factory\obj\Debug\netcoreapp2.0\Factory.AssemblyInfo.cs
+B:\Auth\Design-Patterns\Factory\obj\Debug\netcoreapp2.0\Factory.csproj.CoreCompileInputs.cache
+B:\Auth\Design-Patterns\Factory\obj\Debug\netcoreapp2.0\Factory.sourcelink.json
+B:\Auth\Design-Patterns\Factory\obj\Debug\netcoreapp2.0\Factory.dll
+B:\Auth\Design-Patterns\Factory\obj\Debug\netcoreapp2.0\Factory.pdb
+B:\Auth\Design-Patterns\Factory\obj\Debug\netcoreapp2.0\Factory.genruntimeconfig.cache

@@ -18,3 +18,17 @@ c:\Users\mmosh\Desktop\Moshe Files\GitHub Projects\Design Patterns C#\Builder\ob
 c:\Users\mmosh\Desktop\Moshe Files\GitHub Projects\Design Patterns C#\Builder\obj\Debug\netcoreapp2.0\Builder.AssemblyInfo.cs
 c:\Users\mmosh\Desktop\Moshe Files\GitHub Projects\Design Patterns C#\Builder\obj\Debug\netcoreapp2.0\Builder.dll
 c:\Users\mmosh\Desktop\Moshe Files\GitHub Projects\Design Patterns C#\Builder\obj\Debug\netcoreapp2.0\Builder.pdb
+B:\Auth\Design-Patterns\Builder\bin\Debug\netcoreapp2.0\Builder.deps.json
+B:\Auth\Design-Patterns\Builder\bin\Debug\netcoreapp2.0\Builder.runtimeconfig.json
+B:\Auth\Design-Patterns\Builder\bin\Debug\netcoreapp2.0\Builder.runtimeconfig.dev.json
+B:\Auth\Design-Patterns\Builder\bin\Debug\netcoreapp2.0\Builder.dll
+B:\Auth\Design-Patterns\Builder\bin\Debug\netcoreapp2.0\Builder.pdb
+B:\Auth\Design-Patterns\Builder\obj\Debug\netcoreapp2.0\Builder.csproj.AssemblyReference.cache
+B:\Auth\Design-Patterns\Builder\obj\Debug\netcoreapp2.0\Builder.GeneratedMSBuildEditorConfig.editorconfig
+B:\Auth\Design-Patterns\Builder\obj\Debug\netcoreapp2.0\Builder.AssemblyInfoInputs.cache
+B:\Auth\Design-Patterns\Builder\obj\Debug\netcoreapp2.0\Builder.AssemblyInfo.cs
+B:\Auth\Design-Patterns\Builder\obj\Debug\netcoreapp2.0\Builder.csproj.CoreCompileInputs.cache
+B:\Auth\Design-Patterns\Builder\obj\Debug\netcoreapp2.0\Builder.sourcelink.json
+B:\Auth\Design-Patterns\Builder\obj\Debug\netcoreapp2.0\Builder.dll
+B:\Auth\Design-Patterns\Builder\obj\Debug\netcoreapp2.0\Builder.pdb
+B:\Auth\Design-Patterns\Builder\obj\Debug\netcoreapp2.0\Builder.genruntimeconfig.cache
