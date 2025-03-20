@@ -27,7 +27,6 @@ namespace MosheBinieli.Command
             onPressed = new DeviceButton(volDownCommand);
             onPressed.press();
 
-            // ---------------------------------- //
 
             Television theTV = new Television();
             Radio theRadio = new Radio();

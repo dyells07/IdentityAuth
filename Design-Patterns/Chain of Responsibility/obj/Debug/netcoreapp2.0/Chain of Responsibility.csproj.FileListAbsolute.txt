@@ -8,3 +8,17 @@ c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Chain of Responsibility\ob
 c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Chain of Responsibility\obj\Debug\netcoreapp2.0\Chain of Responsibility.AssemblyInfo.cs
 c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Chain of Responsibility\obj\Debug\netcoreapp2.0\Chain of Responsibility.dll
 c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Chain of Responsibility\obj\Debug\netcoreapp2.0\Chain of Responsibility.pdb
+B:\Auth\Design-Patterns\Chain of Responsibility\bin\Debug\netcoreapp2.0\Chain of Responsibility.deps.json
+B:\Auth\Design-Patterns\Chain of Responsibility\bin\Debug\netcoreapp2.0\Chain of Responsibility.runtimeconfig.json
+B:\Auth\Design-Patterns\Chain of Responsibility\bin\Debug\netcoreapp2.0\Chain of Responsibility.runtimeconfig.dev.json
+B:\Auth\Design-Patterns\Chain of Responsibility\bin\Debug\netcoreapp2.0\Chain of Responsibility.dll
+B:\Auth\Design-Patterns\Chain of Responsibility\bin\Debug\netcoreapp2.0\Chain of Responsibility.pdb
+B:\Auth\Design-Patterns\Chain of Responsibility\obj\Debug\netcoreapp2.0\Chain of Responsibility.csproj.AssemblyReference.cache
+B:\Auth\Design-Patterns\Chain of Responsibility\obj\Debug\netcoreapp2.0\Chain of Responsibility.GeneratedMSBuildEditorConfig.editorconfig
+B:\Auth\Design-Patterns\Chain of Responsibility\obj\Debug\netcoreapp2.0\Chain of Responsibility.AssemblyInfoInputs.cache
+B:\Auth\Design-Patterns\Chain of Responsibility\obj\Debug\netcoreapp2.0\Chain of Responsibility.AssemblyInfo.cs
+B:\Auth\Design-Patterns\Chain of Responsibility\obj\Debug\netcoreapp2.0\Chain of Responsibility.csproj.CoreCompileInputs.cache
+B:\Auth\Design-Patterns\Chain of Responsibility\obj\Debug\netcoreapp2.0\Chain of Responsibility.sourcelink.json
+B:\Auth\Design-Patterns\Chain of Responsibility\obj\Debug\netcoreapp2.0\Chain of Responsibility.dll
+B:\Auth\Design-Patterns\Chain of Responsibility\obj\Debug\netcoreapp2.0\Chain of Responsibility.pdb
+B:\Auth\Design-Patterns\Chain of Responsibility\obj\Debug\netcoreapp2.0\Chain of Responsibility.genruntimeconfig.cache
