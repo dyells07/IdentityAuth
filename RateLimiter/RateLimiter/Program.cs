@@ -2,36 +2,36 @@ using Microsoft.AspNetCore.RateLimiting;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Add services to the container.
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddRateLimiter(config =>
+builder.Services.AddRateLimiter(static config =>
 {
-    config.AddFixedWindowLimiter("FixedWindowPolicy", options =>
+    // Fixed Window Limiter
+    config.AddFixedWindowLimiter("FixedWindowPolicy", static options =>
     {
         options.Window = TimeSpan.FromSeconds(10);
         options.PermitLimit = 3;
         options.QueueLimit = 2;
         options.QueueProcessingOrder = System.Threading.RateLimiting.QueueProcessingOrder.OldestFirst;
-    }).RejectionStatusCode = 429;
-});
+       
+    });
 
-builder.Services.AddRateLimiter(config =>
-{
-    config.AddSlidingWindowLimiter("SlidingWindowPolicy", options =>
+    // Sliding Window Limiter
+    config.AddSlidingWindowLimiter("SlidingWindowPolicy", static options =>
     {
         options.Window = TimeSpan.FromSeconds(15);
         options.PermitLimit = 3;
         options.QueueLimit = 2;
         options.QueueProcessingOrder = System.Threading.RateLimiting.QueueProcessingOrder.OldestFirst;
         options.SegmentsPerWindow = 3;
-    }).RejectionStatusCode = 429;
-});
+       
+    });
 
-builder.Services.AddRateLimiter(config =>
-{
-    config.AddTokenBucketLimiter("TokenBucketPolicy", options =>
+    // Token Bucket Limiter
+    config.AddTokenBucketLimiter("TokenBucketPolicy", static options =>
     {
         options.ReplenishmentPeriod = TimeSpan.FromSeconds(10);
         options.TokenLimit = 3;
@@ -39,17 +39,17 @@ builder.Services.AddRateLimiter(config =>
         options.TokensPerPeriod = 2;
         options.AutoReplenishment = true;
         options.QueueProcessingOrder = System.Threading.RateLimiting.QueueProcessingOrder.OldestFirst;
-    }).RejectionStatusCode = 429;
-});
+       
+    });
 
-builder.Services.AddRateLimiter(config =>
-{
-    config.AddConcurrencyLimiter("ConcureencyPolicy", options =>
+    // Concurrency Limiter
+    config.AddConcurrencyLimiter("ConcurrencyPolicy", static options =>
     {
         options.PermitLimit = 3;
         options.QueueLimit = 2;
         options.QueueProcessingOrder = System.Threading.RateLimiting.QueueProcessingOrder.OldestFirst;
-    }).RejectionStatusCode = 429;
+       
+    });
 });
 
 var app = builder.Build();
@@ -62,11 +62,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseRateLimiter();
-
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
-
 app.MapControllers();
 
 app.Run();
