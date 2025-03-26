@@ -10,9 +10,9 @@ namespace CNTKImageProcessing
 {
     static class ImageProcessing
     {
-        /// <summary>
-        /// Extracts image pixels in CHW using parallelization
-        /// </summary>
+    
+        
+       
         /// <param name="image">The bitmap image to extract features from</param>
         /// <returns>A list of pixels in CHW order</returns>
         public static List<float> ParallelExtractCHW(this Bitmap image)
