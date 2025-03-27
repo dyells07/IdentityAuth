@@ -34,7 +34,6 @@ public class BankAccountFacade
             Console.WriteLine("Transaction Failed\n");
         }
     }
-
     public void DepositCash(double cashToDeposit)
     {
         if (acctChecker.AccountActive(accountNumber) && codeChecker.IsCodeCorrect(securityCode))
@@ -47,4 +46,5 @@ public class BankAccountFacade
             Console.WriteLine("Transaction Failed\n");
         }
     }
+
 }

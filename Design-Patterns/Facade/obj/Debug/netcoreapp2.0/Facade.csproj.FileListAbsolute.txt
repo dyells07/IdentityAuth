@@ -1,10 +1,14 @@
-c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Facade\bin\Debug\netcoreapp2.0\Facade.deps.json
-c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Facade\bin\Debug\netcoreapp2.0\Facade.runtimeconfig.json
-c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Facade\bin\Debug\netcoreapp2.0\Facade.runtimeconfig.dev.json
-c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Facade\bin\Debug\netcoreapp2.0\Facade.dll
-c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Facade\bin\Debug\netcoreapp2.0\Facade.pdb
-c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Facade\obj\Debug\netcoreapp2.0\Facade.csproj.CoreCompileInputs.cache
-c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Facade\obj\Debug\netcoreapp2.0\Facade.AssemblyInfoInputs.cache
-c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Facade\obj\Debug\netcoreapp2.0\Facade.AssemblyInfo.cs
-c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Facade\obj\Debug\netcoreapp2.0\Facade.dll
-c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Facade\obj\Debug\netcoreapp2.0\Facade.pdb
+B:\Auth\Design-Patterns\Facade\bin\Debug\netcoreapp2.0\Facade.deps.json
+B:\Auth\Design-Patterns\Facade\bin\Debug\netcoreapp2.0\Facade.runtimeconfig.json
+B:\Auth\Design-Patterns\Facade\bin\Debug\netcoreapp2.0\Facade.runtimeconfig.dev.json
+B:\Auth\Design-Patterns\Facade\bin\Debug\netcoreapp2.0\Facade.dll
+B:\Auth\Design-Patterns\Facade\bin\Debug\netcoreapp2.0\Facade.pdb
+B:\Auth\Design-Patterns\Facade\obj\Debug\netcoreapp2.0\Facade.csproj.AssemblyReference.cache
+B:\Auth\Design-Patterns\Facade\obj\Debug\netcoreapp2.0\Facade.GeneratedMSBuildEditorConfig.editorconfig
+B:\Auth\Design-Patterns\Facade\obj\Debug\netcoreapp2.0\Facade.AssemblyInfoInputs.cache
+B:\Auth\Design-Patterns\Facade\obj\Debug\netcoreapp2.0\Facade.AssemblyInfo.cs
+B:\Auth\Design-Patterns\Facade\obj\Debug\netcoreapp2.0\Facade.csproj.CoreCompileInputs.cache
+B:\Auth\Design-Patterns\Facade\obj\Debug\netcoreapp2.0\Facade.sourcelink.json
+B:\Auth\Design-Patterns\Facade\obj\Debug\netcoreapp2.0\Facade.dll
+B:\Auth\Design-Patterns\Facade\obj\Debug\netcoreapp2.0\Facade.pdb
+B:\Auth\Design-Patterns\Facade\obj\Debug\netcoreapp2.0\Facade.genruntimeconfig.cache
